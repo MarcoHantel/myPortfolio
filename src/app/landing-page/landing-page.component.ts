@@ -10,6 +10,7 @@ import { NgStyle, NgClass } from '@angular/common';
 })
 export class LandingPageComponent {
 hovered = false;
+hoveredLogo = false;
 
 }
 

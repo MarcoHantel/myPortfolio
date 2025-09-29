@@ -2,11 +2,7 @@
 
 
     <div class="img-change" (mouseenter)="hovered = true" (mouseleave)="hovered = false" [class.hover]="hovered">
-        <div class="social-icons">
-            <img src="assets/img/social/Email_button.png" alt="">
-            <img src="assets/img/social/Git_button.png" alt="">
-            <img src="assets/img/social/Linkedin_button.png" alt="">
-        </div>
+
         <!-- mit wenn hovered false ist, wird die classe hover hinzugefühgt [class.hover]="hovered" -->
         <img class="img base" src="assets/img/shapes/BG_shape_1.png"
             alt=""><!-- Basisbild liegt oben (liefert auch die Höhe des Containers) -->
@@ -19,10 +15,23 @@
 
 
     <div class="text-landing-page">
-        <div class="logo-container img-change" (mouseover)="hovered = true" (mouseleave)="hovered = false"
-            [class.hover]="hovered">
-            <img class="small-logo img base" src="assets/img/logo/LOGO.png">
-            <img class="big-logo img top" src="assets/img/logo/LOGO_hover.png">
+        <div class="logo-and-socials-wraper">
+            <div class="logo-and-socials-spacer">
+                <!-- Logo mit Hover-Effekt img-change -->
+                <div class="logo-container " (mouseover)="hoveredLogo = true" (mouseleave)="hoveredLogo = false"
+                    [class.motion-for-logo]="hoveredLogo">
+                    <!-- img base -->
+                     <!-- img top -->
+                    <img class="small-logo " src="assets/img/logo/LOGO.png">
+                    <img class="big-logo " src="assets/img/logo/LOGO_hover.png">
+                </div>
+
+                <div class="social-icons">
+                    <img src="assets/img/social/Email_button.png" alt="">
+                    <img src="assets/img/social/Git_button.png" alt="">
+                    <img src="assets/img/social/Linkedin_button.png" alt="">
+                </div>
+            </div>
         </div>
         <h1>Marco Hantel</h1>
         <span>FRONTEND DEVELOPER</span>

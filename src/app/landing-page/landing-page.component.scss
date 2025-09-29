@@ -14,17 +14,6 @@
     color: var(--color-white);
     margin: 0 40px 0 40px;
 
-
-    >.small-logo {
-        width: 38px;
-        height: 89px;
-    }
-
-    >.big-logo {
-        width: 38px;
-        height: 89px;
-    }
-
     >h1 {
         font-family: Anta, sans-serif;
         font-weight: 400;
@@ -43,6 +32,59 @@
         cursor: pointer;
     }
 }
+
+.logo-and-socials-wraper {
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+}
+
+.logo-and-socials-spacer {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 55%;
+
+    >.social-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    >.logo-container {
+
+        >.small-logo {
+            position: absolute;
+            width: 66px;
+            height: 73px;
+            opacity: 1;
+        }
+
+        >.big-logo {
+            position: absolute;
+            width: 66px;
+            height: 73px;
+            opacity: 0;
+        }
+    }
+}
+
+.motion-for-logo {
+    >.big-logo {
+        opacity: 1!important;
+        transition: all 0.8s ease-in-out;
+    }
+
+    >.small-logo {
+        opacity: 0!important;
+        transition: all 0.8s ease-in-out;
+    }
+}
+
 
 // Hover-Effekt für Bildwechsel
 // Der Wrapper um die zwei <img>-Tags
