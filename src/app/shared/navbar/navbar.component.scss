@@ -1,0 +1,77 @@
+.nav-bar {
+    width: 1440px;
+    height: 104px;
+    background-color: var(--color-blue);
+
+    padding: 16px 109px;
+    gap: 196px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    >span {
+        font-weight: 400;
+        font-size: 32px;
+
+        >img {
+            width: 58px;
+            height: 72px;
+        }
+
+        >a {
+            text-decoration: none;
+            color: var(--color-anthra);
+
+            &:hover {
+                color: var(--color-white);
+            }
+        }
+    }
+}
+
+.language-icons {
+    font-family: josefin sans, sans-serif;
+    font-weight: 400;
+    font-style: regular;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    .language-de,
+    .language-en {
+        position: absolute;
+    }
+
+    >.language-icon-de,
+    .language-icon-en {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            cursor: pointer;
+            transition: all 0.35s ease-in-out;
+            color: var(--color-white);
+        }
+    }
+
+    .language-icon-de {
+        >img {
+            opacity: 1;
+        }
+    }
+
+    .language-icon-en {
+        >img {
+            opacity: 0;
+        }
+    }
+}
+
+// Aktive Sprache DE
+
+
+// Aktive Sprache EN

@@ -1,0 +1,101 @@
+.landing-page {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 128px;
+    width: 100%;
+}
+
+.text-landing-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--color-white);
+    margin: 0 40px 0 40px;
+
+
+    >.small-logo {
+        width: 38px;
+        height: 89px;
+    }
+
+    >.big-logo {
+        width: 38px;
+        height: 89px;
+    }
+
+    >h1 {
+        font-family: Anta, sans-serif;
+        font-weight: 400;
+        font-size: 88px;
+        margin-block-start: 0.5em;
+        margin-block-end: 0.5em;
+    }
+
+    >span {
+        font-family: Josefin Sans, sans-serif;
+        font-size: 40px;
+    }
+
+    >.arrow-down {
+        margin-top: 128px;
+        cursor: pointer;
+    }
+}
+
+// Hover-Effekt für Bildwechsel
+// Der Wrapper um die zwei <img>-Tags
+.img-change {
+    position: relative; // macht den Wrapper zur Bezugsebene für absolut positionierte Kinder (die .top-Grafik)
+    display: inline-block; // passt sich in Breite/Höhe dem Inhalt an und verhält sich wie ein inline-Element im Fluss
+    margin: 0 40px 0 40px;
+}
+
+.img-change .img {
+    display: block; // entfernt den standardmäßigen "inline-gap" von <img>, verhindert Lücken
+    width: 100%; // macht die Bilder responsiv (füllen die Wrapper-Breite)
+    height: auto; // behält das Seitenverhältnis
+    transition: opacity .8s ease-in-out;
+    // Wichtig: Die Transition liegt auf dem Element selbst (nicht nur im Hover-Zustand),
+    // damit sowohl das Ein- als auch Ausblenden weich animiert
+}
+
+// Das obere Bild, das überlagert
+.img-change .top {
+    position: absolute; // nimmt es aus dem normalen Fluss und legt es relativ zum Wrapper über das Basisbild
+    inset: 0; // Kurzform für top/right/bottom/left: 0; – deckt damit den Wrapper vollständig ab
+    opacity: 0; // Startzustand: unsichtbar, damit zuerst nur das Basisbild zu sehen ist
+    // (Optional, für Klarheit kann man ergänzen:)
+    // z-index: 1;       // sorgt explizit für Überlagerung, falls nötig
+}
+
+// legt mein Bild ganz nach oben 
+.on-top {
+    position: absolute;
+    inset: 0;
+    opacity: 1;
+    // z-index: 1; 
+}
+
+// Startzustand: Basis sichtbar
+.img-change .base {
+    opacity: 1; // Das untere Bild ist am Anfang voll sichtbar
+}
+
+/* Umschalten per Klasse '.hover' am Wrapper:
+   - Basis ausblenden
+   - Top einblenden
+*/
+.img-change.hover .base {
+    opacity: 0;
+}
+
+.img-change.hover .top {
+    opacity: 1;
+}
+
+.selfie {
+    display: inline-block;
+    width: 100%;
+}
