@@ -1,0 +1,16 @@
+<div class="wrapper">
+    <div>
+        <h2>My Skills</h2>
+        <div class=" skills-wrapper width flex">
+            <div class="skills-icon-container">
+                @for (item of skillsImg; track $index) {
+                <img [src]="'assets/img/icons/'+item" alt="Skill Icon">
+                }
+            </div>
+            <div class="flex">
+                <img src="assets/img/shapes/ellipse_1.png" alt="">
+                <!-- <img src="assets/img/shapes/ellipse_2.png" alt=""> -->
+            </div>
+        </div>
+    </div>
+</div>

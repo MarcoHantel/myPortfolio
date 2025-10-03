@@ -6,10 +6,32 @@ body {
     font-family: Josefin Sans, sans-serif;
     margin: 0px;
     background-color: var(--color-anthra);
-    overflow-x: hidden; 
+    overflow-x: hidden;
+}
 
+.wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    margin-top: 80px;
+}
+
+h2 {
+    color: var(--color-blue);
+    text-align: center;
+    font-family: Anta, sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+    margin-block-start: 20px;
+    margin-block-end: 80px;
+}
+
+.width{
+    width: 860px;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

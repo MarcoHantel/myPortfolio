@@ -1,0 +1,72 @@
+// .wrapper {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     margin-top: 80px;
+// }
+
+.why-me {
+    align-items: center;
+    height: 307px;
+
+
+    .why-me-wraper {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        font-weight: 400;
+
+        >.location-wraper {
+
+            font-size: 36px;
+            font-style: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        >.why-me-text {
+            width: 379px;
+            // height: 176px;
+            color: var(--color-white);
+            font-size: 18px;
+        }
+
+    }
+}
+
+
+.blue-text {
+    color: var(--color-blue);
+    margin-right: 8px;
+}
+
+.location-text {
+    color: var(--color-white)
+}
+
+.button-wraper{
+    width: 860px;
+    display: flex;
+    justify-content: flex-end;
+
+    font-family: Josefin Sans, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    
+
+    // Button wirklich programmieren oder doch als Bild einsetzten??
+    >button{
+        width: 134px;
+        height: 48px;
+        border: solid 1px var(--color-blue);
+        border-radius: 30px;
+        background-color: transparent;
+        color: var(--color-blue);
+
+        &:hover{
+            background-color: transparentize($color: #000000, $amount: 0.9);
+            cursor: pointer;
+        }
+    }
+}

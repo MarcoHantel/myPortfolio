@@ -9,8 +9,12 @@ import { NgStyle, NgClass } from '@angular/common';
   styleUrl: './landing-page.component.scss', 
 })
 export class LandingPageComponent {
+  
 hovered = false;
 hoveredLogo = false;
+hoveredSocialMail = false;
+hoveredSocialGit = false;
+hoveredSocialLin = false;
 
 }
 

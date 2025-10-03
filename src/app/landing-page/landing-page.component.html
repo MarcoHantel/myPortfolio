@@ -1,43 +1,46 @@
-<div class="landing-page">
+<div class="landingpage-wraper">
+    <div class="landing-page">
+        <div class="img-change" (mouseenter)="hovered = true" (mouseleave)="hovered = false" [class.hover]="hovered">
+
+            <!-- mit wenn hovered false ist, wird die classe hover hinzugefühgt [class.hover]="hovered" -->
+            <img class="img base" src="assets/img/shapes/BG_shape_1.png"
+                alt=""><!-- Basisbild liegt oben (liefert auch die Höhe des Containers) -->
+            <img class="img top" src="assets/img/shapes/BG_shape_2.png"
+                alt=""><!-- Hoverbild liegt unten und wird dann oben drüber gelegt -->
+            <img class="on-top selfie" src="assets/img/me/marco_1.png">
+
+        </div>
 
 
-    <div class="img-change" (mouseenter)="hovered = true" (mouseleave)="hovered = false" [class.hover]="hovered">
 
-        <!-- mit wenn hovered false ist, wird die classe hover hinzugefühgt [class.hover]="hovered" -->
-        <img class="img base" src="assets/img/shapes/BG_shape_1.png"
-            alt=""><!-- Basisbild liegt oben (liefert auch die Höhe des Containers) -->
-        <img class="img top" src="assets/img/shapes/BG_shape_2.png"
-            alt=""><!-- Hoverbild liegt unten und wird dann oben drüber gelegt -->
-        <img class="on-top selfie" src="assets/img/me/marco_1.png">
+        <div class="text-landing-page">
+            <div class="logo-and-socials-wraper">
+                <div class="logo-and-socials-spacer">
 
-    </div>
+                    <div class="logo-container " (mouseover)="hoveredLogo = true" (mouseleave)="hoveredLogo = false"
+                        [class.motion-for-logo]="hoveredLogo">
+                        <img class="small-logo " src="assets/img/logo/LOGO.png">
+                        <img class="big-logo " src="assets/img/logo/LOGO_hover.png">
+                    </div>
 
-
-
-    <div class="text-landing-page">
-        <div class="logo-and-socials-wraper">
-            <div class="logo-and-socials-spacer">
-
-                <div class="logo-container " (mouseover)="hoveredLogo = true" (mouseleave)="hoveredLogo = false"
-                    [class.motion-for-logo]="hoveredLogo">
-                    <img class="small-logo " src="assets/img/logo/LOGO.png">
-                    <img class="big-logo " src="assets/img/logo/LOGO_hover.png">
-                </div>
-
-                <div class="social-icons">
-                    <img src="assets/img/social/Email_button.png" alt="">
-                    <img src="assets/img/social/Git_button.png" alt="">
-                    <img src="assets/img/social/Linkedin_button.png" alt="">
+                    <div class="social-icons">
+                        <img [src]="hoveredSocialMail ? 'assets/img/social/Email_button_hover.png' : 'assets/img/social/Email_button.png'"
+                            (mouseenter)="hoveredSocialMail = true" (mouseleave)="hoveredSocialMail = false" alt="">
+                        <img [src]="hoveredSocialGit ? 'assets/img/social/Git_button_hover.png' : 'assets/img/social/Git_button.png'"
+                            (mouseenter)="hoveredSocialGit = true" (mouseleave)="hoveredSocialGit = false" alt="">
+                        <img [src]="hoveredSocialLin ? 'assets/img/social/Linkedin_button_hover.png' : 'assets/img/social/Linkedin_button.png'"
+                            (mouseenter)="hoveredSocialLin = true" (mouseleave)="hoveredSocialLin = false" alt="">
+                    </div>
                 </div>
             </div>
-        </div>
-        <h1>Marco Hantel</h1>
-        <span>FRONTEND DEVELOPER</span>
+            <h1>Marco Hantel</h1>
+            <span>FRONTEND DEVELOPER</span>
 
-        <div class="img-change arrow-down" (mouseenter)="hovered = true" (mouseleave)="hovered = false"
-            [class.hover]="hovered">
-            <img class="img base" src="assets/img/icons/arrow_down.png">
-            <img class="img top" src="assets/img/icons/arrow_down_hover.png">
+            <div class="img-change arrow-down" (mouseenter)="hovered = true" (mouseleave)="hovered = false"
+                [class.hover]="hovered">
+                <img class="img" src="assets/img/icons/arrow_down.png">
+                <img class="img top" src="assets/img/icons/arrow_down_hover.png">
+            </div>
         </div>
     </div>
 </div>

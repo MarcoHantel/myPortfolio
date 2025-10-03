@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { WhyMeComponent } from './why-me/why-me.component';
+import { MySkillsComponent } from './my-skills/my-skills.component';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,9 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
   imports: [CommonModule,
     LandingPageComponent,
     NavbarComponent,
-    RouterOutlet],
+    RouterOutlet,
+    WhyMeComponent,
+    MySkillsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
