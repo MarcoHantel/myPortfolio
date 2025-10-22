@@ -1,15 +1,24 @@
 <div class="wrapper">
     <div>
         <h2>My Skills</h2>
-        <div class=" skills-wrapper width flex">
+        <div class=" skills-wrapper width">
             <div class="skills-icon-container">
                 @for (item of skillsImg; track $index) {
                 <img [src]="'assets/img/icons/'+item" alt="Skill Icon">
                 }
             </div>
-            <div class="flex">
-                <img src="assets/img/shapes/ellipse_1.png" alt="">
-                <!-- <img src="assets/img/shapes/ellipse_2.png" alt=""> -->
+
+
+            <div class="skills-lerning-container">
+                <div class="lerning-container">
+                    I am currently continuing my education in topics such as AI,
+                    which includes prompt engineering and AI and ethics,
+                    as well as programming with Python.
+                </div>
+                <div class="shapes-container" (mousemove)="ishover = true" (mouseout)="ishover = false" [class.hover]="ishover">
+                    <img class="img-top" src="assets/img/shapes/ellipse_1.png" alt="">
+                    <img class="img-bottom" src="assets/img/shapes/ellipse_2.png" alt="">
+                </div>
             </div>
         </div>
     </div>

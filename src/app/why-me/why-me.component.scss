@@ -15,6 +15,7 @@
         justify-content: space-between;
         align-items: start;
         font-weight: 400;
+        cursor: default;
 
         >.location-wraper {
 
@@ -30,6 +31,7 @@
             // height: 176px;
             color: var(--color-white);
             font-size: 18px;
+            line-height: 1.2;
         }
 
     }

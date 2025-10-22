@@ -10,6 +10,8 @@ import { CommonModule } from '@angular/common';
 })
 export class MySkillsComponent {
 
+  ishover:boolean = false;
+
   skillsImg = ['angular.png', 'type_script.png', 'java_script.png', 'html.png',
     'css.png', 'rest_api.png', 'firebase.png', 'git.png', 'material_design.png', 'scrum.png'];
 
