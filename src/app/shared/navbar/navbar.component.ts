@@ -14,6 +14,7 @@ export class NavbarComponent{
 
   activeLang: boolean = false;
   language: string = "";
+  sticky: boolean = false;
 
   // changeLanguage() muss in den service rein!!
   // changeLanguage(activeLang: boolean, language: string){

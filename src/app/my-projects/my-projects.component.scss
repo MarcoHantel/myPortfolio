@@ -1,0 +1,24 @@
+.div-tabs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    font-family: Josefin Sans, sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.button-tab {
+    background: transparent;
+    cursor: pointer;
+    transition: background-color .2s ease;
+    color: var(--color-white);
+    border: none;
+    border-radius: 15px 15px 0px 0px;
+    width: 248px;
+    height: 97px;
+}
+
+.tabsActive {
+    background-color: var(--color-tabblue);
+}
