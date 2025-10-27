@@ -1,0 +1,36 @@
+<!-- Wrapper für den Tab-Content -->
+<div class="tab-content">
+  <!-- Hero-Bild, dynamisch gebunden -->
+  <img class="hero" [src]="data.imageHero" [alt]="data.title">
+
+  <!-- Abschnitt "About the project" -->
+  <div>
+    <h3>About the project</h3>
+    <div>{{ data.about }}</div> <!-- Text aus dem Service -->
+  </div>
+
+  <!-- Abschnitt "How I organized my work process" -->
+  <div>
+    <h3>How I organized my work process</h3>
+    <div>{{ data.workProcess }}</div>
+  </div>
+
+  <!-- Abschnitt "What I have learned" -->
+  <div>
+    <h3>What I have learned</h3>
+    <div>{{ data.learned }}</div>
+  </div>
+
+  <!-- Liste der Technologien -->
+  <div *ngIf="data.tech?.length">
+    <h3>Technologies</h3>
+    <ul>
+      <li *ngFor="let t of data.tech">{{ t }}</li>
+    </ul>
+  </div>
+
+  <!-- Optionaler GitHub-Link -->
+  <a *ngIf="data.github" [href]="data.github" target="_blank" rel="noopener">
+    GitHub
+  </a>
+</div>

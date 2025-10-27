@@ -16,7 +16,8 @@ import { MyProjectsComponent } from './my-projects/my-projects.component';
     RouterOutlet,
     WhyMeComponent,
     MySkillsComponent,
-    MyProjectsComponent],
+    MyProjectsComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

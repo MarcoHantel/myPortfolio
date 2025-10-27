@@ -1,10 +1,28 @@
 <h2>My Projects</h2>
 
+<!-- Tab-Buttons: werden aus der Service-Liste generiert -->
 <div class="div-tabs" role="tablist">
-  <button *ngFor="let tab of tabs; let i = index"
-          class="button-tab"
-          [class.tabsActive]="activeTab === i"
-          (click)="activeTab = i">
-    {{ tab }}
+  <!-- @for ist die neue Angular-17-Schleife (Alternative zu *ngFor) -->
+  <!-- tabsSvc.tabs() ruft das Signal auf (wie eine Funktion) und liefert das Array -->
+  <!-- track tab.key gibt Angular eine stabile ID, um DOM-Recycling zu optimieren -->
+
+  <!--type="button" verhindert Form-Submit -->
+  <!--role="tab" A11y-Rolle -->
+  <!--[attr.aria-selected]="tabsSvc.activeKey() === tab.key" Screenreader: aktiv? -->
+  <!--[class.tabsActive]="tabsSvc.activeKey() === tab.key" aktive Farbe -->
+  <!--(click)="tabsSvc.setActive(tab.key)"> wechselt aktiven Tab -->
+  <!--{{ tab.label }}   Button-Text -->
+  @for (tab of tabsSvc.tabs(); track tab.key) {
+  <button class="button-tab" type="button" role="tab" [attr.aria-selected]="tabsSvc.activeKey() === tab.key"
+    [class.tabsActive]="tabsSvc.activeKey() === tab.key" (click)="tabsSvc.setActive(tab.key)">
+    {{ tab.label }}
   </button>
+  }
+</div>
+
+<!-- Inhalt des aktiven Tabs -->
+<div class="content-wrap">
+  <!-- tabsSvc.activeData() gibt dir das TabData-Objekt des aktuell aktiven Tabs -->
+  <!-- Das Ausrufezeichen ! sagt TypeScript: "ist garantiert da" (du kannst auch vorher @if prüfen) -->
+  <app-tab-content [data]="tabsSvc.activeData()!"></app-tab-content>
 </div>

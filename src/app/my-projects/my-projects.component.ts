@@ -1,17 +1,19 @@
+// my-projects.component.ts
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { TabsService } from '../services/tabs/tabs.service';
+import { TabContentComponent } from './tab-content/tab-content.component';
 
 @Component({
   selector: 'app-my-projects',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TabContentComponent],
   templateUrl: './my-projects.component.html',
-  styleUrl: './my-projects.component.scss'
+  styleUrls: ['./my-projects.component.scss']
 })
 export class MyProjectsComponent {
-
-  tabs = ['el pollo loco', 'Join', 'Pokedex', 'coming soon'];
-  activeTab:number = 0;
-
-
+  tabsSvc = inject(TabsService);
 }
+
+
+
