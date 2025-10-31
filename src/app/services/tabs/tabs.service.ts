@@ -6,12 +6,15 @@ export interface TabData {
   key: 'pollo' | 'join' | 'pokedex' | 'soon'; // stabile ID/Key je Tab (für Track & State)
   label: string;        // Label, das im Tab-Button steht
   title: string;        // z. B. Überschrift im Content
+  duration: string;     // z. B. Projektdauer
   about: string;        // Abschnitt "About the project"
   workProcess: string;  // Abschnitt "How I organized my work process"
   learned: string;      // Abschnitt "What I have learned"
-  imageHero: string;    // Pfad zu einem Bild
-  tech: string[];       // Liste verwendeter Technologien
+  imageShape: string;    // Pfad zu einem Bild
+  techImage: string[];       // Liste verwendeter Technologien
   github?: string;      // optionaler Link
+  livetest?: string;    // optionaler Link
+  projectImage: string;    // Pfad zu einem Project-Bild
 }
 
 // @Injectable macht den Service injizierbar; providedIn: 'root' = App-weit als Singleton verfügbar
@@ -23,45 +26,60 @@ export class TabsService {
       key: 'pollo',
       label: 'el pollo loco',
       title: 'El Pollo Loco',
+      duration: 'Durattion 5 Weeks',
       about:
         'A simple Jump-and-Run game based on an object-oriented approach. Help sharkie…',
       workProcess:
         'Clean architecture, reusable modules/components, naming & testing focus…',
       learned:
         'Deep dive into canvas rendering, collision systems, asset pipelines…',
-      imageHero: 'assets/images/el-pollo-loco.png',
-      tech: ['HTML5', 'SCSS', 'TypeScript'],
-      github: 'https://github.com/…'
+      imageShape: 'assets/img/shapes/ellipse 8.png',
+      techImage: ['assets/img/icons/proj_html.png', 'assets/img/icons/proj_css.png', 'assets/img/icons/proj_javascript.png'],
+      projectImage: 'assets/img/projects/ellpolloloco.png',
+      github: 'https://github.com/…',
+      livetest: 'https://test.com/...'
     },
     {
       key: 'join',
       label: 'Join',
       title: 'Join Project',
+      duration: 'Durattion 5 Weeks',
       about: 'Task manager inspired by Kanban…',
       workProcess: 'Services, DI, state handling, routing…',
       learned: 'Forms, validation, accessibility…',
-      imageHero: 'assets/images/join.png',
-      tech: ['HTML', 'CSS', 'Google Firebase']
+      imageShape: 'assets/img/shapes/ellipse 8.png',
+      techImage: ['HTML', 'CSS', 'Google Firebase'],
+      projectImage: '',
+      github: 'https://github.com/…',
+      livetest: 'https://test.com/...'
     },
-        {
+    {
       key: 'pokedex',
       label: 'Pokedex',
       title: 'Pokedex App',
+      duration: 'Durattion 5 Weeks',
       about: 'getting data from a public API and displaying it…',
       workProcess: 'Services, DI, state handling, routing…',
       learned: 'connecting to APIs, async data handling…',
-      imageHero: 'assets/images/pokedex.png',
-      tech: ['HTML', 'CSS']
+      imageShape: 'assets/img/shapes/ellipse 8.png',
+      techImage: ['HTML', 'CSS'],
+      projectImage: '',
+      github: 'https://github.com/…',
+      livetest: 'https://test.com/...'
     },
-        {
+    {
       key: 'soon',
       label: 'soon',
       title: 'soon Project',
+      duration: 'Durattion 5 Weeks',
       about: 'Task manager inspired by Kanban…',
       workProcess: 'Services, DI, state handling, routing…',
       learned: 'Forms, validation, accessibility…',
-      imageHero: 'assets/images/join.png',
-      tech: ['Angular', 'SCSS', 'Signals']
+      imageShape: 'assets/img/shapes/ellipse 8.png',
+      techImage: ['Angular', 'SCSS', 'Signals'],
+      projectImage: '',
+      github: 'https://github.com/…',
+      livetest: 'https://test.com/...'
     },
   ]);
 
@@ -69,7 +87,7 @@ export class TabsService {
   readonly activeKey = signal<TabData['key']>('pollo');
 
   // Setter-Funktion, um den aktiven Tab zu wechseln (wird aus dem Template aufgerufen)
-  setActive(key: TabData['key']) { 
+  setActive(key: TabData['key']) {
     this.activeKey.set(key);
   }
 

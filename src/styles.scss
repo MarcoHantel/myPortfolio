@@ -26,12 +26,17 @@ h2 {
     margin-block-end: 80px;
 }
 
-.width{
+.width {
     width: 860px;
 }
 
-.flex{
+.flex {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.none {
+    text-decoration: none;
+    cursor: pointer;
 }

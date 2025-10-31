@@ -1,36 +1,64 @@
 <!-- Wrapper für den Tab-Content -->
 <div class="tab-content">
-  <!-- Hero-Bild, dynamisch gebunden -->
-  <img class="hero" [src]="data.imageHero" [alt]="data.title">
+    <div class="content-wrapper">
+        <div class="content-text-wrapper">
+            <!-- Hero-Bild, dynamisch gebunden -->
+            <div class="content-top-wrapper">
+                <img class="hero" [src]="data.imageShape" [alt]="data.title">
+                <!-- Abschnitt "About the project" -->
+                <div class="about-wrapper">
+                    <h3>About the project</h3>
+                    <span> {{ data.duration }} </span>
+                </div>
+            </div>
+            <div>{{ data.about }}</div> Text aus dem Service
 
-  <!-- Abschnitt "About the project" -->
-  <div>
-    <h3>About the project</h3>
-    <div>{{ data.about }}</div> <!-- Text aus dem Service -->
-  </div>
 
-  <!-- Abschnitt "How I organized my work process" -->
-  <div>
-    <h3>How I organized my work process</h3>
-    <div>{{ data.workProcess }}</div>
-  </div>
+            <!-- Abschnitt "How I organized my work process" -->
+            <div>
+                <div class="">
+                    <img class="hero" [src]="data.imageShape" [alt]="data.title">
+                    <h3>How I organized my work process</h3>
+                </div>
+                <div>{{ data.workProcess }}</div>
+            </div>
 
-  <!-- Abschnitt "What I have learned" -->
-  <div>
-    <h3>What I have learned</h3>
-    <div>{{ data.learned }}</div>
-  </div>
+            <!-- Abschnitt "What I have learned" -->
+            <div>
+                <h3>What I have learned</h3>
+                <div>{{ data.learned }}</div>
+            </div>
+        </div>
 
-  <!-- Liste der Technologien -->
-  <div *ngIf="data.tech?.length">
-    <h3>Technologies</h3>
-    <ul>
-      <li *ngFor="let t of data.tech">{{ t }}</li>
-    </ul>
-  </div>
 
-  <!-- Optionaler GitHub-Link -->
-  <a *ngIf="data.github" [href]="data.github" target="_blank" rel="noopener">
-    GitHub
-  </a>
+        <div class="tech-wrapper">
+            <!-- Rendere diesen Block nur, wenn es mind. ein Bild in data.techImage gibt.
+       ?.length schützt vor undefined/null (Safe Navigation). -->
+            <div class="tech-img-wrapper" *ngIf="data.techImage?.length">
+                <h3>Technologies</h3>
+
+                <div class="tech-list-img">
+                    <!-- Erzeuge für JEDEN Eintrag im Array data.techImage ein <img>.
+           *ngFor iteriert über das Array; "src" ist hier die aktuelle Bild-URL (string). -->
+                    <!--[src]="src" binde die aktuelle URL als Bildquelle -->
+                    <!--[alt]="data.title + ' technology'" dynamischer Alt-Text für A11y/SEO -->
+                    <img class="tech-img" *ngFor="let src of data.techImage" [src]="src"
+                        [alt]="data.title + ' technology'" />
+                </div>
+
+                <!-- Zusätzliches Projektbild (einzelnes Bild, keine Liste). -->
+                <img class="project-img" [src]="data.projectImage" [alt]="data.title" />
+            </div>
+
+        <!-- Optionaler GitHub-Link -->
+        <div class="button-wrapper">
+            <button class="button-live-test">
+                <a class="none" *ngIf="data.github" [href]="data.livetest" target="_blank" >Live Test</a>
+            </button>
+            <button class="button-github">
+                <a class="none" *ngIf="data.github" [href]="data.github" target="_blank" >GitHub</a>
+            </button>
+        </div>
+    </div>
+</div>
 </div>
