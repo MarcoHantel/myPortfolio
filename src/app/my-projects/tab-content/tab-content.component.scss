@@ -5,29 +5,35 @@ h3 {
     letter-spacing: 0%;
 }
 
+.image-shape {
+    width: 29px;
+    height: 26px;
+}
+
 .tab-content {
     background-color: var(--color-tabblue);
     height: 100%;
     width: 100%;
-    // font-family: Josefin Sans, sans-serif;
     color: var(--color-white);
+    padding: 16px 0px;
+     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .content-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    padding: 40px;
+    width: 1199px;
+    padding: 0, 40px;
 }
 
 .content-text-wrapper {
-    background-color: aquamarine;
     width: 50%;
 }
 
 .content-top-wrapper {
-    background-color: bisque;
     display: flex;
     align-items: center;
 
@@ -41,11 +47,31 @@ h3 {
 }
 
 .about-wrapper {
-    background-color: #8ca52a;
+
     display: flex;
     align-items: center;
     gap: 32px;
 }
+
+.about-text,
+.work-process-text,
+.learned-text {
+    padding: 0 42px;
+}
+
+
+.work-process-header {
+    display: flex;
+    align-items: center;
+
+
+    >img {
+        margin-right: 16px;
+    }
+}
+
+// tech-wrapper styles (right side of the tab content)
+
 
 .tech-wrapper {
     width: 50%;
@@ -56,7 +82,6 @@ h3 {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background-color: rgb(21, 141, 101);
         margin-bottom: 16px;
     }
 
@@ -107,6 +132,19 @@ h3 {
                 background-color: var(--color-anthra);
             }
         }
+
+        //         .button-live-test, .button-github {
+        //   display: inline-flex;
+        //   align-items: center;
+        //   justify-content: center;
+        //   padding: .75rem 1.25rem;
+        //   border-radius: 10px;
+        //   text-decoration: none;
+        //   color: var(--color-white);
+        // }
+        // .button-live-test { background: var(--color-tabblue); }
+        // .button-github    { background: #24292e; } // GitHub-Dunkel
+
 
     }
 }

@@ -1,26 +1,27 @@
-// Importiert Injectable, um einen Service bereitzustellen, und signal für reaktiven State (Angular Signals)
-import { Injectable, signal } from '@angular/core';
+// Importiert Injectable (für den DI-Container), signal (reaktiver State) und computed (reaktives Derivat)
+import { Injectable, signal, computed } from '@angular/core';
 
-// Das Datenmodell für einen Tab: so sehen die Inhalte aus, die deine View rendert
+// Definiert das Datenmodell eines Tabs (starke Typisierung für deine Views)
 export interface TabData {
-  key: 'pollo' | 'join' | 'pokedex' | 'soon'; // stabile ID/Key je Tab (für Track & State)
-  label: string;        // Label, das im Tab-Button steht
-  title: string;        // z. B. Überschrift im Content
-  duration: string;     // z. B. Projektdauer
-  about: string;        // Abschnitt "About the project"
-  workProcess: string;  // Abschnitt "How I organized my work process"
-  learned: string;      // Abschnitt "What I have learned"
-  imageShape: string;    // Pfad zu einem Bild
-  techImage: string[];       // Liste verwendeter Technologien
-  github?: string;      // optionaler Link
-  livetest?: string;    // optionaler Link
-  projectImage: string;    // Pfad zu einem Project-Bild
+  key: 'pollo' | 'join' | 'pokedex' | 'soon'; // stabile ID, z. B. für track/Wechsel
+  label: string;        // Beschriftung des Tab-Buttons
+  title: string;        // Überschrift im Content
+  duration: string;     // Projektdauer
+  about: string;        // Abschnitt: About the project
+  workProcess: string;  // Abschnitt: How I organized my work process
+  learned: string;      // Abschnitt: What I have learned
+  imageShape: string;   // Pfad zu einem Deko-/Hero-Bild
+  techImage: string[];  // Liste von Icon-/Bildpfaden (oder Strings) zu Technologien
+  github?: string;      // optionaler GitHub-Link
+  livetest?: string;    // optionaler Live-Demo-Link
+  projectImage: string; // Pfad zu einem Projektbild/Screenshot
 }
 
-// @Injectable macht den Service injizierbar; providedIn: 'root' = App-weit als Singleton verfügbar
+// Service als Singleton im Root-Injector verfügbar
 @Injectable({ providedIn: 'root' })
 export class TabsService {
-  // Signal mit allen Tabs (Array). Signals sind reaktiv: wenn sich der Wert ändert, reagiert das Template.
+
+  // Reaktiver State: alle Tabs als Array. Jede Änderung an tabs() triggert abhängige computed()s/Templates.
   readonly tabs = signal<TabData[]>([
     {
       key: 'pollo',
@@ -33,39 +34,47 @@ export class TabsService {
         'Clean architecture, reusable modules/components, naming & testing focus…',
       learned:
         'Deep dive into canvas rendering, collision systems, asset pipelines…',
-      imageShape: 'assets/img/shapes/ellipse 8.png',
-      techImage: ['assets/img/icons/proj_html.png', 'assets/img/icons/proj_css.png', 'assets/img/icons/proj_javascript.png'],
+      imageShape: 'assets/img/shapes/ellipse 8.png', // ⚠️ Leerzeichen im Dateinamen sind möglich, aber fehleranfällig
+      techImage: [
+        'assets/img/icons/proj_html.png',
+        'assets/img/icons/proj_css.png',
+        'assets/img/icons/proj_javascript.png'
+      ],
       projectImage: 'assets/img/projects/ellpolloloco.png',
-      github: 'https://github.com/…',
-      livetest: 'https://test.com/...'
+      github: 'https://github.com/MarcoHantel/El-Pollo-Loco',
+      livetest: 'https://marco-hantel.developerakademie.net/EL_POLLO_LOCO/index.html'
     },
     {
       key: 'join',
       label: 'Join',
       title: 'Join Project',
       duration: 'Durattion 5 Weeks',
-      about: 'Task manager inspired by Kanban…',
+      about: 'Task manager inspired by Kanban to organize your projects in a simple way',
       workProcess: 'Services, DI, state handling, routing…',
       learned: 'Forms, validation, accessibility…',
       imageShape: 'assets/img/shapes/ellipse 8.png',
-      techImage: ['HTML', 'CSS', 'Google Firebase'],
-      projectImage: '',
-      github: 'https://github.com/…',
-      livetest: 'https://test.com/...'
+      techImage: ['assets/img/icons/proj_html.png',
+                  'assets/img/icons/proj_css.png',
+                  'assets/img/icons/proj_firebase.png'], // geht, wenn du nur Texte anzeigen willst
+      projectImage: 'assets/img/projects/join.png',
+      github: 'https://github.com/MarcoHantel/Join-App',
+      livetest: 'https://marco-hantel.developerakademie.net/Join-406/index.html'
     },
     {
       key: 'pokedex',
       label: 'Pokedex',
       title: 'Pokedex App',
       duration: 'Durattion 5 Weeks',
-      about: 'getting data from a public API and displaying it…',
-      workProcess: 'Services, DI, state handling, routing…',
-      learned: 'connecting to APIs, async data handling…',
+      about: 'getting data from a public API and displaying it in an user-friendly way',
+      workProcess: 'Services, DI, state handling, routing lorem kjgfh laksh dlashd aoisdhlahdahsd…',
+      learned: 'connecting to APIs, async data handling…aisdhgkjahsd asjhd kashd akd',
       imageShape: 'assets/img/shapes/ellipse 8.png',
-      techImage: ['HTML', 'CSS'],
-      projectImage: '',
+      techImage: ['assets/img/icons/proj_html.png',
+                  'assets/img/icons/proj_css.png',
+                  'assets/img/icons/proj_restAPI.png'],
+      projectImage: 'assets/img/projects/pokedex.png',
       github: 'https://github.com/…',
-      livetest: 'https://test.com/...'
+      livetest: 'https://marco-hantel.developerakademie.net/modul09-PokeDex/index.html'
     },
     {
       key: 'soon',
@@ -83,17 +92,26 @@ export class TabsService {
     },
   ]);
 
-  // Aktiver Tab als Signal (startet mit 'pollo')
+  // Reaktiver State: welcher Tab ist aktiv (Start mit 'pollo')
   readonly activeKey = signal<TabData['key']>('pollo');
 
-  // Setter-Funktion, um den aktiven Tab zu wechseln (wird aus dem Template aufgerufen)
+  // Aktion: aktiven Tab wechseln (wird z. B. beim Button-Klick aufgerufen)
   setActive(key: TabData['key']) {
     this.activeKey.set(key);
   }
 
-  // Helper: gibt die aktuellen Daten des aktiven Tabs zurück (oder undefined, falls nicht gefunden)
+  // REAKTIVES DERIVAT: aktiver Tab-Datensatz
+  // computed() wird automatisch neu berechnet, wenn tabs() ODER activeKey() sich ändern.
+  // Templates, die active() lesen, werden dadurch zuverlässig aktualisiert.
+  readonly active = computed(() =>
+    this.tabs().find(t => t.key === this.activeKey())
+  );
+
+  // (Optionaler) Helper für Abwärtskompatibilität: gibt einfach das computed zurück
+  // So kannst du in bestehendem Code weiterhin tabsSvc.activeData() schreiben.
   activeData(): TabData | undefined {
-    return this.tabs().find(t => t.key === this.activeKey());
+    return this.active();
   }
 }
+
 

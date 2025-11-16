@@ -1,64 +1,70 @@
-<!-- Wrapper für den Tab-Content -->
+<!-- Wrapper für den gesamten Tab-Content -->
 <div class="tab-content">
     <div class="content-wrapper">
         <div class="content-text-wrapper">
-            <!-- Hero-Bild, dynamisch gebunden -->
             <div class="content-top-wrapper">
-                <img class="hero" [src]="data.imageShape" [alt]="data.title">
-                <!-- Abschnitt "About the project" -->
+                <!-- Deko-/Hero-Shape (dynamische Quelle & Alt) -->
+                <img class="image-shape" [src]="data.imageShape" [alt]="data.title" />
+
                 <div class="about-wrapper">
                     <h3>About the project</h3>
-                    <span> {{ data.duration }} </span>
+                    <!-- Projektdauer; einfache Interpolation -->
+                    <span>{{ data.duration }}</span>
                 </div>
             </div>
-            <div>{{ data.about }}</div> Text aus dem Service
-
-
-            <!-- Abschnitt "How I organized my work process" -->
-            <div>
-                <div class="">
-                    <img class="hero" [src]="data.imageShape" [alt]="data.title">
-                    <h3>How I organized my work process</h3>
-                </div>
-                <div>{{ data.workProcess }}</div>
+            <!-- About-Text -->
+            <div class="about-text">
+                {{ data.about }}
             </div>
+            <!-- Work-Process Abschnitt -->
 
-            <!-- Abschnitt "What I have learned" -->
-            <div>
+            <div class="work-process-header">
+                <!-- Optional: zweite Shape, wenn gewünscht -->
+                <img class="image-shape" [src]="data.imageShape" [alt]="data.title" />
+                <h3>How I organized my work process</h3>
+            </div>
+            <div class="work-process-text">{{ data.workProcess }}</div>
+
+
+            <!-- Learned Abschnitt -->
+            <div class="work-process-header">
+                <img class="image-shape" [src]="data.imageShape" [alt]="data.title" />
                 <h3>What I have learned</h3>
-                <div>{{ data.learned }}</div>
             </div>
+            <div class="learned-text">{{ data.learned }}</div>
         </div>
 
-
+        <!-- Rechte/untere Spalte: Technologie-Icons + Projektbild + Links -->
         <div class="tech-wrapper">
-            <!-- Rendere diesen Block nur, wenn es mind. ein Bild in data.techImage gibt.
-       ?.length schützt vor undefined/null (Safe Navigation). -->
+
+            <!-- Nur rendern, wenn es mind. ein Tech-Icon gibt.
+           ?.length schützt vor undefined/null (Safe Navigation). -->
             <div class="tech-img-wrapper" *ngIf="data.techImage?.length">
                 <h3>Technologies</h3>
 
                 <div class="tech-list-img">
-                    <!-- Erzeuge für JEDEN Eintrag im Array data.techImage ein <img>.
-           *ngFor iteriert über das Array; "src" ist hier die aktuelle Bild-URL (string). -->
-                    <!--[src]="src" binde die aktuelle URL als Bildquelle -->
-                    <!--[alt]="data.title + ' technology'" dynamischer Alt-Text für A11y/SEO -->
-                    <img class="tech-img" *ngFor="let src of data.techImage" [src]="src"
-                        [alt]="data.title + ' technology'" />
+                    <!-- Für JEDES Icon einen <img> erzeugen -->
+                    <!-- *ngFor iteriert über das string[]; 'src' ist die URL des Icons -->
+                    <img class="tech-img" *ngFor="let src of data.techImage; let i = index" [src]="src"
+                        [alt]="data.title + ' technology icon ' + (i + 1)" />
                 </div>
 
-                <!-- Zusätzliches Projektbild (einzelnes Bild, keine Liste). -->
+                <!-- Optional: zusätzliches Projektscreenshot/-bild -->
                 <img class="project-img" [src]="data.projectImage" [alt]="data.title" />
             </div>
 
-        <!-- Optionaler GitHub-Link -->
-        <div class="button-wrapper">
-            <button class="button-live-test">
-                <a class="none" *ngIf="data.github" [href]="data.livetest" target="_blank" >Live Test</a>
-            </button>
-            <button class="button-github">
-                <a class="none" *ngIf="data.github" [href]="data.github" target="_blank" >GitHub</a>
-            </button>
+            <!-- Link-Buttons: jeweils NUR anzeigen, wenn ein Link vorhanden ist.
+           Wichtig: Dein ursprüngliches Template prüfte für Live-Test fälschlich 'data.github'.
+           Korrigiert auf 'data.livetest'. Außerdem besser <a> als Button + <a>. -->
+            <div class="button-wrapper">
+                <button class="button-live-test">
+                    <a class="none" *ngIf="data.github" [href]="data.livetest" target="_blank">Live Test</a>
+                </button>
+                <button class="button-github">
+                    <a class="none" *ngIf="data.github" [href]="data.github" target="_blank">GitHub</a>
+                </button>
+            </div>
         </div>
+
     </div>
-</div>
 </div>
