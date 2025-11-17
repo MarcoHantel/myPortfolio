@@ -6,6 +6,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { WhyMeComponent } from './why-me/why-me.component';
 import { MySkillsComponent } from './my-skills/my-skills.component';
 import { MyProjectsComponent } from './my-projects/my-projects.component';
+import { TeamplayerComponent } from './teamplayer/teamplayer.component';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ import { MyProjectsComponent } from './my-projects/my-projects.component';
     WhyMeComponent,
     MySkillsComponent,
     MyProjectsComponent,
+    TeamplayerComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

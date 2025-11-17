@@ -1,0 +1,88 @@
+.teamplayer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 50px;
+    margin: 80px 0px;
+}
+
+.shape-wrapper {
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Der Text liegt über den Shapes */
+.team-text {
+    position: absolute;
+    padding: 0 32px;
+    height: 250px;
+    width: 314px;
+    font-family: Josefin Sans, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--color-white);
+    line-height: 1.2;
+    cursor: default;
+    z-index: 1;
+    /* Text sicher über den Bildern */
+
+    >.text-link {
+        margin-top: 32px;
+
+        a {
+            color: var(--color-blue);
+        }
+    }
+
+    >.text-statement {
+        height: 125px;
+    }
+}
+
+.shape-container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Beide Bilder übereinander platzieren */
+.shape-container img {
+    position: absolute;
+    inset: 0;
+}
+
+/* Standardzustand: oberes Bild sichtbar, unteres unsichtbar */
+.img-top {
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.img-bottom {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+/* Wenn der Wrapper die Klasse .hover bekommt, ändern wir die Opacity */
+.shape-wrapper.hover .img-top {
+    opacity: 0;
+}
+
+.shape-wrapper.hover .img-bottom {
+    opacity: 1;
+}
+
+.headline {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 32px;
+    line-height: 120%;
+    margin-block-start: 80px;
+    margin-block-end: 40px;
+}

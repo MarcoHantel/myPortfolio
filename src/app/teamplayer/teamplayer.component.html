@@ -1,0 +1,22 @@
+<h2 class="headline">Need a teamplayer? Here what my colleagues said about me</h2>
+
+<div class="teamplayer-container">
+    @for (item of teamData; track item.headline; let i = $index) {
+
+    <div class="shape-wrapper" (mouseenter)="hoverIndex = i" (mouseleave)="hoverIndex = null"
+        [class.hover]="hoverIndex === i">
+        <div class="shape-container">
+            <img class="img-top" src="assets/img/shapes/{{item.imageShape1}}">
+            <img class="img-bottom" src="assets/img/shapes/{{item.imageShape2}}">
+        </div>
+        <div class="team-text">
+            <h3 class="text-headline">{{item.headline}}</h3>
+            <div class="text-statement">{{item.text}}</div>
+            <div class="text-link">
+                <a href="#">{{item.link}}</a>
+            </div>
+        </div>
+    </div>
+    }
+
+</div>
