@@ -1,0 +1,36 @@
+.form-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-wrapper {
+    width: 911px;
+    height: 661px;
+    font-family: Josefin Sans, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    color: var(--color-white);
+}
+
+.text-info-wrapper {
+    display: flex;
+    gap: 32px;
+    padding-top: 16px;
+}
+
+.form-text {
+    width: 50%;
+}
+
+.form-contact-infos {
+    width: 50%;
+
+    >.contact-mail, .contact-tel{
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 16px;
+    }
+}
