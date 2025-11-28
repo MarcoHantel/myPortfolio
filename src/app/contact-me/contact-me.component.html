@@ -25,23 +25,65 @@
         </div>
 
         <!-- form -->
+        <div class="form-wraper">
+            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+                <div class="input-one">
+                    <div class="input">
+                        <label for="name">Your name</label>
+                        <input class="input-feeld input-design"
+                        #name="ngModel"
+                        [(ngModel)]="contactData.name" type="text" id="name"
+                            name="name" minlength="2" value="your name" required>
+                    </div>
+                         @if(!name.valid && (contactForm.submitted)){
+                        <span>Please enter a valid Name in the feeld</span>
+                            }
+                    <div class="input">
+                        <label for="email">Your Email</label>
+                        <input class="input-feeld input-design" 
+                        #email="ngModel"
+                        [(ngModel)]="contactData.email" type="email" id="email"
+                            name="email" required
+                            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                    </div>
+                        @if(!email.valid && (contactForm.submitted)){
+                        <span>Please enter a valid email in the feeld</span>
+                            }
+                </div>
+                <div class="input-two">
+                    <div class="textarea">
+                        <label for="message">Your Message</label>
+                        <textarea class="input-textarea input-design" #message="ngModel"
+                            [(ngModel)]="contactData.message" type="text" id="message" name="message"
+                            value="your message" minlength="4" required></textarea>
+                    </div>
+                </div>
+                    @if(!message.valid && (contactForm.submitted)){
+                     <span>Please enter a valid message in the feeld</span>
+                       }
+                <div>
+                    <div class="privacy-policy-check">
+                        <img class="check-box"
+                        (click)="togglePrivacy()"
+                            (mouseenter)="hoveredPrivacyPolicy = true"
+                            (mouseleave)="hoveredPrivacyPolicy = false"
 
-        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-            <label for="fname">Your name</label><br>
-            <input [(ngModel)]="contactData.name" type="text" id="name" name="name" value="your name" required><br>
+                                [src]="
+                                confirmPrivacyPolicy ? 'assets/img/shapes/shap_checkbox/checked.png':
+                                hoveredPrivacyPolicy ? 'assets/img/shapes/shap_checkbox/hover.png' : 'assets/img/shapes/shap_checkbox/default.png'"
+                            
+                            (mouseenter)="hoveredPrivacyPolicy = true"
+                            (mouseleave)="hoveredPrivacyPolicy = false">
 
-            <label for="lname">Your Email</label><br>
-            <input [(ngModel)]="contactData.email" type="text" id="email" name="email" value="your mail" required
-                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"><br>
+                        <p>I've read the <a href="#">privacy policy</a> and agree to the process of my data as autlined.
+                        </p>
+                    </div>
+                    <div class="submit-button">
+                        <input type="submit" value="Send">
+                    </div>
+                </div>
 
-            <label for="message">Your Message</label><br>
-            <textarea #message="ngModel" [(ngModel)]="contactData.message" type="text" id="message" name="message"
-                value="your message" minlength="4" required></textarea><br>
-            @if(!message.valid && (message.touched || contactForm.submitted)){
-            <span>Please enter a valid message in the feeld</span>
-            }
-            <input type="submit" value="Submit">
-        </form>
-
+            </form>
+        </div>
     </div>
 </div>

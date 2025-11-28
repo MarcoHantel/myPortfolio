@@ -6,7 +6,7 @@ import { FormsModule, NgForm } from '@angular/forms';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './contact-me.component.html',
-  styleUrl: './contact-me.component.scss'
+  styleUrls: ['./contact-me.component.scss']
 })
 export class ContactMeComponent {
 
@@ -15,6 +15,13 @@ export class ContactMeComponent {
     email: '',
     message: '',
   }
+
+  hoveredPrivacyPolicy: boolean = false;
+  confirmPrivacyPolicy: boolean = false;
+
+  togglePrivacy() {
+  this.confirmPrivacyPolicy = !this.confirmPrivacyPolicy;
+}
 
 
   onSubmit(ngForm: NgForm) {
