@@ -19,14 +19,18 @@ export class ContactMeComponent {
   hoveredPrivacyPolicy: boolean = false;
   confirmPrivacyPolicy: boolean = false;
 
+  hoveredPhone: boolean = false;
+  hoveredMail: boolean = false;
+
+
   togglePrivacy() {
-  this.confirmPrivacyPolicy = !this.confirmPrivacyPolicy;
-}
+    this.confirmPrivacyPolicy = !this.confirmPrivacyPolicy;
+  }
 
 
   onSubmit(ngForm: NgForm) {
-    if(ngForm.valid && ngForm.submitted){
-          console.log(this.contactData);
+    if (ngForm.valid && ngForm.submitted) {
+      console.log(this.contactData);
     }
 
   }

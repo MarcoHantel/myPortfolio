@@ -12,12 +12,15 @@
             <div class="form-contact-infos">
 
                 <div class="contact-mail">
-                    <img src="assets/img/icons/icon _email.png" alt="email icon" class="contact-icon">
+                    <img [src]="hoveredMail ? 'assets/img/icons/icon_email_hover.png' : 'assets/img/icons/icon_email.png'"
+                    (mouseenter)="hoveredMail = true" (mouseleave)="hoveredMail = false"
+                    alt="email icon" class="contact-icon">
                     <div class="">E-mail: hantelmarcogmail.com</div>
                 </div>
-
                 <div class="contact-tel">
-                    <img src="assets/img/icons/icon _phone.png" alt="email icon" class="contact-icon">
+                    <img [src]="hoveredPhone ? 'assets/img/icons/icon_phone_hover.png' : 'assets/img/icons/icon_phone.png'"
+                    (mouseenter)="hoveredPhone = true" (mouseleave)=" hoveredPhone = false"
+                    alt="phone icon" class="contact-icon">
                     <div class="">Tel.: +49 1743939622</div>
                 </div>
 
@@ -78,8 +81,8 @@
                         <p>I've read the <a href="#">privacy policy</a> and agree to the process of my data as autlined.
                         </p>
                     </div>
-                    <div class="submit-button">
-                        <input type="submit" value="Send">
+                    <div class="submit-button-wrapper">
+                        <input class="button-for-submint" type="submit" value="Send">
                     </div>
                 </div>
 
