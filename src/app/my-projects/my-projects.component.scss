@@ -12,7 +12,7 @@
     background: transparent;
     cursor: pointer;
     transition: background-color .2s ease;
-    color: var(--color-white);
+    color: var(--color-blue);
     border: none;
     border-radius: 15px 15px 0px 0px;
     width: 248px;
@@ -21,4 +21,5 @@
 
 .tabsActive {
     background-color: var(--color-tabblue);
+    color: var(--color-white);
 }

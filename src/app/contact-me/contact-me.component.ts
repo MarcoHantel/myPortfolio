@@ -34,5 +34,15 @@ export class ContactMeComponent {
     }
 
   }
+// hier muss ich dann die library noch einbinden oder?
+
+  //   scrollToTopWithBounce(event: Event) {
+  //   event.preventDefault();
+  //   gsap.to(window, {
+  //     duration: 1,
+  //     scrollTo: { y: 0 },
+  //     ease: 'bounce.out'
+  //   });
+  // }
 
 }

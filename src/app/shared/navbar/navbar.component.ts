@@ -1,28 +1,55 @@
 import { Component } from '@angular/core';
 import { LanguageService } from '../../services/language/language.service';
 
+import gsap from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+
+gsap.registerPlugin(ScrollToPlugin);
+
+
 @Component({
   selector: 'app-navbar',
   standalone: true,
   imports: [],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent{
+export class NavbarComponent {
 
-  constructor(public langSvc: LanguageService) {} // changeLanguage() muss in den service rein!!
+  constructor(public langSvc: LanguageService) {}
 
-  activeLang: boolean = false;
-  language: string = "";
-  sticky: boolean = false;
+  scrollToSection(event: Event, targetId: string) {
+  event.preventDefault();
 
-  // changeLanguage() muss in den service rein!!
-  // changeLanguage(activeLang: boolean, language: string){
-  // activeLang = true; 
-  // console.log("Language changed" + activeLang + language);
-// }
-changeLanguage(){
-  
+  const target = document.querySelector(targetId) as HTMLElement;
+  if (!target) return;
+
+  const offset = 180;
+  const targetY = target.getBoundingClientRect().top + window.scrollY - offset;
+
+  const tl = gsap.timeline();
+
+// 1. Normales smooth scrollen
+tl.to(window, {
+  scrollTo: targetY,
+  duration: 0.7,
+  ease: "power2.out",
+});
+
+// 2. Kleine, weiche Überbewegung
+tl.to(window, {
+  scrollTo: targetY + 20,  // deutlich softerer Overshoot
+  duration: 0.25,          // langsamer → smoother Gefühl
+  ease: "power1.out",
+});
+
+// 3. Weiches Zurückfedern
+tl.to(window, {
+  scrollTo: targetY,
+  duration: 0.55,           // länger → weicher
+  ease: "back.out(1.8)",    // DIE perfekte weiche Bounce-Kurve
+});
+
 }
 
 }

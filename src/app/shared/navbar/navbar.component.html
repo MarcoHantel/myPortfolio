@@ -1,10 +1,24 @@
 <div class="nav-bar">
     <div class="nav-bar-wraper">
         <img class="nav-logo" src="assets/img/logo/LOGO_dark_mh.png">
-        <span><a href="#">Why me</a></span>
-        <span><a href="#">Skills</a></span>
-        <span><a href="#">Projects</a></span>
-        <span><a href="#">Contact</a></span>
+
+        <span>
+            <a href="#whyMe" (click)="scrollToSection($event, '#whyMe')">Why me</a>
+        </span>
+
+        <span>
+            <a href="#skills" (click)="scrollToSection($event, '#skills')">Skills</a>
+        </span>
+
+        <span>
+            <a href="#myProjects" (click)="scrollToSection($event, '#myProjects')">Projects</a>
+        </span>
+
+        <span>
+            <a href="#contactMe" (click)="scrollToSection($event, '#contactMe')">Contact</a>
+        </span>
+
+
         <div class="language-icons">
             <div class="language-icon-de">
                 <span class="language-de">DE</span>

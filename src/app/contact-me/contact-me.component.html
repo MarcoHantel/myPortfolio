@@ -33,40 +33,50 @@
                 <div class="input-one">
                     <div class="input">
                         <label for="name">Your name</label>
-                        <input class="input-feeld input-design"
+                        <input id="inputName" class="input-feeld input-design"
                         #name="ngModel"
                         [(ngModel)]="contactData.name" type="text" id="name"
-                            name="name" minlength="2" value="your name" required>
+                            name="name" minlength="2" value="your name" required
+                            [class.invalid]="!name.valid && (name.touched || contactForm.submitted )"
+                            >
                     </div>
-                         @if(!name.valid && (contactForm.submitted)){
+                         @if(!name.valid && (name.touched || contactForm.submitted )){
                         <span>Please enter a valid Name in the feeld</span>
                             }
+
                     <div class="input">
                         <label for="email">Your Email</label>
-                        <input class="input-feeld input-design" 
+                        <input id="inputMail" class="input-feeld input-design" 
                         #email="ngModel"
                         [(ngModel)]="contactData.email" type="email" id="email"
                             name="email" required
-                            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                            [class.invalid]="!email.valid && (email.touched || contactForm.submitted)"
+                            >
+                            
+
                     </div>
-                        @if(!email.valid && (contactForm.submitted)){
+                        @if(!email.valid && (email.touched || contactForm.submitted)){
                         <span>Please enter a valid email in the feeld</span>
                             }
                 </div>
                 <div class="input-two">
                     <div class="textarea">
                         <label for="message">Your Message</label>
-                        <textarea class="input-textarea input-design" #message="ngModel"
+                        <textarea id="inputText" class="input-textarea input-design" #message="ngModel"
                             [(ngModel)]="contactData.message" type="text" id="message" name="message"
-                            value="your message" minlength="4" required></textarea>
+                            value="your message" minlength="4" required
+                            [class.invalid]="!message.valid && (message.touched || contactForm.submitted)"
+                            ></textarea>
                     </div>
                 </div>
-                    @if(!message.valid && (contactForm.submitted)){
+                    @if(!message.valid && (message.touched || contactForm.submitted)){
                      <span>Please enter a valid message in the feeld</span>
                        }
                 <div>
                     <div class="privacy-policy-check">
                         <img class="check-box"
+                        
                         (click)="togglePrivacy()"
                             (mouseenter)="hoveredPrivacyPolicy = true"
                             (mouseleave)="hoveredPrivacyPolicy = false"
@@ -77,6 +87,10 @@
                             
                             (mouseenter)="hoveredPrivacyPolicy = true"
                             (mouseleave)="hoveredPrivacyPolicy = false">
+<!-- Das muss ich hier irgendwie mit onSubmit machen  -->
+                            @if(!confirmPrivacyPolicy && contactForm.submitted){
+                                <span class="error-text">Please confirm PrivacyPolicy</span> 
+                            }
 
                         <p>I've read the <a href="#">privacy policy</a> and agree to the process of my data as autlined.
                         </p>
@@ -87,6 +101,8 @@
                 </div>
 
             </form>
+            <button>ab nach oben</button>
+                        <!-- <button (click)="scrollToTopWithBounce($event)">ab nach oben</button> -->
         </div>
     </div>
 </div>

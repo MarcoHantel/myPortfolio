@@ -37,6 +37,7 @@ a {
         align-items: center;
         gap: 16px;
         margin-bottom: 16px;
+
     }
 
     >.contact-mail:hover,
@@ -101,6 +102,10 @@ label {
     padding: 10px;
 }
 
+.input-design.invalid {
+    border: 2px solid var(--color-red) !important;
+}
+
 .privacy-policy-check {
     display: flex;
     align-items: center;
@@ -131,4 +136,8 @@ label {
         border: 1px solid var(--color-blue);
         color: var(--color-blue);
     }
+}
+
+.error-text {
+    color: var(--color-red);
 }
