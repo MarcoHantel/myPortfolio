@@ -11,20 +11,7 @@
 
             <div class="form-contact-infos">
 
-                <!-- <div class="contact-mail">
 
-                </div>  (mouseenter)="hoveredMail = true"(mouseleave)="hoveredMail = false">
-                    <img [src]="hoveredMail ? 'assets/img/icons/icon_email_hover.png' : 'assets/img/icons/icon_email.png'"
-                        alt="email icon" class="contact-icon">
-                    <div class="">E-mail: hantelmarcogmail.com</div>
-                </div>
-                <div class="contact-tel" (mouseenter)="hoveredPhone = true" (mouseleave)=" hoveredPhone = false">
-                    <img [src]="hoveredPhone ? 'assets/img/icons/icon_phone_hover.png' : 'assets/img/icons/icon_phone.png'"
-                        alt="phone icon" class="contact-icon">
-                    <div class="">Tel.: +49 1743939622</div>
-                </div> -->
-
-                <div class="form-contact-infos">
 
                     <!-- MAIL -->
                     <div class="contact-mail" (mouseenter)="hoverSvc.setHover(mailHoverKey, true)"
@@ -48,7 +35,7 @@
                         <div>Tel.: +49 1743939622</div>
                     </div>
 
-                </div>
+
 
 
             </div>
@@ -122,17 +109,6 @@
                 </div>
             </form>
 
-            <!-- <div>
-                    <img class="arrow-top arrow-position"
-                    (click)="scrollToTop($event)"
-                    [src]="hoverSvc.getHover(arrowHoverKey)
-                ? 'assets/img/icons/arrow_up_hover.png'
-                : 'assets/img/icons/arrow_up.png'" alt="arrow up" 
-                        (mouseenter)="hoverSvc.setHover(arrowHoverKey, true)"
-                        (mouseleave)="hoverSvc.setHover(arrowHoverKey, false)">
- 
-            </div> -->
-
             <div class="arrow-wrapper" (click)="scrollToTop($event)"
                 (mouseenter)="hoverSvc.setHover(arrowHoverKey, true)"
                 (mouseleave)="hoverSvc.setHover(arrowHoverKey, false)" [class.hover]="hoverSvc.getHover(arrowHoverKey)">
@@ -144,9 +120,6 @@
                 <img src="assets/img/icons/arrow_up_hover.png" alt="arrow up hover" class="arrow-top arrow-hover" />
 
             </div>
-
-
-
         </div>
     </div>
 </div>

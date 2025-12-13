@@ -1,0 +1,40 @@
+.footer-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-blue);
+    height: 214px;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.footer-content {
+    color: var(--color-anthra);
+    height: 100%;
+    width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: Josefin Sans, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 120%;
+
+    >.footer-text{
+        a{
+           text-decoration: none; 
+           color: var(--color-anthra);
+        }
+        a:hover{
+            color: var(--color-white);
+        }
+    }
+
+    >.footer-social {
+        height: auto;
+        display: flex;
+        justify-content: end;
+        gap: 16px;
+    }
+}

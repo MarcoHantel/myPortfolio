@@ -30,12 +30,12 @@
                     </div>
 
                     <div class="social-icons">
-                        <img [src]="hoveredSocialMail ? 'assets/img/social/Email_button_hover.png' : 'assets/img/social/Email_button.png'"
-                            (mouseenter)="hoveredSocialMail = true" (mouseleave)="hoveredSocialMail = false" alt="">
-                        <img [src]="hoveredSocialGit ? 'assets/img/social/Git_button_hover.png' : 'assets/img/social/Git_button.png'"
-                            (mouseenter)="hoveredSocialGit = true" (mouseleave)="hoveredSocialGit = false" alt="">
-                        <img [src]="hoveredSocialLin ? 'assets/img/social/Linkedin_button_hover.png' : 'assets/img/social/Linkedin_button.png'"
-                            (mouseenter)="hoveredSocialLin = true" (mouseleave)="hoveredSocialLin = false" alt="">
+                        <a href="mailto:hantelmarco@gmail.com"><img [src]="hoveredSocialMail ? 'assets/img/social/Email_button_hover.png' : 'assets/img/social/Email_button.png'"
+                            (mouseenter)="hoveredSocialMail = true" (mouseleave)="hoveredSocialMail = false" alt=""></a>
+                        <a href="https://github.com/MarcoHantel" target="_blank"><img [src]="hoveredSocialGit ? 'assets/img/social/Git_button_hover.png' : 'assets/img/social/Git_button.png'"
+                            (mouseenter)="hoveredSocialGit = true" (mouseleave)="hoveredSocialGit = false" alt=""></a>
+                        <a href="https://www.linkedin.com/in/marco-hantel-b6944078/" target="_blank"><img [src]="hoveredSocialLin ? 'assets/img/social/Linkedin_button_hover.png' : 'assets/img/social/Linkedin_button.png'"
+                            (mouseenter)="hoveredSocialLin = true" (mouseleave)="hoveredSocialLin = false" alt=""></a>
                     </div>
                 </div>
             </div>

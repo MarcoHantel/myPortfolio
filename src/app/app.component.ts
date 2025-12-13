@@ -8,6 +8,7 @@ import { MySkillsComponent } from './my-skills/my-skills.component';
 import { MyProjectsComponent } from './my-projects/my-projects.component';
 import { TeamplayerComponent } from './teamplayer/teamplayer.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 
 
@@ -22,7 +23,8 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
     MySkillsComponent,
     MyProjectsComponent,
     TeamplayerComponent,
-    ContactMeComponent
+    ContactMeComponent,
+    FooterComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

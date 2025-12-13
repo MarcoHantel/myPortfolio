@@ -1,1 +1,29 @@
-<p>footer works!</p>
+<div class="footer-wrapper">
+    <div class="footer-content">
+        <div class="footer-text">
+            <a href="#" target="_blank">Legal notice</a>
+            <p>© 2024 My Portfolio. All rights reserved.</p>
+        </div>
+        <div class="footer-logo">
+            <img src="assets/img/logo/LOGO_dark_mh.png" alt="GitHub Icon" class="footer-icon">
+        </div>
+        <div class="footer-social">
+            <a href="https://github.com/MarcoHantel">
+                <img [src]="hoveredSocialGit ? 'assets/img/social/Git_button_grey_hover.png' : 'assets/img/social/Git_button_grey.png' "alt="git button"
+                (mouseenter)="hoveredSocialGit = true"
+                (mouseleave)="hoveredSocialGit = false">
+            </a>
+            <a href="https://www.linkedin.com/in/marco-hantel-b6944078/" target="_blank">
+                <img [src]="hoveredSocialLin ? 'assets/img/social/Linkedin_button_grey_hover.png' : 'assets/img/social/Linkedin_button_grey.png' "alt="linkedIn button"
+                (mouseenter)="hoveredSocialLin = true"
+                (mouseleave)="hoveredSocialLin = false">
+            </a>
+            <a href="mailto:hantelmarco@gmail.com" target="_blank">
+                <img [src]="hoveredSocialMail ? 'assets/img/social/Email_button_grey_hover.png' : 'assets/img/social/Email_button_grey.png'" alt="email button"
+                (mouseenter)="hoveredSocialMail = true"
+                (mouseleave)="hoveredSocialMail = false">
+            </a>                    
+        </div>
+    </div>
+
+</div>
