@@ -1,5 +1,7 @@
+
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HoverServiceService } from '../services/hover/hover.service.service';
 
 @Component({
   selector: 'app-my-skills',
@@ -10,9 +12,29 @@ import { CommonModule } from '@angular/common';
 })
 export class MySkillsComponent {
 
-  ishover:boolean = false;
+  // Key, unter dem wir den Hover-State im Service speichern
+  readonly shapeHoverKey = 'my-skills-shape';
 
-  skillsImg = ['angular.png', 'type_script.png', 'java_script.png', 'html.png',
-    'css.png', 'rest_api.png', 'firebase.png', 'git.png', 'material_design.png', 'scrum.png'];
+  skillsImg = [
+    'angular.png',
+    'type_script.png',
+    'java_script.png',
+    'html.png',
+    'css.png',
+    'rest_api.png',
+    'firebase.png',
+    'git.png',
+    'material_design.png',
+    'scrum.png'
+  ];
 
+  constructor(public hoverSvc: HoverServiceService) {}
+
+  /**
+   * Helfer-Methode für das Template:
+   * Fragt den aktuellen Hover-Status für das Shape ab.
+   */
+   isShapeHovered(): boolean {
+    return this.hoverSvc.getHover(this.shapeHoverKey);
+  }
 }

@@ -11,18 +11,45 @@
 
             <div class="form-contact-infos">
 
-                <div class="contact-mail">
+                <!-- <div class="contact-mail">
+
+                </div>  (mouseenter)="hoveredMail = true"(mouseleave)="hoveredMail = false">
                     <img [src]="hoveredMail ? 'assets/img/icons/icon_email_hover.png' : 'assets/img/icons/icon_email.png'"
-                    (mouseenter)="hoveredMail = true" (mouseleave)="hoveredMail = false"
-                    alt="email icon" class="contact-icon">
+                        alt="email icon" class="contact-icon">
                     <div class="">E-mail: hantelmarcogmail.com</div>
                 </div>
-                <div class="contact-tel">
+                <div class="contact-tel" (mouseenter)="hoveredPhone = true" (mouseleave)=" hoveredPhone = false">
                     <img [src]="hoveredPhone ? 'assets/img/icons/icon_phone_hover.png' : 'assets/img/icons/icon_phone.png'"
-                    (mouseenter)="hoveredPhone = true" (mouseleave)=" hoveredPhone = false"
-                    alt="phone icon" class="contact-icon">
+                        alt="phone icon" class="contact-icon">
                     <div class="">Tel.: +49 1743939622</div>
+                </div> -->
+
+                <div class="form-contact-infos">
+
+                    <!-- MAIL -->
+                    <div class="contact-mail" (mouseenter)="hoverSvc.setHover(mailHoverKey, true)"
+                        (mouseleave)="hoverSvc.setHover(mailHoverKey, false)">
+
+                        <img [src]="hoverSvc.getHover(mailHoverKey)
+                ? 'assets/img/icons/icon_email_hover.png'
+                : 'assets/img/icons/icon_email.png'" alt="email icon" class="contact-icon">
+
+                        <div>E-mail: hantelmarcogmail.com</div>
+                    </div>
+
+                    <!-- PHONE -->
+                    <div class="contact-tel" (mouseenter)="hoverSvc.setHover(phoneHoverKey, true)"
+                        (mouseleave)="hoverSvc.setHover(phoneHoverKey, false)">
+
+                        <img [src]="hoverSvc.getHover(phoneHoverKey)
+                ? 'assets/img/icons/icon_phone_hover.png'
+                : 'assets/img/icons/icon_phone.png'" alt="phone icon" class="contact-icon">
+
+                        <div>Tel.: +49 1743939622</div>
+                    </div>
+
                 </div>
+
 
             </div>
         </div>
@@ -33,32 +60,29 @@
                 <div class="input-one">
                     <div class="input">
                         <label for="name">Your name</label>
-                        <input id="inputName" class="input-feeld input-design"
-                        #name="ngModel"
-                        [(ngModel)]="contactData.name" type="text" id="name"
-                            name="name" minlength="2" value="your name" required
-                            [class.invalid]="!name.valid && (name.touched || contactForm.submitted )"
-                            >
+                        <input id="inputName" class="input-feeld input-design" #name="ngModel"
+                            [(ngModel)]="contactData.name" type="text" id="name" name="name" minlength="2"
+                            value="your name" required
+                            [class.invalid]="!name.valid && (name.touched || contactForm.submitted )">
+
+                        @if(!name.valid && (name.touched || contactForm.submitted )){
+                        <span class="error-text">Please enter a valid Name in the feeld</span>
+                        }
                     </div>
-                         @if(!name.valid && (name.touched || contactForm.submitted )){
-                        <span>Please enter a valid Name in the feeld</span>
-                            }
+
 
                     <div class="input">
                         <label for="email">Your Email</label>
-                        <input id="inputMail" class="input-feeld input-design" 
-                        #email="ngModel"
-                        [(ngModel)]="contactData.email" type="email" id="email"
-                            name="email" required
+                        <input id="inputMail" class="input-feeld input-design" #email="ngModel"
+                            [(ngModel)]="contactData.email" type="email" id="email" name="email" required
                             pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-                            [class.invalid]="!email.valid && (email.touched || contactForm.submitted)"
-                            >
-                            
+                            [class.invalid]="!email.valid && (email.touched || contactForm.submitted)">
 
-                    </div>
                         @if(!email.valid && (email.touched || contactForm.submitted)){
-                        <span>Please enter a valid email in the feeld</span>
-                            }
+                        <span class="error-text">Please enter a valid email in the feeld</span>
+                        }
+                    </div>
+
                 </div>
                 <div class="input-two">
                     <div class="textarea">
@@ -66,43 +90,63 @@
                         <textarea id="inputText" class="input-textarea input-design" #message="ngModel"
                             [(ngModel)]="contactData.message" type="text" id="message" name="message"
                             value="your message" minlength="4" required
-                            [class.invalid]="!message.valid && (message.touched || contactForm.submitted)"
-                            ></textarea>
+                            [class.invalid]="!message.valid && (message.touched || contactForm.submitted)"></textarea>
                     </div>
                 </div>
-                    @if(!message.valid && (message.touched || contactForm.submitted)){
-                     <span>Please enter a valid message in the feeld</span>
-                       }
+                @if(!message.valid && (message.touched || contactForm.submitted)){
+                <span class="error-text">Please enter a valid message in the feeld</span>
+                }
                 <div>
                     <div class="privacy-policy-check">
-                        <img class="check-box"
-                        
-                        (click)="togglePrivacy()"
-                            (mouseenter)="hoveredPrivacyPolicy = true"
-                            (mouseleave)="hoveredPrivacyPolicy = false"
-
-                                [src]="
-                                confirmPrivacyPolicy ? 'assets/img/shapes/shap_checkbox/checked.png':
-                                hoveredPrivacyPolicy ? 'assets/img/shapes/shap_checkbox/hover.png' : 'assets/img/shapes/shap_checkbox/default.png'"
-                            
-                            (mouseenter)="hoveredPrivacyPolicy = true"
+                        <img class="check-box" (click)="togglePrivacy()" (mouseenter)="hoveredPrivacyPolicy = true"
+                            (mouseleave)="hoveredPrivacyPolicy = false" [src]="
+                                    confirmPrivacyPolicy
+                                      ? 'assets/img/shapes/shap_checkbox/checked.png'
+                                      : contactForm.submitted
+                                        ? 'assets/img/shapes/shap_checkbox/error.png'
+                                        : hoveredPrivacyPolicy
+                                          ? 'assets/img/shapes/shap_checkbox/hover.png'
+                                          : 'assets/img/shapes/shap_checkbox/default.png'
+                                  " (mouseenter)="hoveredPrivacyPolicy = true"
                             (mouseleave)="hoveredPrivacyPolicy = false">
-<!-- Das muss ich hier irgendwie mit onSubmit machen  -->
-                            @if(!confirmPrivacyPolicy && contactForm.submitted){
-                                <span class="error-text">Please confirm PrivacyPolicy</span> 
-                            }
 
                         <p>I've read the <a href="#">privacy policy</a> and agree to the process of my data as autlined.
                         </p>
                     </div>
+                    @if(!confirmPrivacyPolicy && contactForm.submitted){
+                    <span class="error-text">Please confirm PrivacyPolicy</span>
+                    }
                     <div class="submit-button-wrapper">
                         <input class="button-for-submint" type="submit" value="Send">
                     </div>
                 </div>
-
             </form>
-            <button>ab nach oben</button>
-                        <!-- <button (click)="scrollToTopWithBounce($event)">ab nach oben</button> -->
+
+            <!-- <div>
+                    <img class="arrow-top arrow-position"
+                    (click)="scrollToTop($event)"
+                    [src]="hoverSvc.getHover(arrowHoverKey)
+                ? 'assets/img/icons/arrow_up_hover.png'
+                : 'assets/img/icons/arrow_up.png'" alt="arrow up" 
+                        (mouseenter)="hoverSvc.setHover(arrowHoverKey, true)"
+                        (mouseleave)="hoverSvc.setHover(arrowHoverKey, false)">
+ 
+            </div> -->
+
+            <div class="arrow-wrapper" (click)="scrollToTop($event)"
+                (mouseenter)="hoverSvc.setHover(arrowHoverKey, true)"
+                (mouseleave)="hoverSvc.setHover(arrowHoverKey, false)" [class.hover]="hoverSvc.getHover(arrowHoverKey)">
+
+                <!-- Basis-Icon -->
+                <img src="assets/img/icons/arrow_up.png" alt="arrow up" class="arrow-top arrow-base" />
+
+                <!-- Hover-Icon -->
+                <img src="assets/img/icons/arrow_up_hover.png" alt="arrow up hover" class="arrow-top arrow-hover" />
+
+            </div>
+
+
+
         </div>
     </div>
 </div>

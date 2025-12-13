@@ -161,25 +161,47 @@
     // z-index: 1; 
 }
 
-// Startzustand: Basis sichtbar
-.img-change .base {
-    opacity: 1; // Das untere Bild ist am Anfang voll sichtbar
-    transform: rotate(-45deg);
+.img-change {
+  position: relative;
+  display: inline-block;
+  margin: 0 40px;
 }
 
-/* Umschalten per Klasse '.hover' am Wrapper:
-   - Basis ausblenden
-   - Top einblenden
-*/
+.img-change .img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity .8s ease-in-out; // wichtig: Transition auf dem Element selbst
+}
+
+.img-change .top {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.on-top {
+  position: absolute;
+  inset: 0;
+  opacity: 1;
+  z-index: 2; // sicher über base + top
+}
+
+.img-change .base {
+  opacity: 1;
+  transform: rotate(-45deg);
+}
+
+/* Wenn .hover auf dem Wrapper → Basis-Bild ausblenden, Hover-Bild einblenden */
 .img-change.hover .base {
-    opacity: 0;
+  opacity: 0;
 }
 
 .img-change.hover .top {
-    opacity: 1;
+  opacity: 1;
 }
 
 .selfie {
-    display: inline-block;
-    width: 100%;
+  display: inline-block;
+  width: 100%;
 }

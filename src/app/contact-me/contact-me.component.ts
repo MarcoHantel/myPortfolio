@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { ScrollService } from '../services/scroll/scroll.service';
+import { HoverServiceService } from '../services/hover/hover.service.service';
 
 @Component({
   selector: 'app-contact-me',
@@ -19,9 +21,20 @@ export class ContactMeComponent {
   hoveredPrivacyPolicy: boolean = false;
   confirmPrivacyPolicy: boolean = false;
 
-  hoveredPhone: boolean = false;
-  hoveredMail: boolean = false;
+  mailHoverKey = 'contact-mail-icon';
+  phoneHoverKey = 'contact-phone-icon';
+  arrowHoverKey = 'contact-arrow-icon';
 
+
+  constructor(
+    public scrollSvc: ScrollService,
+    public hoverSvc: HoverServiceService
+  ) { }
+
+  scrollToTop(event: Event) {
+    event.preventDefault();
+    this.scrollSvc.scrollToWithBounce('#top', 180);
+  }
 
   togglePrivacy() {
     this.confirmPrivacyPolicy = !this.confirmPrivacyPolicy;
@@ -34,15 +47,6 @@ export class ContactMeComponent {
     }
 
   }
-// hier muss ich dann die library noch einbinden oder?
 
-  //   scrollToTopWithBounce(event: Event) {
-  //   event.preventDefault();
-  //   gsap.to(window, {
-  //     duration: 1,
-  //     scrollTo: { y: 0 },
-  //     ease: 'bounce.out'
-  //   });
-  // }
 
 }

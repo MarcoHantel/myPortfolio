@@ -1,15 +1,21 @@
-<div class="landingpage-wraper">
+<div id="top" class="landingpage-wraper">
     <div class="landing-page">
-        <div class="img-change" (mouseenter)="hovered = true" (mouseleave)="hovered = false" [class.hover]="hovered">
+        <!-- ist der große shap -->
+        <div class="img-change"
+            (mouseenter)="hoverSvc.setHover(shapeHoverKey, true)"
+            (mouseleave)="hoverSvc.setHover(shapeHoverKey, false)"
+            [class.hover]="hoverSvc.getHover(shapeHoverKey)">
 
-            <!-- mit wenn hovered false ist, wird die classe hover hinzugefühgt [class.hover]="hovered" -->
-            <img class="img base" src="assets/img/shapes/BG_shape_1.png"
-                alt=""><!-- Basisbild liegt oben (liefert auch die Höhe des Containers) -->
-            <img class="img top" src="assets/img/shapes/BG_shape_2.png"
-                alt=""><!-- Hoverbild liegt unten und wird dann oben drüber gelegt -->
-            <img class="on-top selfie" src="assets/img/me/marco_1.png">
+            <!-- Basis-Shape -->
+            <img class="img base" src="assets/img/shapes/BG_shape_1.png" alt="Background Shape 1">
 
+            <!-- Hover-Shape -->
+            <img class="img top" src="assets/img/shapes/BG_shape_2.png" alt="Background Shape 2">
+
+            <!-- Selfie bleibt oben drauf -->
+            <img class="on-top selfie" src="assets/img/me/marco_1.png" alt="Portrait Marco">
         </div>
+
 
 
 
@@ -36,10 +42,14 @@
             <h1>Marco Hantel</h1>
             <span>FRONTEND DEVELOPER</span>
 
-            <div class="img-change arrow-down" (mouseenter)="hovered = true" (mouseleave)="hovered = false"
-                [class.hover]="hovered">
+            <div (click)="scrollToContact($event)" class="img-change arrow-down"
+                (mouseenter)="hoverSvc.setHover(arrowHoverKey, true)"
+                (mouseleave)="hoverSvc.setHover(arrowHoverKey, false)"
+                [class.hover]="hoverSvc.getHover(arrowHoverKey)">
+
                 <img class="img" src="assets/img/icons/arrow_down.png">
                 <img class="img top" src="assets/img/icons/arrow_down_hover.png">
+                
             </div>
         </div>
     </div>

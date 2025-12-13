@@ -25,11 +25,11 @@ a {
 }
 
 .form-text {
-    width: 50%;
+    width: 100%;
 }
 
 .form-contact-infos {
-    width: 50%;
+    width: 100%;
 
     >.contact-mail,
     .contact-tel {
@@ -37,7 +37,6 @@ a {
         align-items: center;
         gap: 16px;
         margin-bottom: 16px;
-
     }
 
     >.contact-mail:hover,
@@ -56,6 +55,13 @@ a {
 label {
     padding-left: 16px;
 }
+
+input:focus,
+textarea:focus {
+    background-color: var(--color-tabblue);
+    outline: none;
+}
+
 
 .input-one {
     margin-top: 64px;
@@ -140,4 +146,47 @@ label {
 
 .error-text {
     color: var(--color-red);
+    margin-top: 8px;
+    padding-left: 16px;
+}
+
+.arrow-wrapper {
+  position: absolute;          
+  top: 3400px;                 
+  right: 200px;
+  cursor: pointer;
+
+  width: 38px;                
+  height: 89px;
+}
+
+/* Beide Arrow-Icons übereinander legen */
+.arrow-wrapper .arrow-top {
+  position: absolute;
+  inset: 0;                    // top/right/bottom/left: 0
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* Startzustand */
+.arrow-base {
+  opacity: 1;
+}
+
+.arrow-hover {
+  opacity: 0;
+}
+
+/* Wenn der Wrapper die Klasse .hover bekommt:
+   - Basis ausblenden
+   - Hover-Icon einblenden
+*/
+.arrow-wrapper.hover .arrow-base {
+  opacity: 0;
+}
+
+.arrow-wrapper.hover .arrow-hover {
+  opacity: 1;
 }

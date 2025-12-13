@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ScrollService } from '../services/scroll/scroll.service';
 
 @Component({
   selector: 'app-why-me',
@@ -9,4 +10,12 @@ import { Component } from '@angular/core';
 })
 export class WhyMeComponent {
 
+  constructor(
+    private scrollSvc: ScrollService
+  ) { }
+
+  scrollToContact(event: Event) {
+    event.preventDefault();
+    this.scrollSvc.scrollToWithBounce('#top', 180);
+  }
 }
