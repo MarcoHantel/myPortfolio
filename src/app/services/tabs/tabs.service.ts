@@ -15,6 +15,7 @@ export interface TabData {
   github?: string;      // optionaler GitHub-Link
   livetest?: string;    // optionaler Live-Demo-Link
   projectImage: string; // Pfad zu einem Projektbild/Screenshot
+
 }
 
 // Service als Singleton im Root-Injector verfügbar
@@ -25,7 +26,7 @@ export class TabsService {
   readonly tabs = signal<TabData[]>([
     {
       key: 'pollo',
-      label: 'el pollo loco',
+      label: 'El Pollo Loco',
       title: 'El Pollo Loco',
       duration: 'Durattion 5 Weeks',
       about:
@@ -78,8 +79,8 @@ export class TabsService {
     },
     {
       key: 'soon',
-      label: 'soon',
-      title: 'soon Project',
+      label: 'Soon Project',
+      title: 'Soon Project',
       duration: 'Durattion 5 Weeks',
       about: 'Task manager inspired by Kanban…',
       workProcess: 'Services, DI, state handling, routing…',
@@ -94,10 +95,13 @@ export class TabsService {
 
   // Reaktiver State: welcher Tab ist aktiv (Start mit 'pollo')
   readonly activeKey = signal<TabData['key']>('pollo');
+  readonly activeIndex = signal<number>(0);
+
 
   // Aktion: aktiven Tab wechseln (wird z. B. beim Button-Klick aufgerufen)
-  setActive(key: TabData['key']) {
+  setActive(key: TabData['key'], index: number) {
     this.activeKey.set(key);
+    this.activeIndex.set(index);
   }
 
   // REAKTIVES DERIVAT: aktiver Tab-Datensatz

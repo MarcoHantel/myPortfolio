@@ -1,13 +1,8 @@
-// .wrapper {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     margin-top: 80px;
-// }
-
 .why-me {
     align-items: center;
-    height: 307px;
+    min-height: 307px;
+    height: 100%;
+
 
 
     .why-me-wraper {
@@ -18,8 +13,7 @@
         cursor: default;
 
         >.location-wraper {
-
-            font-size: 36px;
+            font-size: 32px;
             font-style: bold;
             display: flex;
             justify-content: center;

@@ -16,6 +16,6 @@ export class WhyMeComponent {
 
   scrollToContact(event: Event) {
     event.preventDefault();
-    this.scrollSvc.scrollToWithBounce('#top', 180);
+    this.scrollSvc.scrollToWithBounce('#contactMe', 180);
   }
 }
