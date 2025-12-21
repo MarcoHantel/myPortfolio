@@ -1,11 +1,9 @@
 import { Routes } from '@angular/router';
+import { HomePageComponent } from './home-page/home-page.component';
 import { ImprintComponent } from './imprint/imprint.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
-import { WhyMeComponent } from './why-me/why-me.component';
 
 export const routes: Routes = [
-
-    // { path: '', component: LandingPageComponent },
-    // { path: '', component: WhyMeComponent },
-    // { path: 'imprint', component: ImprintComponent },
+  { path: '', component: HomePageComponent },
+  { path: 'imprint', component: ImprintComponent },
+//   { path: '**', redirectTo: '' }
 ];
