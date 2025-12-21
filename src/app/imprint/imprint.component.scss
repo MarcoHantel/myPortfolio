@@ -1,0 +1,28 @@
+h3 {
+    color: var(--color-blue);
+}
+
+h1{
+    font-family: Anta, sans-serif;
+    color: var(--color-blue);
+}
+
+.imprint-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 20px;
+    height: 100vh;
+    width: 100%;
+
+    >.imprint-content {
+        width: 1032px;
+        height: 100%;
+
+        >.imprint-text {
+            margin: 32px 0px;
+            color: var(--color-white);
+        }
+    }
+}
