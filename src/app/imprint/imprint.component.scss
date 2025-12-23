@@ -2,10 +2,12 @@ h3 {
     color: var(--color-blue);
 }
 
-h1{
+h1 {
     font-family: Anta, sans-serif;
     color: var(--color-blue);
+    font-size: 54px;
 }
+
 
 .imprint-wrapper {
     display: flex;
@@ -13,16 +15,47 @@ h1{
     align-items: center;
 
     padding-top: 20px;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     width: 100%;
+    line-height: 120%;
 
     >.imprint-content {
-        width: 1032px;
+        max-width: 1032px;
+        width: 90%;
         height: 100%;
 
         >.imprint-text {
             margin: 32px 0px;
             color: var(--color-white);
+
+            >p {
+                span {
+                    color: var(--color-blue);
+                }
+
+                a {
+                    text-decoration: none;
+                    color: var(--color-blue);
+                }
+            }
         }
     }
+}
+
+// mobile view 
+
+@media (max-width: 768px) {
+    .imprint-wrapper {
+        >.imprint-content {
+            width: 90%;
+
+            >.imprint-text {
+                font-size: 14px;
+            }
+        }
+    }
+    h1 {
+    font-size: 32px;
+}
 }

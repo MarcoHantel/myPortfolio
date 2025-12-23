@@ -205,3 +205,40 @@
   display: inline-block;
   width: 100%;
 }
+
+// mobile view 
+// @media (max-width: 768px)
+
+@media (max-width: 1260px){
+    .landing-page {
+        flex-direction: column;
+        margin-top: 64px;
+        width: 100%;
+        gap: 40px;
+    }
+
+    .text-landing-page {
+        margin: 0 20px 0 20px;
+        >h1 {
+            text-align: center;
+        }
+
+        >span {
+            font-size: 24px;
+            text-align: center;
+        }
+
+        >.arrow-down {
+            margin-top: 32px;
+            margin-bottom: 32px;
+        }
+    }
+
+    .logo-and-socials-wraper {
+        display: none;
+    }
+
+    .logo-and-socials-spacer {
+        display: none;
+    }
+}
