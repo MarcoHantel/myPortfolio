@@ -22,7 +22,6 @@
 
         >.why-me-text {
             width: 379px;
-            // height: 176px;
             color: var(--color-white);
             font-size: 18px;
             line-height: 1.2;
@@ -41,7 +40,7 @@
     color: var(--color-white)
 }
 
-.button-wraper{
+.button-wraper {
     width: 860px;
     display: flex;
     justify-content: flex-end;
@@ -49,10 +48,10 @@
     font-family: Josefin Sans, sans-serif;
     font-weight: 400;
     font-size: 18px;
-    
+
 
     // Button wirklich programmieren oder doch als Bild einsetzten??
-    >button{
+    >button {
         width: 134px;
         height: 48px;
         border: solid 1px var(--color-blue);
@@ -60,9 +59,40 @@
         background-color: transparent;
         color: var(--color-blue);
 
-        &:hover{
+        &:hover {
             background-color: transparentize($color: #000000, $amount: 0.9);
             cursor: pointer;
         }
+    }
+}
+
+// mobile view 
+
+@media (max-width: 910px) {
+    .why-me {
+        .why-me-wraper {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            >.location-wraper {
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 16px;
+            }
+
+            >.why-me-text {
+                width: 100%;
+                max-width: 700px;
+                font-size: 16px;
+                >p{
+                    padding: 0 16px;
+                }
+            }
+        }
+    }
+
+    .button-wraper {
+        display: none;
     }
 }

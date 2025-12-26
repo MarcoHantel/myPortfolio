@@ -67,3 +67,25 @@
         transition: opacity 0.8s ease-in-out;
     }
 }
+
+// mobile view 
+
+@media (max-width: 910px) {
+
+    .skills-wrapper {
+        flex-direction: column;
+    }
+
+    .img-bottom,
+    .img-top {
+        display: none;
+    }
+
+    .lerning-container {
+        background-color: aqua;
+        display: block;
+        min-width: 500px;
+        width: 100%;
+        margin-top: 32px;
+    }
+}
