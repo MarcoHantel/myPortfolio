@@ -1,6 +1,7 @@
 .skills-icon-container {
     height: 409px;
-    width: 404px;
+    max-width: 404px;
+    width: 100%;
     display: flex;
     align-items: start;
     justify-content: space-around;
@@ -18,7 +19,7 @@
 .skills-lerning-container {
     position: relative;
     text-align: center;
-
+    height: 400px;
     display: flex;
     align-items: center; // vertikal zentrieren
     justify-content: center; // horizontal zentrieren
@@ -36,6 +37,7 @@
 
     >.lerning-container {
         position: absolute;
+        width: 200px;
         padding: 0px 32px;
         font-family: Josefin Sans, sans-serif;
         font-weight: 400;
@@ -72,8 +74,19 @@
 
 @media (max-width: 910px) {
 
+    .skills-icon-container {
+        height: auto;
+    }
+
+
     .skills-wrapper {
         flex-direction: column;
+        margin-bottom: 88px;
+        width: 100%;
+    }
+
+    .shapes-container {
+        display: none;
     }
 
     .img-bottom,
@@ -81,11 +94,27 @@
         display: none;
     }
 
-    .lerning-container {
-        background-color: aqua;
+    .skills-lerning-container {
+        position: static;
+        height: auto;
         display: block;
-        min-width: 500px;
-        width: 100%;
-        margin-top: 32px;
+
+        >.lerning-container {
+            position: static;
+            max-width: 500px;
+            width: auto;
+            padding: 16px 24px;
+
+            >p {
+                width: 100%;
+            }
+
+            >h3 {
+                color: var(--color-blue);
+            }
+
+        }
+
     }
+
 }
