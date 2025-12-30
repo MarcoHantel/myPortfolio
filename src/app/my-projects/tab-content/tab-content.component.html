@@ -3,14 +3,18 @@
     <div class="content-wrapper">
         <div class="content-text-wrapper">
             <div class="content-top-wrapper">
+
                 <!-- Deko-/Hero-Shape (dynamische Quelle & Alt) -->
                 <img class="image-shape" [src]="data.imageShape" [alt]="data.title" />
 
                 <div class="about-wrapper">
                     <h3>About the project</h3>
+
                     <!-- Projektdauer; einfache Interpolation -->
-                    <span>{{ data.duration }}</span>
+                    <span class="duration-desktop">{{ data.duration }}</span>
+
                 </div>
+
             </div>
             <!-- About-Text -->
             <div class="about-text">
@@ -40,8 +44,12 @@
             <!-- Nur rendern, wenn es mind. ein Tech-Icon gibt.
            ?.length schützt vor undefined/null (Safe Navigation). -->
             <div class="tech-img-wrapper" *ngIf="data.techImage?.length">
-                <h3>Technologies</h3>
-
+                <div class="mobile-text-wrapper">
+                    <h2 class="mobile-Project-Name d-none">{{data.title}}</h2>
+                    <p>Technologies:<p>
+                        <span class="technology">{{data.technology}}</span>
+                        <span class="duration-mobile d-none">{{ data.duration }}</span>
+                </div>
                 <div class="tech-list-img">
                     <!-- Für JEDES Icon einen <img> erzeugen -->
                     <!-- *ngFor iteriert über das string[]; 'src' ist die URL des Icons -->

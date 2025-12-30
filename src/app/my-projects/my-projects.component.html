@@ -6,7 +6,7 @@
 
   @for (tab of tabsSvc.tabs(); track tab.key; let i = $index) {
   <button
-    class="button-tab"
+    class="button-tab desktop-tab"
     type="button" role="tab"
     [attr.aria-selected]="tabsSvc.activeKey() === tab.key"
     [class.tabsActive]="tabsSvc.activeKey() === tab.key"
@@ -14,6 +14,17 @@
 
     {{ i + 1 }}. {{ tab.label }}
   </button>
+
+    <button
+    class="button-tab mobile-tab"
+    type="button" role="tab"
+    [attr.aria-selected]="tabsSvc.activeKey() === tab.key"
+    [class.tabsActive]="tabsSvc.activeKey() === tab.key"
+    (click)="tabsSvc.setActive(tab.key, i)">
+
+    {{ i + 1 }}. {{ tab.mobileLabel }}
+  </button>
+
   }
 </div>
 

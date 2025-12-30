@@ -15,7 +15,8 @@ export interface TabData {
   github?: string;      // optionaler GitHub-Link
   livetest?: string;    // optionaler Live-Demo-Link
   projectImage: string; // Pfad zu einem Projektbild/Screenshot
-
+  technology: string; // Technologien als String
+  mobileLabel: string; // Beschriftung des Tab-Buttons für Mobile
 }
 
 // Service als Singleton im Root-Injector verfügbar
@@ -27,6 +28,7 @@ export class TabsService {
     {
       key: 'pollo',
       label: 'El Pollo Loco',
+      mobileLabel:'Project',
       title: 'El Pollo Loco',
       duration: 'Durattion 5 Weeks',
       about:
@@ -36,6 +38,7 @@ export class TabsService {
       learned:
         'Deep dive into canvas rendering, collision systems, asset pipelines…',
       imageShape: 'assets/img/shapes/ellipse 8.png', // ⚠️ Leerzeichen im Dateinamen sind möglich, aber fehleranfällig
+      technology: 'HTML, CSS, JavaScript',
       techImage: [
         'assets/img/icons/proj_html.png',
         'assets/img/icons/proj_css.png',
@@ -48,15 +51,17 @@ export class TabsService {
     {
       key: 'join',
       label: 'Join',
+      mobileLabel:'Project',
       title: 'Join Project',
       duration: 'Durattion 5 Weeks',
       about: 'Task manager inspired by Kanban to organize your projects in a simple way',
       workProcess: 'Services, DI, state handling, routing…',
       learned: 'Forms, validation, accessibility…',
       imageShape: 'assets/img/shapes/ellipse 8.png',
+      technology: 'HTML, CSS, Firebase',
       techImage: ['assets/img/icons/proj_html.png',
-                  'assets/img/icons/proj_css.png',
-                  'assets/img/icons/proj_firebase.png'], // geht, wenn du nur Texte anzeigen willst
+        'assets/img/icons/proj_css.png',
+        'assets/img/icons/proj_firebase.png'], // geht, wenn du nur Texte anzeigen willst
       projectImage: 'assets/img/projects/join.png',
       github: 'https://github.com/MarcoHantel/Join-App',
       livetest: 'https://marco-hantel.developerakademie.net/Join-406/index.html'
@@ -64,15 +69,17 @@ export class TabsService {
     {
       key: 'pokedex',
       label: 'Pokedex',
+      mobileLabel:'Project',
       title: 'Pokedex App',
       duration: 'Durattion 5 Weeks',
       about: 'getting data from a public API and displaying it in an user-friendly way',
       workProcess: 'Services, DI, state handling, routing lorem kjgfh laksh dlashd aoisdhlahdahsd…',
       learned: 'connecting to APIs, async data handling…aisdhgkjahsd asjhd kashd akd',
       imageShape: 'assets/img/shapes/ellipse 8.png',
+      technology: 'HTML, CSS, restAPI',
       techImage: ['assets/img/icons/proj_html.png',
-                  'assets/img/icons/proj_css.png',
-                  'assets/img/icons/proj_restAPI.png'],
+        'assets/img/icons/proj_css.png',
+        'assets/img/icons/proj_restAPI.png'],
       projectImage: 'assets/img/projects/pokedex.png',
       github: 'https://github.com/…',
       livetest: 'https://marco-hantel.developerakademie.net/modul09-PokeDex/index.html'
@@ -81,11 +88,13 @@ export class TabsService {
       key: 'soon',
       label: 'Soon Project',
       title: 'Soon Project',
+      mobileLabel:'Project',
       duration: 'Durattion 5 Weeks',
       about: 'Task manager inspired by Kanban…',
       workProcess: 'Services, DI, state handling, routing…',
       learned: 'Forms, validation, accessibility…',
       imageShape: 'assets/img/shapes/ellipse 8.png',
+      technology: 'Angular SCSS Signals',
       techImage: ['Angular', 'SCSS', 'Signals'],
       projectImage: '',
       github: 'https://github.com/…',

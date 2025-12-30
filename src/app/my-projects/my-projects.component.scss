@@ -19,7 +19,23 @@
     font-size: 30px;
 }
 
+    .mobile-tab{
+        display: none;
+    }
+
 .tabsActive {
     background-color: var(--color-tabblue);
     color: var(--color-white);
+}
+
+// mobile view
+
+@media screen and (max-width: 768px) {
+    .mobile-tab{
+        display: block;
+    }
+
+    .desktop-tab{
+        display: none;
+    }
 }

@@ -13,20 +13,25 @@ h3 {
 .tab-content {
     background-color: var(--color-tabblue);
     height: 100%;
-    width: 100%;
     color: var(--color-white);
-    padding: 16px 0px 32px 0px;
-     display: flex;
+    padding: 32px;
+    display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.technology {
+    display: none;
 }
 
 .content-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1199px;
-    padding: 0, 40px;
+    max-width: 1199px;
+    width: 100%;
+    padding: 0px, 40px;
+    gap: 8px
 }
 
 .content-text-wrapper {
@@ -132,28 +137,17 @@ h3 {
                 background-color: var(--color-anthra);
             }
         }
-
-        //         .button-live-test, .button-github {
-        //   display: inline-flex;
-        //   align-items: center;
-        //   justify-content: center;
-        //   padding: .75rem 1.25rem;
-        //   border-radius: 10px;
-        //   text-decoration: none;
-        //   color: var(--color-white);
-        // }
-        // .button-live-test { background: var(--color-tabblue); }
-        // .button-github    { background: #24292e; } // GitHub-Dunkel
-
-
     }
 }
 
 
 .project-img {
     border-radius: 15px;
-    width: 453px;
-    height: 312px;
+    max-width: 453px;
+    max-height: 312px;
+    width: 100%;
+    height: 100%;
+    margin: 10px;
 }
 
 .tech-list-img {
@@ -167,5 +161,50 @@ h3 {
         width: 36px;
         height: 36px;
         gap: 32px;
+    }
+}
+
+.mobile-Project-Name {
+    display: none;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+// mobile view
+
+@media screen and (max-width: 768px) {
+    .technology {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .d-none {
+        display: block;
+
+    }
+
+    .content-wrapper {
+        flex-direction: column-reverse;
+        padding: 0;
+    }
+
+    .tech-list-img,
+    .duration-desktop {
+        display: none;
+    }
+
+    .content-text-wrapper,
+    .tech-wrapper {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    h3 {
+        color: var(--color-blue);
+    }
+
+    .mobile-text-wrapper {
+        width: 100%;
+
     }
 }
