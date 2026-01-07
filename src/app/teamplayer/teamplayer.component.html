@@ -2,9 +2,12 @@
 
 <div class="teamplayer-container">
     @for (item of teamData; track item.headline; let i = $index) {
-
-    <div class="shape-wrapper" (mouseenter)="hoverIndex = i" (mouseleave)="hoverIndex = null"
-        [class.hover]="hoverIndex === i">
+    <div 
+    
+  class="shape-wrapper"
+  (mouseenter)="onHoverEnter(i)"
+  (mouseleave)="onHoverLeave()"
+  [class.hover]="hoverIndex === i">
         <div class="shape-container">
             <img class="img-top" src="assets/img/shapes/{{item.imageShape1}}">
             <img class="img-bottom" src="assets/img/shapes/{{item.imageShape2}}">

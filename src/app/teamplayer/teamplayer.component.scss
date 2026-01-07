@@ -86,3 +86,12 @@
     margin-block-start: 80px;
     margin-block-end: 40px;
 }
+
+// mobile view
+
+@media (max-width: 768px) {
+    
+    .img-bottom{
+        display: none;
+    }
+}

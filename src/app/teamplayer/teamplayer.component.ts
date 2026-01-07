@@ -1,28 +1,40 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MobileViewService } from '../services/mobile/mobile-view.service';
+
+
 
 @Component({
   selector: 'app-teamplayer',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './teamplayer.component.html',
-  styleUrl: './teamplayer.component.scss'
+  styleUrls: ['./teamplayer.component.scss']
 })
 export class TeamplayerComponent {
-
   hoverIndex: number | null = null;
 
+  constructor(public bp: MobileViewService) {}
+
+  onHoverEnter(i: number) {
+    if (this.bp.isMobile()) return;   // ✅ im Mobile deaktiviert
+    this.hoverIndex = i;
+  }
+
+  onHoverLeave() {
+    if (this.bp.isMobile()) return;
+    this.hoverIndex = null;
+  }
 
   teamData = [
-
-    {
-      headline: 'Nathalie Dorendorf',
+    { headline: 'Nathalie Dorendorf',
       project: 'Join',
       text: 'Marco is reliable, friendly, and highly structured in his work. His code is clean and easy to understand. I fully recommend him as a colleague.',
       link: 'Linked In Profile',
       imageShape1: 'ellipse_ref_01.png',
       imageShape2: 'ellipse_ref_02.png'
     },
+      
     {
       headline: 'Felix',
       project: 'PokeDex',
@@ -31,14 +43,13 @@ export class TeamplayerComponent {
       imageShape1: 'ellipse_ref_01.png',
       imageShape2: 'ellipse_ref_02.png'
     },
+      
     {
       headline: 'Simeon',
       project: 'Join',
       text: 'Marco is a very organized and team-minded person who contributes positively to any group dynamic. He combines strong interpersonal skills with the ability to write clear, reliable, and maintainable code.',
       link: 'Linked In Profile',
       imageShape1: 'ellipse_ref_01.png',
-      imageShape2: 'ellipse_ref_02.png'
-    }
+      imageShape2: 'ellipse_ref_02.png' }
   ];
-
 }
