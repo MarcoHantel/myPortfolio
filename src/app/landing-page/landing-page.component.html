@@ -1,23 +1,11 @@
 <div id="top" class="landingpage-wraper">
     <div class="landing-page">
-        <!-- ist der große shap -->
-        <div class="img-change"
-            (mouseenter)="hoverSvc.setHover(shapeHoverKey, true)"
-            (mouseleave)="hoverSvc.setHover(shapeHoverKey, false)"
-            [class.hover]="hoverSvc.getHover(shapeHoverKey)">
-
-            <!-- Basis-Shape -->
-            <img class="img base" src="assets/img/shapes/BG_shape_1.png" alt="Background Shape 1">
-
-            <!-- Hover-Shape -->
-            <img class="img top" src="assets/img/shapes/BG_shape_2.png" alt="Background Shape 2">
-
-            <!-- Selfie bleibt oben drauf -->
+        <div class="img-change" (mouseenter)="onShapeEnter()" (mouseleave)="onShapeLeave()"
+            [class.hover]="hoveredShape">
+            <img class="img base" src="assets/img/shapes/BG_shape_2.png" alt="">
+            <img class="img top" src="assets/img/shapes/BG_shape_1.png" alt="">
             <img class="on-top selfie" src="assets/img/me/marco_1.png" alt="Portrait Marco">
         </div>
-
-
-
 
         <div class="text-landing-page">
             <div class="logo-and-socials-wraper">
@@ -30,12 +18,18 @@
                     </div>
 
                     <div class="social-icons">
-                        <a href="mailto:hantelmarco@gmail.com"><img [src]="hoveredSocialMail ? 'assets/img/social/Email_button_hover.png' : 'assets/img/social/Email_button.png'"
-                            (mouseenter)="hoveredSocialMail = true" (mouseleave)="hoveredSocialMail = false" alt=""></a>
-                        <a href="https://github.com/MarcoHantel" target="_blank"><img [src]="hoveredSocialGit ? 'assets/img/social/Git_button_hover.png' : 'assets/img/social/Git_button.png'"
-                            (mouseenter)="hoveredSocialGit = true" (mouseleave)="hoveredSocialGit = false" alt=""></a>
-                        <a href="https://www.linkedin.com/in/marco-hantel-b6944078/" target="_blank"><img [src]="hoveredSocialLin ? 'assets/img/social/Linkedin_button_hover.png' : 'assets/img/social/Linkedin_button.png'"
-                            (mouseenter)="hoveredSocialLin = true" (mouseleave)="hoveredSocialLin = false" alt=""></a>
+                        <a href="mailto:hantelmarco@gmail.com"><img
+                                [src]="hoveredSocialMail ? 'assets/img/social/Email_button_hover.png' : 'assets/img/social/Email_button.png'"
+                                (mouseenter)="hoveredSocialMail = true" (mouseleave)="hoveredSocialMail = false"
+                                alt=""></a>
+                        <a href="https://github.com/MarcoHantel" target="_blank"><img
+                                [src]="hoveredSocialGit ? 'assets/img/social/Git_button_hover.png' : 'assets/img/social/Git_button.png'"
+                                (mouseenter)="hoveredSocialGit = true" (mouseleave)="hoveredSocialGit = false"
+                                alt=""></a>
+                        <a href="https://www.linkedin.com/in/marco-hantel-b6944078/" target="_blank"><img
+                                [src]="hoveredSocialLin ? 'assets/img/social/Linkedin_button_hover.png' : 'assets/img/social/Linkedin_button.png'"
+                                (mouseenter)="hoveredSocialLin = true" (mouseleave)="hoveredSocialLin = false"
+                                alt=""></a>
                     </div>
                 </div>
             </div>
@@ -44,12 +38,11 @@
 
             <div (click)="scrollToContact($event)" class="img-change arrow-down"
                 (mouseenter)="hoverSvc.setHover(arrowHoverKey, true)"
-                (mouseleave)="hoverSvc.setHover(arrowHoverKey, false)"
-                [class.hover]="hoverSvc.getHover(arrowHoverKey)">
+                (mouseleave)="hoverSvc.setHover(arrowHoverKey, false)" [class.hover]="hoverSvc.getHover(arrowHoverKey)">
 
                 <img class="img" src="assets/img/icons/arrow_down.png">
                 <img class="img top" src="assets/img/icons/arrow_down_hover.png">
-                
+
             </div>
         </div>
     </div>

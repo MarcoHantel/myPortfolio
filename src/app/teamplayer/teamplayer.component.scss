@@ -55,7 +55,7 @@
 /* Beide Bilder übereinander platzieren */
 .shape-container img {
     position: absolute;
-    inset: 0;
+    // inset: 0;
 }
 
 /* Standardzustand: oberes Bild sichtbar, unteres unsichtbar */
@@ -89,9 +89,73 @@
 
 // mobile view
 
+
+/* ✅ Nur Mobile: horizontal swipe */
 @media (max-width: 768px) {
-    
-    .img-bottom{
+    .teamplayer-container.swipe {
+        justify-content: flex-start;
+        gap: 32px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+
+        scroll-snap-type: x mandatory;
+        padding: 0 16px;
+
+        /* optional: Scrollbar verstecken */
+        scrollbar-width: none;
+    }
+
+    .teamplayer-container.swipe::-webkit-scrollbar {
         display: none;
+    }
+
+    /* Jede Card soll “einrasten” */
+    .teamplayer-container .card {
+        scroll-snap-align: center;
+
+        /* wichtig: damit Flex nicht zusammendrückt */
+        flex: 0 0 85%;
+        max-width: 85%;
+    }
+}
+
+@media (max-width: 580px) {
+
+    .team-text {
+        height: 200px;
+        width: 200px;
+        font-weight: 400;
+        font-size: 14px;
+
+        >.text-statement {
+            height: auto;
+        }
+        >.text-link {
+            margin-top: 16px;
+        }
+        >h3{
+            margin-top: 8px;
+            margin-left: 8px;
+        }
+    }
+
+    .img-top,
+    .img-bottom {
+        width: 100%;
+        height: 100%;
+        max-width: 300px;
+        min-width: 300px;
+    }
+
+    .shape-container {
+        width: 300px;
+        height: 300px;
+
+    }
+
+    .teamplayer-container.swipe {
+        gap: 64px;
     }
 }

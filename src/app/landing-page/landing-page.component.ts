@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgStyle, NgClass } from '@angular/common';
 import { ScrollService } from '../services/scroll/scroll.service';
 import { HoverServiceService } from '../services/hover/hover.service.service';
+import { MobileViewService } from '../services/mobile/mobile-view.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -22,11 +23,29 @@ export class LandingPageComponent {
 
   constructor(
     private scrollSvc: ScrollService,
-    public hoverSvc: HoverServiceService
+    public hoverSvc: HoverServiceService,
+    public bp: MobileViewService
   ) { }
+
+hoveredShape = false;
+
+onShapeEnter() {
+  if (this.bp.isMobile()) return;   // ⛔ im Mobile keine Reaktion
+  this.hoveredShape = true;
+}
+
+onShapeLeave() {
+  if (this.bp.isMobile()) return;
+  this.hoveredShape = false;
+}
+
 
   scrollToContact(event: Event) {
     event.preventDefault();
     this.scrollSvc.scrollToWithBounce('#contactMe', 180);
   }
+
+  shapeImages = [
+    'assets/img/shapes/BG_shape_2.png', 'assets/img/shapes/BG_shape_1.png'
+  ];
 }
