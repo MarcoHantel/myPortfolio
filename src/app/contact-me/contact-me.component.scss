@@ -2,6 +2,12 @@ a {
     color: var(--color-blue);
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 .form-content {
     position: relative;
     display: flex;
@@ -10,13 +16,15 @@ a {
 }
 
 .form-wrapper {
-    width: 911px;
+    width: 100%;
+    max-width: 911px;
     min-height: 661px;
     font-family: Josefin Sans, sans-serif;
     font-weight: 400;
     font-size: 18px;
     line-height: 120%;
     color: var(--color-white);
+    padding: 0 16px;
 }
 
 .text-info-wrapper {
@@ -48,7 +56,7 @@ a {
 
 // form
 
-.form-wraper {
+.inside-form-wrapper {
     font-size: 14px;
     line-height: 120%;
 }
@@ -70,6 +78,7 @@ textarea:focus {
     gap: 32px;
     color: var(--color-blue);
 
+
     >.input {
         display: flex;
         justify-content: center;
@@ -82,17 +91,18 @@ textarea:focus {
 .input-two {
     color: var(--color-blue);
     margin-top: 16px;
+
 }
 
-.input-feeld {
+.input-field {
     width: 100%;
-    max-width: 433px;
+    max-width: 100%;
 }
 
 
 .input-textarea {
     width: 100%;
-    max-width: 905px;
+    max-width: 100%;
     height: 150px !important;
     resize: none;
 }
@@ -161,17 +171,15 @@ textarea:focus {
     height: 89px;
 }
 
-/* Beide Arrow-Icons übereinander legen */
 .arrow-wrapper .arrow-top {
     position: absolute;
-    inset: 0; // top/right/bottom/left: 0
+    inset: 0;
     width: 100%;
     height: 100%;
     display: block;
     transition: opacity 0.4s ease-in-out;
 }
 
-/* Startzustand */
 .arrow-base {
     opacity: 1;
 }
@@ -180,14 +188,76 @@ textarea:focus {
     opacity: 0;
 }
 
-/* Wenn der Wrapper die Klasse .hover bekommt:
-   - Basis ausblenden
-   - Hover-Icon einblenden
-*/
 .arrow-wrapper.hover .arrow-base {
     opacity: 0;
 }
 
 .arrow-wrapper.hover .arrow-hover {
     opacity: 1;
+}
+
+@media (max-width: 1250px) {
+    .arrow-wrapper {
+        right: 50px;
+    }
+}
+
+@media (max-width: 840px) {
+
+
+
+    .text-info-wrapper {
+        flex-direction: column-reverse;
+        gap: 16px;
+        padding: 0px 32px;
+    }
+
+    .input-one {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .input-one>.input {
+        width: 100%;
+    }
+
+    .input-field,
+    .input-textarea {
+        max-width: 100%;
+    }
+
+    .submit-button-wrapper {
+        margin-right: 32px;
+    }
+
+    .arrow-wrapper .arrow-hover {
+        display: none;
+    }
+
+    .arrow-wrapper .arrow-base {
+        opacity: 1 !important;
+    }
+
+    .arrow-wrapper.hover .arrow-base {
+        opacity: 1 !important;
+    }
+
+    .arrow-wrapper.hover .arrow-hover {
+        opacity: 0 !important;
+    }
+
+    .arrow-wrapper {
+        position: static;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 64px 0px;
+    }
+
+    .arrow-wrapper .arrow-top {
+        position: static;
+        width: 38px;
+        height: 89px;
+    }
 }

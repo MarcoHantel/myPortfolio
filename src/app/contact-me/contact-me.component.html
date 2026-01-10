@@ -42,31 +42,31 @@
         </div>
 
         <!-- form -->
-        <div class="form-wraper">
+        <div class="inside-form-wrapper">
             <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
                 <div class="input-one">
                     <div class="input">
                         <label for="name">Your name</label>
-                        <input id="inputName" class="input-feeld input-design" #name="ngModel"
+                        <input id="inputName" class="input-field input-design" #name="ngModel"
                             [(ngModel)]="contactData.name" type="text" id="name" name="name" minlength="2"
                             value="your name" required
                             [class.invalid]="!name.valid && (name.touched || contactForm.submitted )">
 
                         @if(!name.valid && (name.touched || contactForm.submitted )){
-                        <span class="error-text">Please enter a valid Name in the feeld</span>
+                        <span class="error-text">Please enter a valid Name in the field</span>
                         }
                     </div>
 
 
                     <div class="input">
                         <label for="email">Your Email</label>
-                        <input id="inputMail" class="input-feeld input-design" #email="ngModel"
+                        <input id="inputMail" class="input-field input-design" #email="ngModel"
                             [(ngModel)]="contactData.email" type="email" id="email" name="email" required
                             pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
                             [class.invalid]="!email.valid && (email.touched || contactForm.submitted)">
 
                         @if(!email.valid && (email.touched || contactForm.submitted)){
-                        <span class="error-text">Please enter a valid email in the feeld</span>
+                        <span class="error-text">Please enter a valid email in the field</span>
                         }
                     </div>
 
@@ -81,7 +81,7 @@
                     </div>
                 </div>
                 @if(!message.valid && (message.touched || contactForm.submitted)){
-                <span class="error-text">Please enter a valid message in the feeld</span>
+                <span class="error-text">Please enter a valid message in the field</span>
                 }
                 <div>
                     <div class="privacy-policy-check">
