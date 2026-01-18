@@ -12,11 +12,18 @@ import { ScrollService } from '../../services/scroll/scroll.service';
 export class NavbarComponent {
   constructor(
     public langSvc: LanguageService,
-    private scrollSvc: ScrollService
-  ) {}
+    private scrollSvc: ScrollService,
 
-  scrollToLocation(event: Event){
-        event.preventDefault();
+  ) { }
+
+  isMobileMenuOpen: boolean = false;
+
+    setLang(lang: 'de' | 'en') {
+    this.langSvc.set(lang);
+  }
+
+  scrollToLocation(event: Event) {
+    event.preventDefault();
     this.scrollSvc.scrollToWithBounce('#whyMe', 180);
   }
 
@@ -34,4 +41,11 @@ export class NavbarComponent {
     event.preventDefault();
     this.scrollSvc.scrollToWithBounce('#myProjects', 180);
   }
+
+  toggleMobileMenu() {
+    const mobileNav = document.querySelector('.mobile-nav-bar');
+    mobileNav?.classList.toggle('active');
+  }
+
+
 }

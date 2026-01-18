@@ -1,3 +1,7 @@
+.mobile-nav-bar {
+    display: none;
+}
+
 .nav-bar {
 
     position: sticky;
@@ -86,5 +90,39 @@
 @media (max-width: 1260px) {
     .nav-bar {
         display: none;
+    }
+
+    .mobile-nav-bar-wrapper{
+        width: 100%;
+    }
+
+    .mobile-nav-bar {
+        display: flex;
+    }
+
+    .mobile-menu {
+        position: absolute;
+        top: 100px;
+        left: 300px;
+        background-color: aqua;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 99999;
+
+        >.mobile-links {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            
+            >a{
+                text-decoration: none;
+                color: var(--color-grey-dark);
+                font-weight: 400;
+                font-size: 22px;
+                line-height: 120%;
+            }
+        }
     }
 }

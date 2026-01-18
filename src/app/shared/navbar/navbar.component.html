@@ -19,7 +19,7 @@
         </span>
 
 
-        <div class="language-icons">
+        <!-- <div class="language-icons">
             <div class="language-icon-de">
                 <span class="language-de">DE</span>
                 <img src="assets/img/icons/ellipse_activ.png">
@@ -28,6 +28,68 @@
                 <span class="language-en">EN</span>
                 <img src="assets/img/icons/ellipse_activ.png">
             </div>
+        </div> -->
+        <div class="language-icons">
+
+  <div
+    class="language-icon-de"
+     (click)="setLang('de')"
+     [class.active]="langSvc.is('de')">
+  
+    <span>DE</span>
+    <img src="assets/img/icons/ellipse_activ.png">
+  </div>
+
+  <div
+    class="language-icon-en"
+     (click)="setLang('en')"
+     [class.active]="langSvc.is('en')"
+  >
+    <span>EN</span>
+    <img src="assets/img/icons/ellipse_activ.png">
+  </div>
+
+</div>
+
+    </div>
+</div>
+
+<div class="mobile-nav-bar-wrapper">
+    <div class="mobile-nav-bar">
+        <div class="mobile-nav-bar-wraper">
+            <img class="nav-logo" src="assets/img/icons/symple_menu.png">
+
+            <div class="hamburger-menu" (click)="toggleMobileMenu()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
         </div>
+
+
+
+        <div class="mobile-menu" [class.show]="isMobileMenuOpen">
+            <img src="/assets/img/shapes/mobil/nav-bar-mobile.png" alt="mobile menu">
+            <div class="mobile-links">
+                <a href="#whyMe" (click)="scrollToLocation($event); toggleMobileMenu()">Why me</a>
+                <a href="#skills" (click)="scrollToSkills($event); toggleMobileMenu()">Skills</a>
+                <a href="#myProjects" (click)="scrollToProjects($event); toggleMobileMenu()">Projects</a>
+                <a href="#contactMe" (click)="scrollToContact($event); toggleMobileMenu()">Contact</a>
+
+                <div class="language-icons">
+                    <div class="language-icon-de">
+                        <span class="language-de">DE</span>
+                        <img src="assets/img/icons/ellipse_activ.png">
+                    </div>
+                    <div class="language-icon-en">
+                        <span class="language-en">EN</span>
+                        <img src="assets/img/icons/ellipse_activ.png">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
     </div>
 </div>

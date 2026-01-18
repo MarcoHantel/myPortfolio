@@ -33,8 +33,10 @@
                     </div>
                 </div>
             </div>
-            <h1>Marco Hantel</h1>
-            <span>FRONTEND DEVELOPER</span>
+            <!-- <h1>Marco Hantel</h1> -->
+             <h1>{{ langSvc.t.landing.title[langSvc.lang()] }}</h1>
+
+            <span>{{ langSvc.t.landing.subtitle[langSvc.lang()] }}</span>
 
             <div (click)="scrollToContact($event)" class="img-change arrow-down"
                 (mouseenter)="hoverSvc.setHover(arrowHoverKey, true)"

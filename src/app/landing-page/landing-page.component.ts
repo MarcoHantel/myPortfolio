@@ -3,6 +3,7 @@ import { NgStyle, NgClass } from '@angular/common';
 import { ScrollService } from '../services/scroll/scroll.service';
 import { HoverServiceService } from '../services/hover/hover.service.service';
 import { MobileViewService } from '../services/mobile/mobile-view.service';
+import { LanguageService } from '../services/language/language.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -24,7 +25,8 @@ export class LandingPageComponent {
   constructor(
     private scrollSvc: ScrollService,
     public hoverSvc: HoverServiceService,
-    public bp: MobileViewService
+    public bp: MobileViewService,
+    public langSvc: LanguageService 
   ) { }
 
 hoveredShape = false;
