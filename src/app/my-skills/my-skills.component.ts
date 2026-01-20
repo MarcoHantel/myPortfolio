@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HoverServiceService } from '../services/hover/hover.service.service';
+import { LanguageService } from '../services/language/language.service';
 
 @Component({
   selector: 'app-my-skills',
@@ -28,13 +29,15 @@ export class MySkillsComponent {
     'scrum.png'
   ];
 
-  constructor(public hoverSvc: HoverServiceService) {}
+  constructor(
+    public hoverSvc: HoverServiceService,
+    public langSvc: LanguageService) { }
 
   /**
    * Helfer-Methode für das Template:
    * Fragt den aktuellen Hover-Status für das Shape ab.
    */
-   isShapeHovered(): boolean {
+  isShapeHovered(): boolean {
     return this.hoverSvc.getHover(this.shapeHoverKey);
   }
 }

@@ -8,7 +8,7 @@
                 <img class="image-shape" [src]="data.imageShape" [alt]="data.title" />
 
                 <div class="about-wrapper">
-                    <h3>About the project</h3>
+                    <h3>{{ langSvc.t.myProjects.title[langSvc.lang()] }}</h3>
 
                     <!-- Projektdauer; einfache Interpolation -->
                     <span class="duration-desktop">{{ data.duration }}</span>
@@ -25,7 +25,7 @@
             <div class="work-process-header">
                 <!-- Optional: zweite Shape, wenn gewünscht -->
                 <img class="image-shape" [src]="data.imageShape" [alt]="data.title" />
-                <h3>How I organized my work process</h3>
+                <h3>{{ langSvc.t.myProjects.EPL.headlineTwo[langSvc.lang()] }}</h3>
             </div>
             <div class="work-process-text">{{ data.workProcess }}</div>
 
@@ -33,7 +33,7 @@
             <!-- Learned Abschnitt -->
             <div class="work-process-header">
                 <img class="image-shape" [src]="data.imageShape" [alt]="data.title" />
-                <h3>What I have learned</h3>
+                <h3>{{ langSvc.t.myProjects.EPL.headlineThree[langSvc.lang()] }}</h3>
             </div>
             <div class="learned-text">{{ data.learned }}</div>
         </div>

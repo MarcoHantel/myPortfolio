@@ -3,32 +3,20 @@
         <img class="nav-logo" src="assets/img/logo/LOGO_dark_mh.png">
 
         <span>
-            <a href="#whyMe" (click)="scrollToLocation($event)">Why me</a>
+            <a href="#whyMe" (click)="scrollToLocation($event)">{{ langSvc.t.navbar.whyMe[langSvc.lang()] }}</a>
         </span>
 
         <span>
-            <a href="#skills" (click)="scrollToSkills($event)">Skills</a>
+            <a href="#skills" (click)="scrollToSkills($event)">{{ langSvc.t.navbar.skills[langSvc.lang()] }}</a>
         </span>
 
         <span>
-            <a href="#myProjects" (click)="scrollToProjects($event)">Projects</a>
+            <a href="#myProjects" (click)="scrollToProjects($event)">{{ langSvc.t.navbar.projects[langSvc.lang()] }}</a>
         </span>
 
         <span>
-            <a href="#contactMe" (click)="scrollToContact($event)">Contact</a>
+            <a href="#contactMe" (click)="scrollToContact($event)">{{ langSvc.t.navbar.contact[langSvc.lang()] }}</a>
         </span>
-
-
-        <!-- <div class="language-icons">
-            <div class="language-icon-de">
-                <span class="language-de">DE</span>
-                <img src="assets/img/icons/ellipse_activ.png">
-            </div>
-            <div class="language-icon-en">
-                <span class="language-en">EN</span>
-                <img src="assets/img/icons/ellipse_activ.png">
-            </div>
-        </div> -->
         <div class="language-icons">
 
   <div
@@ -71,10 +59,10 @@
         <div class="mobile-menu" [class.show]="isMobileMenuOpen">
             <img src="/assets/img/shapes/mobil/nav-bar-mobile.png" alt="mobile menu">
             <div class="mobile-links">
-                <a href="#whyMe" (click)="scrollToLocation($event); toggleMobileMenu()">Why me</a>
-                <a href="#skills" (click)="scrollToSkills($event); toggleMobileMenu()">Skills</a>
-                <a href="#myProjects" (click)="scrollToProjects($event); toggleMobileMenu()">Projects</a>
-                <a href="#contactMe" (click)="scrollToContact($event); toggleMobileMenu()">Contact</a>
+                <a href="#whyMe" (click)="scrollToLocation($event); toggleMobileMenu()"> {{ langSvc.t.navbar.whyMe[langSvc.lang()] }}</a>
+                <a href="#skills" (click)="scrollToSkills($event); toggleMobileMenu()"> {{ langSvc.t.navbar.skills[langSvc.lang()] }}</a>
+                <a href="#myProjects" (click)="scrollToProjects($event); toggleMobileMenu()"> {{ langSvc.t.navbar.projects[langSvc.lang()] }}</a>
+                <a href="#contactMe" (click)="scrollToContact($event); toggleMobileMenu()"> {{ langSvc.t.navbar.contact[langSvc.lang()] }}</a>
 
                 <div class="language-icons">
                     <div class="language-icon-de">

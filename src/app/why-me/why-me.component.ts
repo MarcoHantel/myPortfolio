@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ScrollService } from '../services/scroll/scroll.service';
+import { LanguageService } from '../services/language/language.service';
 
 @Component({
   selector: 'app-why-me',
@@ -11,7 +12,8 @@ import { ScrollService } from '../services/scroll/scroll.service';
 export class WhyMeComponent {
 
   constructor(
-    private scrollSvc: ScrollService
+    private scrollSvc: ScrollService,
+    public langSvc: LanguageService
   ) { }
 
   scrollToContact(event: Event) {
