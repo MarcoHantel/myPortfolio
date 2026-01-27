@@ -1,6 +1,6 @@
-<h2 class="headline">Need a teamplayer? Here what my colleagues said about me</h2>
+<h2 class="headline">{{langSvc.t.teamplayer.title[langSvc.lang()]}}</h2>
 
-<div class="teamplayer-container swipe">
+<!-- <div class="teamplayer-container swipe">
   @for (item of teamData; track item.headline; let i = $index) {
     <div
       class="shape-wrapper card"
@@ -20,4 +20,51 @@
       </div>
     </div>
   }
+</div> -->
+
+<div class="teamplayer-container swipe">
+  @for (item of teamData; track item.headline; let i = $index) {
+    <div
+      class="shape-wrapper card"
+      (mouseenter)="onHoverEnter(i)"
+      (mouseleave)="onHoverLeave()"
+      [class.hover]="hoverIndex === i"
+    >
+      <div class="shape-container">
+        <img
+          class="img-top"
+          [src]="'assets/img/shapes/' + item.imageShape1"
+          alt=""
+        >
+        <img
+          class="img-bottom"
+          [src]="'assets/img/shapes/' + item.imageShape2"
+          alt=""
+        >
+      </div>
+
+      <div class="team-text">
+        <h3 class="text-headline">
+          {{ item.headline }}
+        </h3>
+
+        <!-- ✅ Mehrsprachiger Text -->
+        <div class="text-statement">
+          {{ item.text[langSvc.lang()] }}
+        </div>
+
+        <!-- ✅ Mehrsprachiger Link -->
+        <div class="text-link">
+          <a
+            [href]="item.linkUrl"
+            target="_blank"
+            rel="noopener"
+          >
+            {{ item.linkLabel[langSvc.lang()] }}
+          </a>
+        </div>
+      </div>
+    </div>
+  }
 </div>
+

@@ -1,18 +1,12 @@
 <div class="form-content">
     <div class="form-wrapper">
-        <h2>Contact me</h2>
+        <h2>{{ langSvc.t.contactMe.title[langSvc.lang()] }}</h2>
         <div class="text-info-wrapper">
             <div class="form-text">
-                I’m a dedicated and detail-oriented Frontend Developer with a strong focus on creating clean, intuitive
-                and responsive user interfaces. I enjoy turning complex ideas into simple, elegant solutions using
-                modern web technologies. My work is driven by structure, teamwork, and a deep interest in user-centric
-                design and high-quality code.
+                {{ langSvc.t.contactMe.text[langSvc.lang()] }}
             </div>
 
             <div class="form-contact-infos">
-
-
-
                     <!-- MAIL -->
                     <div class="contact-mail" (mouseenter)="hoverSvc.setHover(mailHoverKey, true)"
                         (mouseleave)="hoverSvc.setHover(mailHoverKey, false)">
@@ -34,10 +28,6 @@
 
                         <div>Tel.: +49 1743939622</div>
                     </div>
-
-
-
-
             </div>
         </div>
 
@@ -46,34 +36,34 @@
             <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
                 <div class="input-one">
                     <div class="input">
-                        <label for="name">Your name</label>
+                        <label for="name">{{ langSvc.t.contactMe.forms.name[langSvc.lang()] }}</label>
                         <input id="inputName" class="input-field input-design" #name="ngModel"
                             [(ngModel)]="contactData.name" type="text" id="name" name="name" minlength="2"
                             value="your name" required
                             [class.invalid]="!name.valid && (name.touched || contactForm.submitted )">
 
                         @if(!name.valid && (name.touched || contactForm.submitted )){
-                        <span class="error-text">Please enter a valid Name in the field</span>
+                        <span class="error-text">{{ langSvc.t.contactMe.forms.errorName[langSvc.lang()] }}</span>
                         }
                     </div>
 
 
                     <div class="input">
-                        <label for="email">Your Email</label>
+                        <label for="email">{{ langSvc.t.contactMe.forms.email[langSvc.lang()] }}</label>
                         <input id="inputMail" class="input-field input-design" #email="ngModel"
                             [(ngModel)]="contactData.email" type="email" id="email" name="email" required
                             pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
                             [class.invalid]="!email.valid && (email.touched || contactForm.submitted)">
 
                         @if(!email.valid && (email.touched || contactForm.submitted)){
-                        <span class="error-text">Please enter a valid email in the field</span>
+                        <span class="error-text">{{ langSvc.t.contactMe.forms.errorEmail[langSvc.lang()] }}</span>
                         }
                     </div>
 
                 </div>
                 <div class="input-two">
                     <div class="textarea">
-                        <label for="message">Your Message</label>
+                        <label for="message">{{ langSvc.t.contactMe.forms.message[langSvc.lang()] }}</label>
                         <textarea id="inputText" class="input-textarea input-design" #message="ngModel"
                             [(ngModel)]="contactData.message" type="text" id="message" name="message"
                             value="your message" minlength="4" required
@@ -81,7 +71,7 @@
                     </div>
                 </div>
                 @if(!message.valid && (message.touched || contactForm.submitted)){
-                <span class="error-text">Please enter a valid message in the field</span>
+                <span class="error-text">{{ langSvc.t.contactMe.forms.errorText[langSvc.lang()] }}</span>
                 }
                 <div>
                     <div class="privacy-policy-check">
@@ -97,11 +87,11 @@
                                   " (mouseenter)="hoveredPrivacyPolicy = true"
                             (mouseleave)="hoveredPrivacyPolicy = false">
 
-                        <p>I've read the <a href="#">privacy policy</a> and agree to the process of my data as autlined.
+                        <p>{{ langSvc.t.contactMe.forms.textPrivacyPolicy_1[langSvc.lang()] }} <a href="#">privacy policy</a> {{ langSvc.t.contactMe.forms.textPrivacyPolicy_2[langSvc.lang()] }}.
                         </p>
                     </div>
                     @if(!confirmPrivacyPolicy && contactForm.submitted){
-                    <span class="error-text">Please confirm PrivacyPolicy</span>
+                    <span class="error-text">{{ langSvc.t.contactMe.forms.errorPrivacyPolicy[langSvc.lang()] }}</span>
                     }
                     <div class="submit-button-wrapper">
                         <input class="button-for-submint" type="submit" value="Send">

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ScrollService } from '../services/scroll/scroll.service';
 import { HoverServiceService } from '../services/hover/hover.service.service';
+import { LanguageService } from '../services/language/language.service';
 
 @Component({
   selector: 'app-contact-me',
@@ -28,7 +29,8 @@ export class ContactMeComponent {
 
   constructor(
     public scrollSvc: ScrollService,
-    public hoverSvc: HoverServiceService
+    public hoverSvc: HoverServiceService,
+    public langSvc: LanguageService,
   ) { }
 
   scrollToTop(event: Event) {
