@@ -1,5 +1,7 @@
 // Importiert Injectable (für den DI-Container), signal (reaktiver State) und computed (reaktives Derivat)
 import { Injectable, signal, computed } from '@angular/core';
+import type { Language } from '../language/language.service';
+
 
 // Definiert das Datenmodell eines Tabs (starke Typisierung für deine Views)
 export interface TabData {
@@ -7,9 +9,9 @@ export interface TabData {
   label: string;        // Beschriftung des Tab-Buttons
   title: string;        // Überschrift im Content
   duration: string;     // Projektdauer
-  about: string;        // Abschnitt: About the project
-  workProcess: string;  // Abschnitt: How I organized my work process
-  learned: string;      // Abschnitt: What I have learned
+  about: Record<Language, string>;        // Abschnitt: About the project
+  workProcess: Record<Language, string>;  // Abschnitt: How I organized my work process
+  learned: Record<Language, string>;      // Abschnitt: What I have learned
   imageShape: string;   // Pfad zu einem Deko-/Hero-Bild
   techImage: string[];  // Liste von Icon-/Bildpfaden (oder Strings) zu Technologien
   github?: string;      // optionaler GitHub-Link
@@ -31,12 +33,17 @@ export class TabsService {
       mobileLabel:'Project',
       title: 'El Pollo Loco',
       duration: 'Durattion 5 Weeks',
-      about:
-        'A simple Jump-and-Run game based on an object-oriented approach. Help sharkie…',
-      workProcess:
-        'Clean architecture, reusable modules/components, naming & testing focus…',
-      learned:
-        'Deep dive into canvas rendering, collision systems, asset pipelines…',
+      about: {
+        en: 'A simple Jump-and-Run game based on an object-oriented approach. Help sharkie…',
+        de: 'Ein einfaches Jump-and-Run-Spiel basierend auf einem objektorientierten Ansatz. Hilf Sharkie…'},
+      workProcess: {
+        en: 'Clean architecture, reusable modules/components, naming & testing focus…',
+        de: 'Reinigung der Architektur, wiederverwendbare Module/Komponenten, Benennung & Tests…'
+      },
+      learned: {
+        en: 'Deep dive into canvas rendering, collision systems, asset pipelines…',
+        de: 'Tiefgang in die Canvas-Darstellung, Kollisionsysteme und Asset-Pipelines…'
+      },
       imageShape: 'assets/img/shapes/ellipse 8.png', // ⚠️ Leerzeichen im Dateinamen sind möglich, aber fehleranfällig
       technology: 'HTML, CSS, JavaScript',
       techImage: [
@@ -54,9 +61,18 @@ export class TabsService {
       mobileLabel:'Project',
       title: 'Join Project',
       duration: 'Durattion 5 Weeks',
-      about: 'Task manager inspired by Kanban to organize your projects in a simple way',
-      workProcess: 'Services, DI, state handling, routing…',
-      learned: 'Forms, validation, accessibility…',
+      about: {
+        en: 'Task manager inspired by Kanban to organize your projects in a simple way',
+        de: 'Aufgabenmanager inspiriert von Kanban, um deine Projekte auf einfache Weise zu organisieren'
+      },
+      workProcess: {
+        en: 'Services, DI, state handling, routing…',
+        de: 'Services, DI, Zustandsverwaltung, Routing…'
+      },
+      learned: {
+        en: 'Forms, validation, accessibility…',
+        de: 'Formulare, Validierung, Barrierefreiheit…'
+      },
       imageShape: 'assets/img/shapes/ellipse 8.png',
       technology: 'HTML, CSS, Firebase',
       techImage: ['assets/img/icons/proj_html.png',
@@ -72,9 +88,18 @@ export class TabsService {
       mobileLabel:'Project',
       title: 'Pokedex App',
       duration: 'Durattion 5 Weeks',
-      about: 'getting data from a public API and displaying it in an user-friendly way',
-      workProcess: 'Services, DI, state handling, routing lorem kjgfh laksh dlashd aoisdhlahdahsd…',
-      learned: 'connecting to APIs, async data handling…aisdhgkjahsd asjhd kashd akd',
+      about: {
+        en: 'getting data from a public API and displaying it in an user-friendly way',
+        de: 'Daten von einer öffentlichen API abrufen und in einer benutzerfreundlichen Art anzeigen'
+      },
+      workProcess: {
+        en: 'Services, DI, state handling, routing lorem kjgfh laksh dlashd aoisdhlahdahsd…',
+        de: 'Services, DI, Zustandsverwaltung, Routing lorem kjgfh laksh dlashd aoisdhlahdahsd…'
+      },
+      learned: {
+        en: 'connecting to APIs, async data handling…aisdhgkjahsd asjhd kashd akd',
+        de: 'Verbindung zu APIs herstellen, asynchrone Datenverarbeitung…aisdhgkjahsd asjhd kashd akd'
+      },
       imageShape: 'assets/img/shapes/ellipse 8.png',
       technology: 'HTML, CSS, restAPI',
       techImage: ['assets/img/icons/proj_html.png',
@@ -90,9 +115,18 @@ export class TabsService {
       title: 'Soon Project',
       mobileLabel:'Project',
       duration: 'Durattion 5 Weeks',
-      about: 'Task manager inspired by Kanban…',
-      workProcess: 'Services, DI, state handling, routing…',
-      learned: 'Forms, validation, accessibility…',
+      about: {
+        en: 'Task manager inspired by Kanban…',
+        de: 'Aufgabenmanager inspiriert von Kanban…'
+      },
+      workProcess: {
+        en: 'Services, DI, state handling, routing…',
+        de: 'Services, DI, Zustandsverwaltung, Routing…'
+      },
+      learned: {
+        en: 'Forms, validation, accessibility…',
+        de: 'Formulare, Validierung, Barrierefreiheit…'
+      },
       imageShape: 'assets/img/shapes/ellipse 8.png',
       technology: 'Angular SCSS Signals',
       techImage: ['Angular', 'SCSS', 'Signals'],

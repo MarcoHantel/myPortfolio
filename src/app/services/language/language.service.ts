@@ -3,6 +3,8 @@ import { TRANSLATIONS } from '../../translation/translation';
 
 export type Language = 'de' | 'en';
 
+
+
 @Injectable({ providedIn: 'root' })
 export class LanguageService {
 

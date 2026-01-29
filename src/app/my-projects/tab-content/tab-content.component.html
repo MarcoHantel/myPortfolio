@@ -18,7 +18,7 @@
             </div>
             <!-- About-Text -->
             <div class="about-text">
-                {{ data.about }}
+                {{ data.about[langSvc.lang()] }}
             </div>
             <!-- Work-Process Abschnitt -->
 
@@ -27,7 +27,9 @@
                 <img class="image-shape" [src]="data.imageShape" [alt]="data.title" />
                 <h3>{{ langSvc.t.myProjects.EPL.headlineTwo[langSvc.lang()] }}</h3>
             </div>
-            <div class="work-process-text">{{ data.workProcess }}</div>
+            <div class="work-process-text">
+                {{ data.workProcess[langSvc.lang()] }}
+            </div>
 
 
             <!-- Learned Abschnitt -->
@@ -35,7 +37,9 @@
                 <img class="image-shape" [src]="data.imageShape" [alt]="data.title" />
                 <h3>{{ langSvc.t.myProjects.EPL.headlineThree[langSvc.lang()] }}</h3>
             </div>
-            <div class="learned-text">{{ data.learned }}</div>
+            <div class="learned-text">
+                {{ data.learned[langSvc.lang()] }}
+            </div>
         </div>
 
         <!-- Rechte/untere Spalte: Technologie-Icons + Projektbild + Links -->
@@ -46,7 +50,8 @@
             <div class="tech-img-wrapper" *ngIf="data.techImage?.length">
                 <div class="mobile-text-wrapper">
                     <h2 class="mobile-Project-Name d-none">{{data.title}}</h2>
-                    <p>Technologies:<p>
+                    <p>Technologies:
+                    <p>
                         <span class="technology">{{data.technology}}</span>
                         <span class="duration-mobile d-none">{{ data.duration }}</span>
                 </div>

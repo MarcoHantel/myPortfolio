@@ -1,4 +1,3 @@
-// translations.ts
 export const TRANSLATIONS = {
     landing: {
         title: {
@@ -141,8 +140,12 @@ export const TRANSLATIONS = {
         },
 
         text: {
-            en: 'I’m a dedicated and detail-oriented Frontend Developer with a strong focus on creating clean, intuitive and responsive user interfaces. I enjoy turning complex ideas into simple, elegant solutions using modern web technologies. My work is driven by structure, teamwork, and a deep interest in user-centric design and high-quality code.',
-            de: 'Ich bin ein engagierter und detailorientierter Frontend-Entwickler mit starkem Fokus auf die Erstellung sauberer, intuitiver und reaktionsschneller Benutzeroberflächen. Ich genieße es, komplexe Ideen in einfache, elegante Lösungen umzuwandeln, indem ich moderne Webtechnologien nutze. Meine Arbeit wird von Struktur, Teamarbeit und einem tiefen Interesse an benutzerzentriertem Design und hochwertigem Code angetrieben.'
+            en: `I’m a dedicated and detail-oriented Frontend Developer with a strong focus on creating clean, intuitive and responsive user interfaces. 
+                 I enjoy turning complex ideas into simple, elegant solutions using modern web technologies. My work is driven by structure, 
+                 teamwork, and a deep interest in user-centric design and high-quality code.`,
+            de: `Ich bin ein engagierter und detailorientierter Frontend-Entwickler mit einem starken 
+                 Fokus auf die Entwicklung sauberer, intuitiver und reaktionsschneller Benutzeroberflächen. Es bereitet mir Freude, komplexe Anforderungen mithilfe moderner Webtechnologien in einfache und elegante Lösungen zu übersetzen. Meine Arbeit ist geprägt von Struktur,
+                 Teamgeist sowie einem ausgeprägten Interesse an benutzerzentriertem Design und qualitativ hochwertigem Code.`
         },
 
         forms: {
@@ -352,6 +355,4 @@ export const TRANSLATIONS = {
 
     }
 
-
-    //   hier einfach alle eintragen
 } as const;
