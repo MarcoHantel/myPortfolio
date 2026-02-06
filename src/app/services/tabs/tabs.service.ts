@@ -93,8 +93,8 @@ export class TabsService {
         de: 'Daten von einer öffentlichen API abrufen und in einer benutzerfreundlichen Art anzeigen'
       },
       workProcess: {
-        en: 'Services, DI, state handling, routing lorem kjgfh laksh dlashd aoisdhlahdahsd…',
-        de: 'Services, DI, Zustandsverwaltung, Routing lorem kjgfh laksh dlashd aoisdhlahdahsd…'
+        en: 'Services, DI, state handling, routing ',
+        de: 'Services, DI, Zustandsverwaltung, Routing'
       },
       learned: {
         en: 'connecting to APIs, async data handling…aisdhgkjahsd asjhd kashd akd',
@@ -106,33 +106,33 @@ export class TabsService {
         'assets/img/icons/proj_css.png',
         'assets/img/icons/proj_restAPI.png'],
       projectImage: 'assets/img/projects/pokedex.png',
-      github: 'https://github.com/…',
+      github: 'https://github.com/MarcoHantel/PokeDex',
       livetest: 'https://marco-hantel.developerakademie.net/modul09-PokeDex/index.html'
     },
     {
       key: 'soon',
-      label: 'Soon Project',
-      title: 'Soon Project',
+      label: 'Aesparel',
+      title: 'Aesparel',
       mobileLabel:'Project',
-      duration: 'Durattion 5 Weeks',
+      duration: 'on going',
       about: {
-        en: 'Task manager inspired by Kanban…',
-        de: 'Aufgabenmanager inspiriert von Kanban…'
+        en: 'This is my own fashion brand which I founded with friends. I handle the CMS and do the designs',
+        de: 'Das ist mein eigenes Modebrand was ich mit freunden gegründet habe. Ich bereue das CMS und mache die Designs'
       },
       workProcess: {
-        en: 'Services, DI, state handling, routing…',
-        de: 'Services, DI, Zustandsverwaltung, Routing…'
+        en: 'Shopify, Illustrator, Photoshop',
+        de: 'Shopify, Illustrator, Photoshop'
       },
       learned: {
-        en: 'Forms, validation, accessibility…',
-        de: 'Formulare, Validierung, Barrierefreiheit…'
+        en: 'validation, APIs, accessibility, SEO optimization',
+        de: 'Validierung, APIs, Barrierefreiheit, SEO optimierung '
       },
       imageShape: 'assets/img/shapes/ellipse 8.png',
-      technology: 'Angular SCSS Signals',
-      techImage: ['Angular', 'SCSS', 'Signals'],
-      projectImage: '',
-      github: 'https://github.com/…',
-      livetest: 'https://test.com/...'
+      technology: 'Shopify, Photoshop, Illustrator',
+      techImage: ['assets/img/icons/proj_shopify.png', 'assets/img/icons/proj_photoshop.png', 'assets/img/icons/proj_illustrator.png'],
+      projectImage: 'assets/img/projects/aesparel.png',
+      github: 'https://github.com/',
+      livetest: 'https://aesparel.com/'
     },
   ]);
 

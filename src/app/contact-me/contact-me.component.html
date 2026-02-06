@@ -38,8 +38,8 @@
                     <div class="input">
                         <label for="name">{{ langSvc.t.contactMe.forms.name[langSvc.lang()] }}</label>
                         <input id="inputName" class="input-field input-design" #name="ngModel"
-                            [(ngModel)]="contactData.name" type="text" id="name" name="name" minlength="2"
-                            value="your name" required
+                            [(ngModel)]="contactData.name" type="text" name="name" minlength="2"
+                            placeholder="your name" required
                             [class.invalid]="!name.valid && (name.touched || contactForm.submitted )">
 
                         @if(!name.valid && (name.touched || contactForm.submitted )){
@@ -52,7 +52,7 @@
                         <label for="email">{{ langSvc.t.contactMe.forms.email[langSvc.lang()] }}</label>
                         <input id="inputMail" class="input-field input-design" #email="ngModel"
                             [(ngModel)]="contactData.email" type="email" id="email" name="email" required
-                            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" placeholder="your email"
                             [class.invalid]="!email.valid && (email.touched || contactForm.submitted)">
 
                         @if(!email.valid && (email.touched || contactForm.submitted)){
@@ -66,7 +66,7 @@
                         <label for="message">{{ langSvc.t.contactMe.forms.message[langSvc.lang()] }}</label>
                         <textarea id="inputText" class="input-textarea input-design" #message="ngModel"
                             [(ngModel)]="contactData.message" type="text" id="message" name="message"
-                            value="your message" minlength="4" required
+                            placeholder="your message" minlength="4" required
                             [class.invalid]="!message.valid && (message.touched || contactForm.submitted)"></textarea>
                     </div>
                 </div>

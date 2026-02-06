@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ScrollService } from '../services/scroll/scroll.service';
 import { HoverServiceService } from '../services/hover/hover.service.service';
 import { LanguageService } from '../services/language/language.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact-me',
@@ -12,6 +13,8 @@ import { LanguageService } from '../services/language/language.service';
   styleUrls: ['./contact-me.component.scss']
 })
 export class ContactMeComponent {
+
+  http = inject(HttpClient);
 
   contactData = {
     name: '',
@@ -43,12 +46,21 @@ export class ContactMeComponent {
   }
 
 
-  onSubmit(ngForm: NgForm) {
-    if (ngForm.valid && ngForm.submitted) {
-      console.log(this.contactData);
-    }
-
+onSubmit(ngForm: NgForm) {
+  if (ngForm.valid && ngForm.submitted && this.confirmPrivacyPolicy) {
+    this.http.post('https://DEINE-DOMAIN.TLD/sendMail.php', this.contactData, {
+      headers: { 'Content-Type': 'application/json' }
+    }).subscribe({
+      next: (res) => {
+        console.log('Mail sent', res);
+        ngForm.resetForm();
+        this.confirmPrivacyPolicy = false;
+      },
+      error: (err) => console.error('Mail error', err)
+    });
   }
+}
+
 
 
 }
