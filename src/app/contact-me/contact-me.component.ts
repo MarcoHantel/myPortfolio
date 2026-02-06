@@ -48,7 +48,7 @@ export class ContactMeComponent {
 
 onSubmit(ngForm: NgForm) {
   if (ngForm.valid && ngForm.submitted && this.confirmPrivacyPolicy) {
-    this.http.post('https://DEINE-DOMAIN.TLD/sendMail.php', this.contactData, {
+    this.http.post('/sendMail.php', this.contactData, {
       headers: { 'Content-Type': 'application/json' }
     }).subscribe({
       next: (res) => {
