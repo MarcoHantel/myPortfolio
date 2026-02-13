@@ -19,25 +19,22 @@
         </span>
         <div class="language-icons">
 
-  <div
-    class="language-icon-de"
-     (click)="setLang('de')"
-     [class.active]="langSvc.is('de')">
-  
-    <span>DE</span>
-    <img src="assets/img/icons/ellipse_activ.png">
-  </div>
+            <div class="language-icon-de" (click)="setLang('de')" [class.active]="langSvc.is('de')">
+                <span class="language-de">DE</span>
+                @if (langSvc.is('de')) {
+                <img src="assets/img/icons/ellipse_activ.png" alt="">
+                }
+            </div>
 
-  <div
-    class="language-icon-en"
-     (click)="setLang('en')"
-     [class.active]="langSvc.is('en')"
-  >
-    <span>EN</span>
-    <img src="assets/img/icons/ellipse_activ.png">
-  </div>
+            <div class="language-icon-en" (click)="setLang('en')" [class.active]="langSvc.is('en')">
+                <span class="language-en">EN</span>
+                @if (langSvc.is('en')) {
+                <img src="assets/img/icons/ellipse_activ.png" alt="">
+                }
+            </div>
 
-</div>
+
+        </div>
 
     </div>
 </div>
@@ -59,21 +56,31 @@
         <div class="mobile-menu" [class.show]="isMobileMenuOpen">
             <img src="/assets/img/shapes/mobil/nav-bar-mobile.png" alt="mobile menu">
             <div class="mobile-links">
-                <a href="#whyMe" (click)="scrollToLocation($event); toggleMobileMenu()"> {{ langSvc.t.navbar.whyMe[langSvc.lang()] }}</a>
-                <a href="#skills" (click)="scrollToSkills($event); toggleMobileMenu()"> {{ langSvc.t.navbar.skills[langSvc.lang()] }}</a>
-                <a href="#myProjects" (click)="scrollToProjects($event); toggleMobileMenu()"> {{ langSvc.t.navbar.projects[langSvc.lang()] }}</a>
-                <a href="#contactMe" (click)="scrollToContact($event); toggleMobileMenu()"> {{ langSvc.t.navbar.contact[langSvc.lang()] }}</a>
+                <a href="#whyMe" (click)="scrollToLocation($event); toggleMobileMenu()"> {{
+                    langSvc.t.navbar.whyMe[langSvc.lang()] }}</a>
+                <a href="#skills" (click)="scrollToSkills($event); toggleMobileMenu()"> {{
+                    langSvc.t.navbar.skills[langSvc.lang()] }}</a>
+                <a href="#myProjects" (click)="scrollToProjects($event); toggleMobileMenu()"> {{
+                    langSvc.t.navbar.projects[langSvc.lang()] }}</a>
+                <a href="#contactMe" (click)="scrollToContact($event); toggleMobileMenu()"> {{
+                    langSvc.t.navbar.contact[langSvc.lang()] }}</a>
 
                 <div class="language-icons">
-                    <div class="language-icon-de">
+                    <div class="language-icon-de" (click)="setLang('de')" [class.active]="langSvc.is('de')">
                         <span class="language-de">DE</span>
-                        <img src="assets/img/icons/ellipse_activ.png">
+                        @if (langSvc.is('de')) {
+                        <img src="assets/img/icons/ellipse_activ.png" alt="">
+                        }
                     </div>
-                    <div class="language-icon-en">
+
+                    <div class="language-icon-en" (click)="setLang('en')" [class.active]="langSvc.is('en')">
                         <span class="language-en">EN</span>
-                        <img src="assets/img/icons/ellipse_activ.png">
+                        @if (langSvc.is('en')) {
+                        <img src="assets/img/icons/ellipse_activ.png" alt="">
+                        }
                     </div>
                 </div>
+
 
 
             </div>
