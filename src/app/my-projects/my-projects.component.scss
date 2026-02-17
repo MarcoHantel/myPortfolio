@@ -19,9 +19,9 @@
     font-size: 30px;
 }
 
-    .mobile-tab{
-        display: none;
-    }
+.mobile-tab {
+    display: none;
+}
 
 .tabsActive {
     background-color: var(--color-tabblue);
@@ -31,11 +31,18 @@
 // mobile view
 
 @media screen and (max-width: 768px) {
-    .mobile-tab{
+    .mobile-tab {
         display: block;
     }
 
-    .desktop-tab{
+    .desktop-tab {
         display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .button-tab {
+        font-weight: 400;
+        font-size: 20px;
     }
 }
