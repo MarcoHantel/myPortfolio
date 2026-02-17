@@ -16,9 +16,9 @@ export class NavbarComponent {
 
   ) { }
 
-  isMobileMenuOpen: boolean = false;
+  isMobileMenuOpen = false;
 
-    setLang(lang: 'de' | 'en') {
+  setLang(lang: 'de' | 'en') {
     this.langSvc.set(lang);
   }
 
@@ -43,9 +43,11 @@ export class NavbarComponent {
   }
 
   toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+
     const mobileNav = document.querySelector('.mobile-nav-bar');
-    mobileNav?.classList.toggle('active');
+    mobileNav?.classList.toggle('active', this.isMobileMenuOpen);
+
+    document.body.style.overflow = this.isMobileMenuOpen ? 'hidden' : '';
   }
-
-
 }

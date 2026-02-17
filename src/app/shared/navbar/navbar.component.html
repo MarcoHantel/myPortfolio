@@ -41,21 +41,21 @@
 
 <div class="mobile-nav-bar-wrapper">
     <div class="mobile-nav-bar">
-        <div class="mobile-nav-bar-wraper">
-            <img class="nav-logo" src="assets/img/icons/symple_menu.png">
+        <!-- <div class="mobile-nav-bar-wraper"> -->
+            <!-- <img class="nav-logo" src="assets/img/icons/symple_menu.png"> -->
 
             <div class="hamburger-menu" (click)="toggleMobileMenu()">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
             </div>
-        </div>
+        <!-- </div> -->
 
 
 
-        <div class="mobile-menu" [class.show]="isMobileMenuOpen">
-            <img src="/assets/img/shapes/mobil/nav-bar-mobile.png" alt="mobile menu">
-            <div class="mobile-links">
+        <div class="mobile-menu" [class.show]="isMobileMenuOpen" (click)="toggleMobileMenu()">
+            <img src="/assets/img/shapes/mobil/nav-bar-mobile.png" alt="mobile menu" (click)="$event.stopPropagation()">
+            <div class="mobile-links" (click)="$event.stopPropagation()">
                 <a href="#whyMe" (click)="scrollToLocation($event); toggleMobileMenu()"> {{
                     langSvc.t.navbar.whyMe[langSvc.lang()] }}</a>
                 <a href="#skills" (click)="scrollToSkills($event); toggleMobileMenu()"> {{
