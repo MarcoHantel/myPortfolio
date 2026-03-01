@@ -2,6 +2,7 @@
 <h2>{{ langSvc.t.myProjects.title[langSvc.lang()] }}</h2>
 
 <!-- Tab-Buttons: werden aus der Service-Liste generiert -->
+ <div class="div-tabs-wrap">
 <div class="div-tabs" role="tablist">
 
   @for (tab of tabsSvc.tabs(); track tab.key; let i = $index) {
@@ -27,7 +28,7 @@
 
   }
 </div>
-
+</div>
 <!-- Inhalt des aktiven Tabs -->
 <div class="content-wrap">
   <!-- tabsSvc.activeData() gibt dir das TabData-Objekt des aktuell aktiven Tabs -->

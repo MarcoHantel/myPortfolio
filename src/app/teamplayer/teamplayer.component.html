@@ -26,21 +26,12 @@
           {{ item.headline }}
         </h3>
 
-        <!-- ✅ Mehrsprachiger Text -->
+        <!-- Mehrsprachiger Text -->
         <div class="text-statement">
           {{ item.text[langSvc.lang()] }}
         </div>
 
-        <!-- ✅ Mehrsprachiger Link -->
-        <div class="text-link">
-          <a
-            [href]="item.linkUrl"
-            target="_blank"
-            rel="noopener"
-          >
-            {{ item.linkLabel[langSvc.lang()] }}
-          </a>
-        </div>
+        <!-- Link -->
       </div>
     </div>
   }

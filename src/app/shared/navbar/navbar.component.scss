@@ -94,14 +94,13 @@
         inset: 0;
         z-index: 99999;
         pointer-events: none;
-        /* nur hamburger/menu soll clicks bekommen */
     }
 
     /* Hamburger oben rechts */
     .hamburger-menu {
         position: fixed;
         top: 18px;
-        right: 18px;
+        right: 34px;
         width: 34px;
         height: 26px;
         display: flex;

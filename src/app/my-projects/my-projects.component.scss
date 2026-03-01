@@ -1,7 +1,15 @@
+.div-tabs-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
 .div-tabs {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    width: 1500px;
 }
 
 .button-tab {
