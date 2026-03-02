@@ -108,6 +108,7 @@ export class TabsService {
       projectImage: 'assets/img/projects/pokedex.png',
       github: 'https://github.com/MarcoHantel/PokeDex',
       livetest: 'https://www.pokedex/marcohantel.de'
+
     },
     {
       key: 'soon',
