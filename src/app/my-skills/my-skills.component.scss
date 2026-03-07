@@ -7,6 +7,15 @@
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 32px;
+
+
+}
+
+.skill-icon-text-wrapper {
+    text-align: center;
+    >.skill-text {
+        color: var(--color-blue);
+    }
 }
 
 .skills-wrapper {

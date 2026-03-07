@@ -6,7 +6,10 @@
     <div class="skills-wrapper width">
       <div class="skills-icon-container">
         @for (item of skillsImg; track $index) {
-          <img [src]="'assets/img/icons/' + item" alt="Skill Icon">
+          <div class="skill-icon-text-wrapper">
+          <img [src]="'assets/img/icons/SVG/' + item" alt="Skill Icon">
+          <p class="skill-text">{{ skillsText[$index] }}</p>
+          </div>
         }
       </div>
 
