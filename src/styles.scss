@@ -68,6 +68,19 @@ h2 {
     display: none;
 }
 
+.button_up_down{
+    width: 38px;
+    height: 89px;
+    border: solid 1px var(--color-blue);
+    border-radius: 30px;
+    background-color: transparent;
+}
+
+.button_up_down:hover {
+    background-color: var(--color-grey);
+    cursor: pointer;
+}
+
 
 // mobile view 
 

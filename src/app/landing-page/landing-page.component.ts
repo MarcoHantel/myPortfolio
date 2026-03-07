@@ -32,7 +32,7 @@ export class LandingPageComponent {
 hoveredShape = false;
 
 onShapeEnter() {
-  if (this.bp.isMobile()) return;   // ⛔ im Mobile keine Reaktion
+  if (this.bp.isMobile()) return;   // im Mobile keine Reaktion
   this.hoveredShape = true;
 }
 
