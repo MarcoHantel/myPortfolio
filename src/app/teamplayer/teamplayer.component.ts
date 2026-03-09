@@ -50,7 +50,7 @@ export class TeamplayerComponent {
         de: 'Marco ist zuverlässig, freundlich und sehr strukturiert in seiner Arbeit. Sein Code ist sauber und einfach zu verstehen.'
       },
       linkLabel: { en: 'LinkedIn Profile', de: 'LinkedIn Profil' },
-      linkUrl: 'Linked In Profile',
+      linkUrl: 'https://www.linkedin.com/in/nathalie-d-721069186/',
       imageShape1: 'ellipse_ref_01.png',
       imageShape2: 'ellipse_ref_02.png'
     },
@@ -63,7 +63,7 @@ export class TeamplayerComponent {
         de: 'Ich habe nicht mit Marco in einem Projekt gearbeitet, aber er hat mir bei meiner Pokédex-Arbeit geholfen. Er ist sehr organisiert und hilfsbereit. Seine Erklärungen sind klar und seine Programmierfähigkeiten sind stark.'
       },
       linkLabel: { en: 'LinkedIn Profile', de: 'LinkedIn Profil' },
-      linkUrl: 'Linked In Profile',
+      linkUrl: '',
       imageShape1: 'ellipse_ref_01.png',
       imageShape2: 'ellipse_ref_02.png'
     },
@@ -76,7 +76,7 @@ export class TeamplayerComponent {
         de: 'Marco ist eine sehr strukturierte und teamorientierte Person. Er verbindet starke personelle Fähigkeiten mit der Fähigkeit, klaren, zuverlässigen und einfachen lesbaren Code zu schreiben.'
       },
       linkLabel: { en: 'LinkedIn Profile', de: 'LinkedIn Profil' },
-      linkUrl: 'Linked In Profile',
+      linkUrl: '',
       imageShape1: 'ellipse_ref_01.png',
       imageShape2: 'ellipse_ref_02.png'
     }

@@ -2,38 +2,32 @@
 
 <div class="teamplayer-container swipe">
   @for (item of teamData; track item.headline; let i = $index) {
-    <div
-      class="shape-wrapper card"
-      (mouseenter)="onHoverEnter(i)"
-      (mouseleave)="onHoverLeave()"
-      [class.hover]="hoverIndex === i"
-    >
-      <div class="shape-container">
-        <img
-          class="img-top"
-          [src]="'assets/img/shapes/' + item.imageShape1"
-          alt=""
-        >
-        <img
-          class="img-bottom"
-          [src]="'assets/img/shapes/' + item.imageShape2"
-          alt=""
-        >
+  <div class="shape-wrapper card" (mouseenter)="onHoverEnter(i)" (mouseleave)="onHoverLeave()"
+    [class.hover]="hoverIndex === i">
+    <div class="shape-container">
+      <img class="img-top" [src]="'assets/img/shapes/' + item.imageShape1" alt="">
+      <img class="img-bottom" [src]="'assets/img/shapes/' + item.imageShape2" alt="">
+    </div>
+
+    <div class="team-text">
+      <h3 class="text-headline">
+        {{ item.headline }}
+      </h3>
+
+      <!-- Mehrsprachiger Text -->
+      <div class="text-statement">
+        {{ item.text[langSvc.lang()] }}
       </div>
 
-      <div class="team-text">
-        <h3 class="text-headline">
-          {{ item.headline }}
-        </h3>
+      <!-- Mehrsprachiger Link -->
+      <div class="text-link">
+        @if(item.linkUrl){
+          <a [href]="item.linkUrl" target="_blank" rel="noopener">
+          {{ item.linkLabel[langSvc.lang()] }}
+        </a>}
 
-        <!-- Mehrsprachiger Text -->
-        <div class="text-statement">
-          {{ item.text[langSvc.lang()] }}
-        </div>
-
-        <!-- Link -->
       </div>
     </div>
+  </div>
   }
 </div>
-

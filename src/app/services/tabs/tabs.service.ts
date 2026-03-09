@@ -80,7 +80,7 @@ export class TabsService {
         'assets/img/icons/proj_firebase.png'], // geht, wenn du nur Texte anzeigen willst
       projectImage: 'assets/img/projects/join.png',
       github: 'https://github.com/MarcoHantel/Join-App',
-      livetest: 'https://marco-hantel.developerakademie.net/Join-406/index.html'
+      livetest: 'https://join.marcohantel.de'
     },
     {
       key: 'pokedex',
@@ -107,7 +107,7 @@ export class TabsService {
         'assets/img/icons/proj_restAPI.png'],
       projectImage: 'assets/img/projects/pokedex.png',
       github: 'https://github.com/MarcoHantel/PokeDex',
-      livetest: 'https://www.pokedex/marcohantel.de'
+      livetest: 'https://pokedex.marcohantel.de'
 
     },
     {

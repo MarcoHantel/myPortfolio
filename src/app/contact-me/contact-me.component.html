@@ -94,12 +94,15 @@
                     <span class="error-text">{{ langSvc.t.contactMe.forms.errorPrivacyPolicy[langSvc.lang()] }}</span>
                     }
                     <div class="submit-button-wrapper">
-                        <input class="button-for-submint" type="submit" value="Send">
+                        <input class="button-for-submint" type="submit" value="Send"
+                        [disabled]="contactForm.invalid || !confirmPrivacyPolicy"
+                        >
                     </div>
                 </div>
             </form>
 
             <div class="arrow-wrapper" (click)="scrollToTop($event)">
+
                 <button class="button_up_down">
                     <img src="assets/img/icons/arrow_up.png" alt="arrow up" class="arrow-top arrow-base" />
                 </button>
