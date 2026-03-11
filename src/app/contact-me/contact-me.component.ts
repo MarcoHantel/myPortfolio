@@ -45,21 +45,6 @@ export class ContactMeComponent {
     this.confirmPrivacyPolicy = !this.confirmPrivacyPolicy;
   }
 
-
-// onSubmit(ngForm: NgForm) {
-//   if (ngForm.valid && ngForm.submitted && this.confirmPrivacyPolicy) {
-//     this.http.post('/sendMail.php', this.contactData, {
-//       headers: { 'Content-Type': 'application/json' }
-//     }).subscribe({
-//       next: (res) => {
-//         console.log('Mail sent', res);
-//         ngForm.resetForm();
-//         this.confirmPrivacyPolicy = false;
-//       },
-//       error: (err) => console.error('Mail error', err)
-//     });
-//   }
-// }
 onSubmit(ngForm: NgForm) {
 
   if (ngForm.invalid || !this.confirmPrivacyPolicy) {
@@ -71,7 +56,6 @@ onSubmit(ngForm: NgForm) {
     headers: { 'Content-Type': 'application/json' }
   }).subscribe({
     next: (res) => {
-      console.log('Mail sent', res);
       ngForm.resetForm();
       this.confirmPrivacyPolicy = false;
     },

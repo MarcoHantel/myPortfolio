@@ -36,14 +36,19 @@
             <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
                 <div class="input-one">
                     <div class="input">
-                        <label for="name">{{ langSvc.t.contactMe.forms.name[langSvc.lang()] }}</label>
+                        <label for="name">
+                            {{ langSvc.t.contactMe.forms.name[langSvc.lang()] }}
+                        </label>
+
                         <input id="inputName" class="input-field input-design" #name="ngModel"
                             [(ngModel)]="contactData.name" type="text" name="name" minlength="2" placeholder="your name"
-                            required [class.invalid]="!name.valid && (name.touched || contactForm.submitted )">
+                            required [class.invalid]="!name.valid && (name.touched || contactForm.submitted)">
 
-                        @if(!name.valid && (name.touched || contactForm.submitted )){
-                        <span class="error-text">{{ langSvc.t.contactMe.forms.errorName[langSvc.lang()] }}</span>
-                        }
+                        <span class="error-text">
+                            {{ !name.valid && (name.touched || contactForm.submitted)
+                            ? langSvc.t.contactMe.forms.errorName[langSvc.lang()]
+                            : '' }}
+                        </span>
                     </div>
 
 
@@ -54,11 +59,12 @@
                             pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" placeholder="your email"
                             [class.invalid]="!email.valid && (email.touched || contactForm.submitted)">
 
-                        @if(!email.valid && (email.touched || contactForm.submitted)){
-                        <span class="error-text">{{ langSvc.t.contactMe.forms.errorEmail[langSvc.lang()] }}</span>
-                        }
-                    </div>
 
+                        <span class="error-text">
+                            {{ !email.valid && (email.touched || contactForm.submitted)
+                            ?langSvc.t.contactMe.forms.errorEmail[langSvc.lang()]: '' }}</span>
+
+                    </div>
                 </div>
                 <div class="input-two">
                     <div class="textarea">
@@ -69,9 +75,11 @@
                             [class.invalid]="!message.valid && (message.touched || contactForm.submitted)"></textarea>
                     </div>
                 </div>
-                @if(!message.valid && (message.touched || contactForm.submitted)){
-                <span class="error-text">{{ langSvc.t.contactMe.forms.errorText[langSvc.lang()] }}</span>
-                }
+
+                <span class="error-text">
+                    {{ !message.valid && (message.touched || contactForm.submitted)
+                    ? langSvc.t.contactMe.forms.errorText[langSvc.lang()] : ''}}</span>
+
                 <div>
                     <div class="privacy-policy-check">
                         <img class="check-box" (click)="togglePrivacy()" (mouseenter)="hoveredPrivacyPolicy = true"
@@ -86,17 +94,20 @@
                                   " (mouseenter)="hoveredPrivacyPolicy = true"
                             (mouseleave)="hoveredPrivacyPolicy = false">
 
-                        <p>{{ langSvc.t.contactMe.forms.textPrivacyPolicy_1[langSvc.lang()] }} <a href="#">privacy
+                        <p>{{ langSvc.t.contactMe.forms.textPrivacyPolicy_1[langSvc.lang()] }} <a
+                                href="/imprint">privacy
                                 policy</a> {{ langSvc.t.contactMe.forms.textPrivacyPolicy_2[langSvc.lang()] }}.
                         </p>
                     </div>
-                    @if(!confirmPrivacyPolicy && contactForm.submitted){
-                    <span class="error-text">{{ langSvc.t.contactMe.forms.errorPrivacyPolicy[langSvc.lang()] }}</span>
-                    }
+
+                    <span class="error-text">{{
+                        !confirmPrivacyPolicy && contactForm.submitted
+                        ? langSvc.t.contactMe.forms.errorPrivacyPolicy[langSvc.lang()] : '' }}
+                    </span>
+
                     <div class="submit-button-wrapper">
                         <input class="button-for-submint" type="submit" value="Send"
-                        [disabled]="contactForm.invalid || !confirmPrivacyPolicy"
-                        >
+                            [disabled]="contactForm.invalid || !confirmPrivacyPolicy">
                     </div>
                 </div>
             </form>
@@ -104,7 +115,7 @@
             <div class="arrow-wrapper" (click)="scrollToTop($event)">
 
                 <button class="button_up_down">
-                    <img src="assets/img/icons/arrow_up.png" alt="arrow up" class="arrow-top arrow-base" />
+                    <img src="assets/img/icons/SVG/arrow_up.svg" alt="arrow up">
                 </button>
             </div>
         </div>
