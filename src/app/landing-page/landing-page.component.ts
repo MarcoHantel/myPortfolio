@@ -42,12 +42,6 @@ onShapeLeave() {
   this.hoveredShape = false;
 }
 
-
-  scrollToContact(event: Event) {
-    event.preventDefault();
-    this.scrollSvc.scrollToWithBounce('#contactMe', 180);
-  }
-
   shapeImages = [
     'assets/img/shapes/BG_shape_2.png', 'assets/img/shapes/BG_shape_1.png'
   ];

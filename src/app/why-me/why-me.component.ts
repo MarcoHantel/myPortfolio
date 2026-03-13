@@ -16,8 +16,4 @@ export class WhyMeComponent {
     public langSvc: LanguageService
   ) { }
 
-  scrollToContact(event: Event) {
-    event.preventDefault();
-    this.scrollSvc.scrollToWithBounce('#contactMe', 180);
-  }
 }

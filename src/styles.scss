@@ -2,34 +2,38 @@
 @import './colourstyls.scss';
 @import './fonts.scss';
 
-html {
-  scroll-behavior: smooth;
+html,
+body {
+    margin: 0;
+    min-height: 100%;
 }
 
-#whyMe,
-#skills,
-#myProjects,
-#contactMe {
-  scroll-margin-top: 120px;
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: Josefin Sans, sans-serif;
-    margin: 0px;
     background-color: var(--color-anthra);
     overflow-x: hidden;
+    margin: 0px;
 }
 
 app-root {
     display: block;
     width: 100%;
+    min-height: 100vh;
 }
 
-.page-wrapper {
-    max-width: 4000px;
-    margin: 0 auto;
-    width: 100%;
-    overflow-x: hidden;
+.page-shell {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-content {
+    flex: 1;
+    display: block;
 }
 
 .wrapper {
@@ -78,7 +82,7 @@ h2 {
     display: none;
 }
 
-.button_up_down{
+.button_up_down {
     width: 38px;
     height: 89px;
     border: solid 1px var(--color-blue);

@@ -38,11 +38,6 @@ export class ContactMeComponent {
     public langSvc: LanguageService,
   ) { }
 
-  scrollToTop(event: Event) {
-    event.preventDefault();
-    this.scrollSvc.scrollToWithBounce('#top', 180);
-  }
-
   togglePrivacy() {
     this.confirmPrivacyPolicy = !this.confirmPrivacyPolicy;
   }
