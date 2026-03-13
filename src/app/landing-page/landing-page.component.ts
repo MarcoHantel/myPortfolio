@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { NgStyle, NgClass } from '@angular/common';
 import { ScrollService } from '../services/scroll/scroll.service';
 import { HoverServiceService } from '../services/hover/hover.service.service';
@@ -8,7 +9,7 @@ import { LanguageService } from '../services/language/language.service';
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [NgStyle, NgClass],
+  imports: [NgStyle, NgClass, RouterLink],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
 })

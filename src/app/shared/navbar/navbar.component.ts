@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { LanguageService } from '../../services/language/language.service';
 import { ScrollService } from '../../services/scroll/scroll.service';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
@@ -20,26 +21,6 @@ export class NavbarComponent {
 
   setLang(lang: 'de' | 'en') {
     this.langSvc.set(lang);
-  }
-
-  scrollToLocation(event: Event) {
-    event.preventDefault();
-    this.scrollSvc.scrollToWithBounce('#whyMe', 180);
-  }
-
-  scrollToContact(event: Event) {
-    event.preventDefault();
-    this.scrollSvc.scrollToWithBounce('#contactMe', 180);
-  }
-
-  scrollToSkills(event: Event) {
-    event.preventDefault();
-    this.scrollSvc.scrollToWithBounce('#skills', 180);
-  }
-
-  scrollToProjects(event: Event) {
-    event.preventDefault();
-    this.scrollSvc.scrollToWithBounce('#myProjects', 180);
   }
 
   toggleMobileMenu() {

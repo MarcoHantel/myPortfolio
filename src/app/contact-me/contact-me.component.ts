@@ -4,11 +4,12 @@ import { ScrollService } from '../services/scroll/scroll.service';
 import { HoverServiceService } from '../services/hover/hover.service.service';
 import { LanguageService } from '../services/language/language.service';
 import { HttpClient } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-contact-me',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './contact-me.component.html',
   styleUrls: ['./contact-me.component.scss']
 })
@@ -24,6 +25,7 @@ export class ContactMeComponent {
 
   hoveredPrivacyPolicy: boolean = false;
   confirmPrivacyPolicy: boolean = false;
+  mailSent: boolean = false;
 
   mailHoverKey = 'contact-mail-icon';
   phoneHoverKey = 'contact-phone-icon';
@@ -46,23 +48,28 @@ export class ContactMeComponent {
   }
 
 onSubmit(ngForm: NgForm) {
+  this.mailSent = false;
 
   if (ngForm.invalid || !this.confirmPrivacyPolicy) {
     ngForm.control.markAllAsTouched();
     return;
   }
 
-  this.http.post('/sendMail.php', this.contactData, {
+  this.mailSent = true;
+
+  const formData = { ...this.contactData };
+
+  this.contactData = {
+    name: '',
+    email: '',
+    message: ''
+  };
+
+  this.confirmPrivacyPolicy = false;
+  ngForm.resetForm();
+
+  this.http.post('/sendMail.php', formData, {
     headers: { 'Content-Type': 'application/json' }
-  }).subscribe({
-    next: (res) => {
-      ngForm.resetForm();
-      this.confirmPrivacyPolicy = false;
-    },
-    error: (err) => console.error('Mail error', err)
-  });
+  }).subscribe();
 }
-
-
-
 }

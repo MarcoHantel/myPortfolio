@@ -36,12 +36,12 @@
             <h1>{{ langSvc.t.landing.title[langSvc.lang()] }}</h1>
 
             <span>{{ langSvc.t.landing.subtitle[langSvc.lang()] }}</span>
-
-            <div (click)="scrollToContact($event)" class="img-change arrow-down">
+            
+            <a routerLink="/" fragment="contactMe" class="img-change arrow-down">
                 <button class="button_up_down">
                     <img src="assets/img/icons/SVG/arrow_down.svg">
                 </button>
-            </div>
+            </a>
         </div>
     </div>
 </div>

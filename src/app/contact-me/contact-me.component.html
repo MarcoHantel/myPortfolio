@@ -40,8 +40,8 @@
                             {{ langSvc.t.contactMe.forms.name[langSvc.lang()] }}
                         </label>
 
-                        <input id="inputName" class="input-field input-design" #name="ngModel"
-                            [(ngModel)]="contactData.name" type="text" name="name" minlength="2" placeholder="your name"
+                        <input id="name" class="input-field input-design" #name="ngModel" [(ngModel)]="contactData.name"
+                            (input)="mailSent = false" type="text" name="name" minlength="2" placeholder="your name"
                             required [class.invalid]="!name.valid && (name.touched || contactForm.submitted)">
 
                         <span class="error-text">
@@ -54,26 +54,24 @@
 
                     <div class="input">
                         <label for="email">{{ langSvc.t.contactMe.forms.email[langSvc.lang()] }}</label>
-                        <input id="inputMail" class="input-field input-design" #email="ngModel"
-                            [(ngModel)]="contactData.email" type="email" id="email" name="email" required
-                            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" placeholder="your email"
+                        <input id="email" class="input-field input-design" #email="ngModel"
+                            [(ngModel)]="contactData.email" (input)="mailSent = false" type="email" name="email"
+                            required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" placeholder="your email"
                             [class.invalid]="!email.valid && (email.touched || contactForm.submitted)">
-
 
                         <span class="error-text">
                             {{ !email.valid && (email.touched || contactForm.submitted)
-                            ?langSvc.t.contactMe.forms.errorEmail[langSvc.lang()]: '' }}</span>
+                            ?langSvc.t.contactMe.forms.errorEmail[langSvc.lang()]: '' }}
+                        </span>
 
                     </div>
                 </div>
                 <div class="input-two">
-                    <div class="textarea">
-                        <label for="message">{{ langSvc.t.contactMe.forms.message[langSvc.lang()] }}</label>
-                        <textarea id="inputText" class="input-textarea input-design" #message="ngModel"
-                            [(ngModel)]="contactData.message" type="text" id="message" name="message"
-                            placeholder="your message" minlength="4" required
-                            [class.invalid]="!message.valid && (message.touched || contactForm.submitted)"></textarea>
-                    </div>
+                    <textarea id="message" class="input-textarea input-design" #message="ngModel"
+                        [(ngModel)]="contactData.message" (input)="mailSent = false" name="message"
+                        placeholder="your message" minlength="4" required
+                        [class.invalid]="!message.valid && (message.touched || contactForm.submitted)">
+</textarea>
                 </div>
 
                 <span class="error-text">
@@ -105,6 +103,12 @@
                         ? langSvc.t.contactMe.forms.errorPrivacyPolicy[langSvc.lang()] : '' }}
                     </span>
 
+                    @if(mailSent){
+                    <span class="success-text">
+                        {{ langSvc.t.contactMe.forms.sentMail[langSvc.lang()] }}
+                    </span>
+                    }
+
                     <div class="submit-button-wrapper">
                         <input class="button-for-submint" type="submit" value="Send"
                             [disabled]="contactForm.invalid || !confirmPrivacyPolicy">
@@ -112,12 +116,11 @@
                 </div>
             </form>
 
-            <div class="arrow-wrapper" (click)="scrollToTop($event)">
-
+            <a routerLink="/" fragment="top" class="arrow-wrapper">
                 <button class="button_up_down">
                     <img src="assets/img/icons/SVG/arrow_up.svg" alt="arrow up">
                 </button>
-            </div>
+            </a>
         </div>
     </div>
 </div>

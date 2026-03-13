@@ -190,6 +190,11 @@ export const TRANSLATIONS = {
             errorPrivacyPolicy: {
                 en: 'Please confirm PrivacyPolicy.',
                 de: 'Bitte bestätigen Sie die Datenschutzrichtlinie.'
+            },
+
+            sentMail: {
+                en: 'your message has been delivered successfully.',
+                de: 'Deine Nachricht wurde erfolgreich verschickt.'
             }
         },
     },
@@ -201,7 +206,7 @@ export const TRANSLATIONS = {
             de: 'Impressum'
         },
 
-        legalNotice:{
+        legalNotice: {
             en: 'Legal Notice',
             de: 'Rechtliche Hinweise'
         },
