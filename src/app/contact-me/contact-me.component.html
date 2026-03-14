@@ -103,7 +103,7 @@
                         ? langSvc.t.contactMe.forms.errorPrivacyPolicy[langSvc.lang()] : '' }}
                     </span>
 
-                    @if(mailSent){
+                    @if(mailSent && !contactForm.invalid){
                     <span class="success-text">
                         {{ langSvc.t.contactMe.forms.sentMail[langSvc.lang()] }}
                     </span>
