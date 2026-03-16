@@ -48,10 +48,15 @@ a {
         margin-bottom: 16px;
     }
 
-    >.contact-mail:hover,
-    .contact-tel:hover {
+    >.contact-mail a:hover,
+    .contact-tel a:hover {
         color: var(--color-blue);
     }
+}
+
+.contact-link{
+    text-decoration: none;
+    color: var(--color-white);
 }
 
 // form
@@ -181,8 +186,14 @@ textarea:focus {
     color: var(--color-green);
     margin-top: 8px;
     height: 16px;
+
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
 }
 
+.success-text.hide {
+    opacity: 0;
+}
 
 .arrow-wrapper {
     position: absolute;

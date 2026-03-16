@@ -92,7 +92,7 @@
 
 
 /* ✅ Nur Mobile: horizontal swipe */
-@media (max-width: 768px) {
+@media (max-width: 1320px) {
     .teamplayer-container.swipe {
         justify-content: flex-start;
         gap: 32px;
@@ -117,6 +117,13 @@
         scroll-snap-align: center;
 
         /* wichtig: damit Flex nicht zusammendrückt */
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .teamplayer-container .card {
         flex: 0 0 85%;
         max-width: 85%;
     }
@@ -125,7 +132,7 @@
 @media (max-width: 580px) {
 
     .team-text {
-        height: 200px;
+        // height: 200px;
         width: 200px;
         font-weight: 400;
         font-size: 16px;
@@ -148,13 +155,13 @@
     .img-bottom {
         width: 100%;
         height: 100%;
-        max-width: 300px;
-        min-width: 300px;
+        max-width: 320px;
+        min-width: 320px;
     }
 
     .shape-container {
-        width: 300px;
-        height: 300px;
+        width: 320px;
+        height: 320px;
 
     }
 

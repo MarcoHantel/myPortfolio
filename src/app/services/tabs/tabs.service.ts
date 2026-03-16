@@ -47,13 +47,13 @@ export class TabsService {
       imageShape: 'assets/img/shapes/ellipse 8.png', // ⚠️ Leerzeichen im Dateinamen sind möglich, aber fehleranfällig
       technology: 'HTML, CSS, JavaScript',
       techImage: [
-        'assets/img/icons/proj_html.png',
-        'assets/img/icons/proj_css.png',
-        'assets/img/icons/proj_javascript.png'
+        'assets/img/icons/proj_html.svg',
+        'assets/img/icons/proj_css.svg',
+        'assets/img/icons/proj_javascript.svg'
       ],
       projectImage: 'assets/img/projects/ellpolloloco.png',
       github: 'https://github.com/MarcoHantel/El-Pollo-Loco',
-      livetest: 'https://marco-hantel.developerakademie.net/EL_POLLO_LOCO/index.html'
+      livetest: 'https://el-pollo-loco.marcohantel.de'
     },
     {
       key: 'join',
@@ -75,9 +75,9 @@ export class TabsService {
       },
       imageShape: 'assets/img/shapes/ellipse 8.png',
       technology: 'HTML, CSS, Firebase',
-      techImage: ['assets/img/icons/proj_html.png',
-        'assets/img/icons/proj_css.png',
-        'assets/img/icons/proj_firebase.png'], // geht, wenn du nur Texte anzeigen willst
+      techImage: ['assets/img/icons/proj_html.svg',
+        'assets/img/icons/proj_css.svg',
+        'assets/img/icons/proj_firebase.svg'], // geht, wenn du nur Texte anzeigen willst
       projectImage: 'assets/img/projects/join.png',
       github: 'https://github.com/MarcoHantel/Join-App',
       livetest: 'https://join.marcohantel.de'
@@ -102,39 +102,39 @@ export class TabsService {
       },
       imageShape: 'assets/img/shapes/ellipse 8.png',
       technology: 'HTML, CSS, restAPI',
-      techImage: ['assets/img/icons/proj_html.png',
-        'assets/img/icons/proj_css.png',
-        'assets/img/icons/proj_restAPI.png'],
+      techImage: ['assets/img/icons/proj_html.svg',
+        'assets/img/icons/proj_css.svg',
+        'assets/img/icons/proj_restAPI.svg'],
       projectImage: 'assets/img/projects/pokedex.png',
       github: 'https://github.com/MarcoHantel/PokeDex',
       livetest: 'https://pokedex.marcohantel.de'
 
-    },
-    {
-      key: 'soon',
-      label: 'Aesparel',
-      title: 'Aesparel',
-      mobileLabel:'Project',
-      duration: 'on going',
-      about: {
-        en: 'This is my own fashion brand which I founded with friends. I handle the CMS and do the designs',
-        de: 'Das ist mein eigenes Modebrand was ich mit freunden gegründet habe. Ich bereue das CMS und mache die Designs'
-      },
-      workProcess: {
-        en: 'Shopify, Illustrator, Photoshop',
-        de: 'Shopify, Illustrator, Photoshop'
-      },
-      learned: {
-        en: 'validation, APIs, accessibility, SEO optimization',
-        de: 'Validierung, APIs, Barrierefreiheit, SEO optimierung '
-      },
-      imageShape: 'assets/img/shapes/ellipse 8.png',
-      technology: 'Shopify, Photoshop, Illustrator',
-      techImage: ['assets/img/icons/proj_shopify.png', 'assets/img/icons/proj_photoshop.png', 'assets/img/icons/proj_illustrator.png'],
-      projectImage: 'assets/img/projects/aesparel.png',
-      github: 'https://github.com/',
-      livetest: 'https://aesparel.com/'
-    },
+    }
+    // {
+    //   key: 'soon',
+    //   label: 'Aesparel',
+    //   title: 'Aesparel',
+    //   mobileLabel:'Project',
+    //   duration: 'on going',
+    //   about: {
+    //     en: 'This is my own fashion brand which I founded with friends. I handle the CMS and do the designs',
+    //     de: 'Das ist mein eigenes Modebrand was ich mit freunden gegründet habe. Ich bereue das CMS und mache die Designs'
+    //   },
+    //   workProcess: {
+    //     en: 'Shopify, Illustrator, Photoshop',
+    //     de: 'Shopify, Illustrator, Photoshop'
+    //   },
+    //   learned: {
+    //     en: 'validation, APIs, accessibility, SEO optimization',
+    //     de: 'Validierung, APIs, Barrierefreiheit, SEO optimierung '
+    //   },
+    //   imageShape: 'assets/img/shapes/ellipse 8.png',
+    //   technology: 'Shopify, Photoshop, Illustrator',
+    //   techImage: ['assets/img/icons/proj_shopify.png', 'assets/img/icons/proj_photoshop.png', 'assets/img/icons/proj_illustrator.png'],
+    //   projectImage: 'assets/img/projects/aesparel.png',
+    //   github: 'https://github.com/',
+    //   livetest: 'https://aesparel.com/'
+    // },
   ]);
 
   // Reaktiver State: welcher Tab ist aktiv (Start mit 'pollo')

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgStyle, NgClass } from '@angular/common';
-import { ScrollService } from '../services/scroll/scroll.service';
+// import { ScrollService } from '../services/scroll/scroll.service';
 import { HoverServiceService } from '../services/hover/hover.service.service';
 import { MobileViewService } from '../services/mobile/mobile-view.service';
 import { LanguageService } from '../services/language/language.service';
@@ -24,7 +24,7 @@ export class LandingPageComponent {
   arrowHoverKey = 'arrow-landing-page';
 
   constructor(
-    private scrollSvc: ScrollService,
+    // private scrollSvc: ScrollService,
     public hoverSvc: HoverServiceService,
     public bp: MobileViewService,
     public langSvc: LanguageService 

@@ -3,24 +3,27 @@
         <a href="/"><img class="nav-logo" src="assets/img/logo/LOGO_dark_mh.png"></a>
 
         <span>
-            <a routerLink="/" fragment="whyMe">{{
-                langSvc.t.navbar.whyMe[langSvc.lang()] }}</a>
+            <a [routerLink]="['/']" (click)="scrollToSection($event, 'whyMe')">
+                {{ langSvc.t.navbar.whyMe[langSvc.lang()] }}
+            </a>
         </span>
 
         <span>
-            <a routerLink="/" fragment="skills">
+            <a [routerLink]="['/']" (click)="scrollToSection($event, 'skills')">
                 {{ langSvc.t.navbar.skills[langSvc.lang()] }}
             </a>
         </span>
 
         <span>
-            <a routerLink="/" fragment="myProjects">{{
-                langSvc.t.navbar.projects[langSvc.lang()] }}</a>
+            <a [routerLink]="['/']" (click)="scrollToSection($event, 'myProjects')">
+                {{ langSvc.t.navbar.projects[langSvc.lang()] }}
+            </a>
         </span>
 
         <span>
-            <a routerLink="/" fragment="contactMe">{{
-                langSvc.t.navbar.contact[langSvc.lang()] }}</a>
+            <a [routerLink]="['/']" (click)="scrollToSection($event, 'contactMe')">
+                {{ langSvc.t.navbar.contact[langSvc.lang()] }}
+            </a>
         </span>
         <div class="language-icons">
 

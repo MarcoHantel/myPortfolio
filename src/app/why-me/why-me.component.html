@@ -1,6 +1,6 @@
-<div id="whyMe" class="wrapper">
+<div class="wrapper">
     <div class="why-me width">
-        <h2>{{ langSvc.t.whyMe.title[langSvc.lang()] }}</h2>
+        <h2 id="whyMe">{{ langSvc.t.whyMe.title[langSvc.lang()] }}</h2>
         <div class="why-me-wraper">
             <div class="location-wraper">
                 <img src="assets/img/icons/location.png" alt="Location Icon">
@@ -13,7 +13,9 @@
             </div>
         </div>
         <div class="button-wraper">
-            <button>{{ langSvc.t.whyMe.button[langSvc.lang()] }}</button>
+            <button [routerLink]="['/']" fragment="contactMe" type="button">
+                {{ langSvc.t.whyMe.button[langSvc.lang()] }}
+            </button>
         </div>
     </div>
 </div>

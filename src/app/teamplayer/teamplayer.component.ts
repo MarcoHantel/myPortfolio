@@ -43,7 +43,7 @@ export class TeamplayerComponent {
 
   teamData: TeamItem[] = [
     {
-      headline: 'Nathalie Dorendorf',
+      headline: 'Nathalie',
       project: 'Join',
       text: {
         en: 'Marco is reliable, friendly, and highly structured in his work. His code is clean and easy to understand. I fully recommend him as a colleague.',

@@ -15,7 +15,7 @@
                 ? 'assets/img/icons/icon_email_hover.png'
                 : 'assets/img/icons/icon_email.png'" alt="email icon" class="contact-icon">
 
-                    <div>E-mail: hantelmarco[at]gmail.com</div>
+                    <div><a class="contact-link" href="mailto:hantelmarco@gmail.com">E-mail: hantelmarco[at]gmail.com</a></div>
                 </div>
 
                 <!-- PHONE -->
@@ -26,7 +26,7 @@
                 ? 'assets/img/icons/icon_phone_hover.png'
                 : 'assets/img/icons/icon_phone.png'" alt="phone icon" class="contact-icon">
 
-                    <div>Tel.: +49 1743939622</div>
+                    <div><a class="contact-link" href="tel:+491743939622">Tel.: +49 1743939622</a></div>
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
                         </label>
 
                         <input id="name" class="input-field input-design" #name="ngModel" [(ngModel)]="contactData.name"
-                            (input)="mailSent = false" type="text" name="name" minlength="2" placeholder="your name"
+                            (input)="mailSent = false; hideSuccessText = false" type="text" name="name" minlength="2" placeholder="your name"
                             required [class.invalid]="!name.valid && (name.touched || contactForm.submitted)">
 
                         <span class="error-text">
@@ -55,7 +55,7 @@
                     <div class="input">
                         <label for="email">{{ langSvc.t.contactMe.forms.email[langSvc.lang()] }}</label>
                         <input id="email" class="input-field input-design" #email="ngModel"
-                            [(ngModel)]="contactData.email" (input)="mailSent = false" type="email" name="email"
+                            [(ngModel)]="contactData.email" (input)="mailSent = false; hideSuccessText = false" type="email" name="email"
                             required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" placeholder="your email"
                             [class.invalid]="!email.valid && (email.touched || contactForm.submitted)">
 
@@ -68,7 +68,7 @@
                 </div>
                 <div class="input-two">
                     <textarea id="message" class="input-textarea input-design" #message="ngModel"
-                        [(ngModel)]="contactData.message" (input)="mailSent = false" name="message"
+                        [(ngModel)]="contactData.message" (input)="mailSent = false; hideSuccessText = false" name="message"
                         placeholder="your message" minlength="4" required
                         [class.invalid]="!message.valid && (message.touched || contactForm.submitted)">
 </textarea>
@@ -103,8 +103,8 @@
                         ? langSvc.t.contactMe.forms.errorPrivacyPolicy[langSvc.lang()] : '' }}
                     </span>
 
-                    @if(mailSent && !contactForm.invalid){
-                    <span class="success-text">
+                    @if(mailSent){
+                    <span class="success-text" [class.hide]="!mailSent">
                         {{ langSvc.t.contactMe.forms.sentMail[langSvc.lang()] }}
                     </span>
                     }
