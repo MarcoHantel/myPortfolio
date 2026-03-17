@@ -41,7 +41,7 @@
                         </label>
 
                         <input id="name" class="input-field input-design" #name="ngModel" [(ngModel)]="contactData.name"
-                            (input)="mailSent = false; hideSuccessText = false" type="text" name="name" minlength="2" placeholder="your name"
+                            (input)="mailSent = false; hideSuccessText = false" type="text" name="name" minlength="2"
                             required [class.invalid]="!name.valid && (name.touched || contactForm.submitted)">
 
                         <span class="error-text">
@@ -56,7 +56,7 @@
                         <label for="email">{{ langSvc.t.contactMe.forms.email[langSvc.lang()] }}</label>
                         <input id="email" class="input-field input-design" #email="ngModel"
                             [(ngModel)]="contactData.email" (input)="mailSent = false; hideSuccessText = false" type="email" name="email"
-                            required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" placeholder="your email"
+                            required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
                             [class.invalid]="!email.valid && (email.touched || contactForm.submitted)">
 
                         <span class="error-text">
@@ -69,7 +69,7 @@
                 <div class="input-two">
                     <textarea id="message" class="input-textarea input-design" #message="ngModel"
                         [(ngModel)]="contactData.message" (input)="mailSent = false; hideSuccessText = false" name="message"
-                        placeholder="your message" minlength="4" required
+                        minlength="4" required
                         [class.invalid]="!message.valid && (message.touched || contactForm.submitted)">
 </textarea>
                 </div>
@@ -93,8 +93,8 @@
                             (mouseleave)="hoveredPrivacyPolicy = false">
 
                         <p>{{ langSvc.t.contactMe.forms.textPrivacyPolicy_1[langSvc.lang()] }} <a
-                                routerLink="/privacy-policy">privacy
-                                policy</a> {{ langSvc.t.contactMe.forms.textPrivacyPolicy_2[langSvc.lang()] }}.
+                                routerLink="/privacy-policy">{{ langSvc.t.contact.privacy[langSvc.lang()] }}
+                            </a>  {{ langSvc.t.contactMe.forms.textPrivacyPolicy_2[langSvc.lang()] }}.
                         </p>
                     </div>
 

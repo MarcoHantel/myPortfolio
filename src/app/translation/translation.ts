@@ -14,6 +14,11 @@ export const TRANSLATIONS = {
         title: {
             en: 'Contact me',
             de: 'Kontakt'
+
+        },
+        privacy: {
+            en: 'privacy policy',
+            de: 'Datenschutzbestimmungen'
         }
     },
 
@@ -169,7 +174,7 @@ export const TRANSLATIONS = {
 
             textPrivacyPolicy_2: {
                 en: 'and agree to the process of my data as autlined',
-                de: 'Dateschutzbestimmungen gelesen und stimme diesen zu'
+                de: ' gelesen und stimme diesen zu'
             },
 
             errorName: {
@@ -453,6 +458,13 @@ export const TRANSLATIONS = {
                 de: `Diese Website verwendet keine Analytics- oder Tracking-Tools (wie z.B. Google Analytics).
                 Es findet keine Erfassung des Nutzerverhaltens zu Marketingzwecken statt.`
             }
+        }
+    },
+
+    footer: {
+        legal:{
+            en: 'Legal notice',
+            de: 'Impressum'
         }
     }
 
