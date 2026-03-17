@@ -1,15 +1,18 @@
 <div id="top" class="landingpage-wraper">
     <div class="landing-page">
+        <div class="hero-left">
+            <div class="img-change" (mouseenter)="onShapeEnter()" (mouseleave)="onShapeLeave()"
+                [class.hover]="hoveredShape">
 
-        <div class="img-change" (mouseenter)="onShapeEnter()" (mouseleave)="onShapeLeave()"
-            [class.hover]="hoveredShape">
-            <img class="img base" src="assets/img/shapes/BG_shape_2.png" alt="">
-            <img class="img top" src="assets/img/shapes/BG_shape_1.png" alt="">
-
-            <img class="on-top selfie" src="assets/img/me/marco_2.png" alt="Portrait Marco">
-
+                <div class="shape-layer">
+                    <img class="img base" src="assets/img/shapes/BG_shape_2.png" alt="">
+                    <img class="img top" src="assets/img/shapes/BG_shape_1.png" alt="">
+                </div>
+            </div>
+            <div class="selfie-layer">
+                <img class="on-top selfie" src="assets/img/me/marco_3.png" alt="Portrait Marco">
+            </div>
         </div>
-
         <div class="text-landing-page">
             <div class="logo-and-socials-wraper">
                 <div class="logo-and-socials-spacer">
@@ -40,7 +43,7 @@
 
             <span>{{ langSvc.t.landing.subtitle[langSvc.lang()] }}</span>
 
-            <a routerLink="/" fragment="contactMe" class="img-change arrow-down">
+            <a routerLink="/" fragment="contactMe" class="arrow-down">
                 <button class="button_up_down">
                     <img src="assets/img/icons/SVG/arrow_down.svg">
                 </button>

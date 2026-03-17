@@ -78,7 +78,7 @@ export class NavbarComponent {
     const element = document.getElementById(sectionId);
 
     if (element) {
-      const offset = 120;
+      const offset = 130;
       const y = element.getBoundingClientRect().top + window.scrollY - offset;
 
       window.scrollTo({

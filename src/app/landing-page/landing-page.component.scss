@@ -1,21 +1,41 @@
 .landingpage-wraper {
+    overflow-x: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    // flex-direction: column;
     width: 100%;
+    padding-inline: 24px;
+    box-sizing: border-box;
+    min-height: calc(100vh - 104px);
+    overflow: hidden;
 }
 
 .landing-page {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: calc(100vh - 104px);
     max-width: 1300px;
     width: 100%;
     box-sizing: border-box;
     padding: 128px 0 0;
     margin: 0 auto;
+    gap: 48px;
+    // min-height: calc(100dvh - 104px);
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    // box-sizing: border-box;
+    // padding: 32px;
+}
+
+.hero-left {
+    position: relative;
+    width: 50%;
+    min-height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .text-landing-page {
@@ -24,31 +44,34 @@
     align-items: center;
     flex-direction: column;
     color: var(--color-white);
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
+    width: 50%;
+    text-align: center;
 
     >h1 {
         font-family: Anta, sans-serif;
         font-weight: 400;
-        font-size: 80px;
+        font-size: clamp(44px, 6vw, 80px);
+        line-height: 1.05;
         margin-block-start: 0.5em;
-        margin-block-end: 0.5em;
+        margin-block-end: 0.35em;
     }
 
     >span {
         font-family: Josefin Sans, sans-serif;
-        font-size: 40px;
+        font-size: clamp(22px, 3vw, 40px);
+        line-height: 1.2;
     }
 
     >.arrow-down {
-        margin-top: 128px;
+        margin-top: 96px;
         cursor: pointer;
     }
 }
 
-/* bestehendes Layout bleibt */
 .logo-and-socials-wraper {
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
@@ -56,30 +79,15 @@
 .logo-and-socials-spacer {
     display: flex;
     justify-content: space-between;
-    align-items: end;
-    width: 55%;
-}
+    align-items: flex-end;
+    width: min(320px, 100%);
+    gap: 24px;
 
-/* >>> Logo-Stack (wichtige Teile) */
-.logo-and-socials-spacer {
     >.logo-container {
         position: relative;
         width: 66px;
         height: 73px;
-    }
-}
 
-.logo-and-socials-spacer {
-
-    .social-icons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    >.logo-container {
         >img {
             position: absolute;
             inset: 0;
@@ -88,105 +96,96 @@
             display: block;
             transition: opacity .8s ease-in-out;
         }
-    }
-}
 
-/* Startzustand: small-logo sichtbar, big-logo unsichtbar */
-.logo-and-socials-spacer {
-    >.logo-container {
         >.small-logo {
             opacity: 1;
         }
-    }
-}
 
-.logo-and-socials-spacer {
-    >.logo-container {
         >.big-logo {
             opacity: 0;
             z-index: 1;
         }
-    }
-}
 
-/* Umschalten per Klasse '.motion-for-logo' am Container:
-   - small-logo ausblenden
-   - big-logo einblenden
-*/
-.logo-and-socials-spacer {
-    >.logo-container .motion-for-logo {
-        >.small-logo {
+        &.motion-for-logo>.small-logo {
             opacity: 0;
         }
-    }
-}
 
-.logo-and-socials-spacer {
-    >.logo-container.motion-for-logo {
-        >.big-logo {
+        &.motion-for-logo>.big-logo {
             opacity: 1;
         }
     }
-}
 
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 8px;
 
-
-// Hover-Effekt für Bildwechsel
-// Der Wrapper um die zwei <img>-Tags
-.img-change {
-    position: relative; // macht den Wrapper zur Bezugsebene für absolut positionierte Kinder (die .top-Grafik)
-    display: inline-block; // passt sich in Breite/Höhe dem Inhalt an und verhält sich wie ein inline-Element im Fluss
-    margin: 0 40px 0 40px;
-}
-
-.img-change .img {
-    display: block; // entfernt den standardmäßigen "inline-gap" von <img>, verhindert Lücken
-    width: 100%; // macht die Bilder responsiv (füllen die Wrapper-Breite)
-    height: auto; // behält das Seitenverhältnis
-    transition: opacity .8s ease-in-out;
-    // Wichtig: Die Transition liegt auf dem Element selbst (nicht nur im Hover-Zustand),
-    // damit sowohl das Ein- als auch Ausblenden weich animiert
-}
-
-// Das obere Bild, das überlagert
-.img-change .top {
-    position: absolute; // nimmt es aus dem normalen Fluss und legt es relativ zum Wrapper über das Basisbild
-    inset: 0; // Kurzform für top/right/bottom/left: 0; – deckt damit den Wrapper vollständig ab
-    opacity: 0; // Startzustand: unsichtbar, damit zuerst nur das Basisbild zu sehen ist
-    // (Optional, für Klarheit kann man ergänzen:)
-    // z-index: 1;       // sorgt explizit für Überlagerung, falls nötig
-}
-
-//legt mein Bild ganz nach oben 
-.on-top {
-    position: absolute;
-    // inset: 0;
-    opacity: 1;
-    // z-index: 1; 
+        img {
+            width: 32px;
+            height: 32px;
+            display: block;
+        }
+    }
 }
 
 .img-change {
-    // position: relative;
-    // display: inline-block;
-    // margin: 0 40px;
     position: relative;
+    width: min(500px, 100%);
+    aspect-ratio: 1 / 1;
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
+.shape-layer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.shape-layer .img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity .8s ease-in-out;
 }
 
 .img-change .img {
     display: block;
     width: 100%;
     height: auto;
-    transition: opacity .8s ease-in-out; // wichtig: Transition auf dem Element selbst
+}
+
+.img-change .base {
+    opacity: 1;
+    transform: rotate(-45deg);
 }
 
 .img-change .top {
     position: absolute;
     inset: 0;
     opacity: 0;
+}
+
+.img-change.hover .base {
+    opacity: 0;
+}
+
+.img-change.hover .top {
+    opacity: 1;
+}
+
+.selfie-layer {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    pointer-events: none;
 }
 
 .on-top {
@@ -198,64 +197,78 @@
     z-index: 2;
 }
 
-.img-change .base {
-    opacity: 1;
-    transform: rotate(-45deg);
-}
-
-/* Wenn .hover auf dem Wrapper → Basis-Bild ausblenden, Hover-Bild einblenden */
-.img-change.hover .base {
-    opacity: 0;
-}
-
-.img-change.hover .top {
-    opacity: 1;
-}
-
 .selfie {
-    display: inline-block;
-    width: 140%;
+    width: 95%;
+    max-width: 800px;
+    height: auto;
+    z-index: 2;
 }
 
-// mobile view 
-@media (max-width: 1920px) {
-    .selfie {
-        width: 100%;
-    }
-
-    .on-top {
-        top: 55%
-    }
+.button_up_down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (max-width: 1260px) {
+
+@media (max-width: 1100px) {
+
     .landing-page {
-        flex-direction: column-reverse;
+        gap: 24px;
+        padding-top: 100px;
+        min-height: calc(100vh - 104px);
+        // box-sizing: border-box;
+        // overflow-y: hidden;
+    }
+
+    .hero-left {
+        min-height: 560px;
+    }
+
+    .text-landing-page>.arrow-down {
+        margin-top: 72px;
+    }
+}
+
+@media (max-width: 900px) {
+    .landing-page {
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         min-height: auto;
+        padding-top: 80px;
+        padding-bottom: 40px;
+        gap: 8px;
+    }
+
+    .hero-left,
+    .text-landing-page {
         width: 100%;
-        padding-top: 24px;
-        padding-left: 20px;
-        padding-right: 20px;
-        gap: 24px;
+    }
+
+    .hero-left {
+        min-height: auto;
+        max-width: 520px;
+    }
+
+    .img-change {
+        width: min(420px, 100%);
+    }
+
+    .selfie {
+        width: 88%;
     }
 
     .text-landing-page {
-        margin: 0 20px 0 20px;
+        margin-bottom: 0;
+        margin-top: 80px;
 
         >h1 {
-            text-align: center;
-        }
-
-        >span {
-            font-size: 24px;
-            text-align: center;
+            margin-top: 20px;
         }
 
         >.arrow-down {
-            margin-top: 32px;
-            margin-bottom: 32px;
+            margin-top: 48px;
         }
     }
 
@@ -266,42 +279,83 @@
     .logo-and-socials-spacer {
         display: none;
     }
-
-    .selfie {
-        width: 120%;
-    }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 600px) {
+    .landingpage-wraper {
+        padding-inline: 16px;
+    }
 
     .landing-page {
-        flex-direction: column;
-        margin-top: 64px;
-        width: 100%;
-        gap: 40px;
-        margin-top: 0;
+        // padding-top: 56px;
+        // gap: 0;
+        // padding-bottom: 0px;
     }
 
-    .selfie {
-        width: 100%;
+    .hero-left {
+        max-width: 100%;
     }
-}
 
-@media (max-width: 500px) {
+    .img-change {
+        width: min(340px, 100%);
+    }
+
+    // .on-top {
+    //     top: 64%;
+    //     width: 65%;
+    // }
 
     .text-landing-page {
-        margin: 0 0 0 0px;
-
         >h1 {
-            font-size: 40px;
+            font-size: clamp(34px, 10vw, 48px);
         }
 
         >span {
-            font-size: 20px;
+            font-size: clamp(18px, 5.5vw, 26px);
         }
 
         >.arrow-down {
-            margin-top: 40px;
+            margin-top: 36px;
         }
+    }
+
+    .logo-and-socials-spacer {
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+
+        >.logo-container {
+            width: 52px;
+            height: 58px;
+        }
+
+        .social-icons {
+            flex-direction: row;
+            gap: 12px;
+
+            img {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .img-change {
+        width: 280px;
+    }
+
+    .on-top {
+        top: 63%;
+        width: 94%;
+    }
+
+    .text-landing-page>h1 {
+        font-size: 30px;
+    }
+
+    .text-landing-page>span {
+        font-size: 17px;
     }
 }

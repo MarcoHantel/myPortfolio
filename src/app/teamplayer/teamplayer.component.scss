@@ -86,25 +86,22 @@
     line-height: 120%;
     margin-block-start: 80px;
     margin-block-end: 40px;
+    padding: 0px 16px;
 }
 
 // mobile view
 
-
-/* ✅ Nur Mobile: horizontal swipe */
+/* Nur Mobile: horizontal swipe */
 @media (max-width: 1320px) {
     .teamplayer-container.swipe {
         justify-content: flex-start;
         gap: 32px;
-
         overflow-x: auto;
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
-
         scroll-snap-type: x mandatory;
         padding: 0 16px;
 
-        /* optional: Scrollbar verstecken */
         scrollbar-width: none;
     }
 
