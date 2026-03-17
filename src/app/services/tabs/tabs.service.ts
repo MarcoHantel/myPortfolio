@@ -82,34 +82,34 @@ export class TabsService {
       github: 'https://github.com/MarcoHantel/Join-App',
       livetest: 'https://join.marcohantel.de'
     },
-    {
-      key: 'pokedex',
-      label: 'Pokedex',
-      mobileLabel:'Project',
-      title: 'Pokedex App',
-      duration: 'Durattion 5 Weeks',
-      about: {
-        en: 'getting data from a public API and displaying it in an user-friendly way',
-        de: 'Daten von einer öffentlichen API abrufen und in einer benutzerfreundlichen Art anzeigen'
-      },
-      workProcess: {
-        en: 'Services, DI, state handling, routing ',
-        de: 'Services, DI, Zustandsverwaltung, Routing'
-      },
-      learned: {
-        en: 'connecting to APIs, async data handling…aisdhgkjahsd asjhd kashd akd',
-        de: 'Verbindung zu APIs herstellen, asynchrone Datenverarbeitung…aisdhgkjahsd asjhd kashd akd'
-      },
-      imageShape: 'assets/img/shapes/ellipse 8.png',
-      technology: 'HTML, CSS, restAPI',
-      techImage: ['assets/img/icons/proj_html.svg',
-        'assets/img/icons/proj_css.svg',
-        'assets/img/icons/proj_restAPI.svg'],
-      projectImage: 'assets/img/projects/pokedex.png',
-      github: 'https://github.com/MarcoHantel/PokeDex',
-      livetest: 'https://pokedex.marcohantel.de'
+    // {
+    //   key: 'pokedex',
+    //   label: 'Pokedex',
+    //   mobileLabel:'Project',
+    //   title: 'Pokedex App',
+    //   duration: 'Durattion 5 Weeks',
+    //   about: {
+    //     en: 'getting data from a public API and displaying it in an user-friendly way',
+    //     de: 'Daten von einer öffentlichen API abrufen und in einer benutzerfreundlichen Art anzeigen'
+    //   },
+    //   workProcess: {
+    //     en: 'Services, DI, state handling, routing ',
+    //     de: 'Services, DI, Zustandsverwaltung, Routing'
+    //   },
+    //   learned: {
+    //     en: 'connecting to APIs, async data handling…aisdhgkjahsd asjhd kashd akd',
+    //     de: 'Verbindung zu APIs herstellen, asynchrone Datenverarbeitung…aisdhgkjahsd asjhd kashd akd'
+    //   },
+    //   imageShape: 'assets/img/shapes/ellipse 8.png',
+    //   technology: 'HTML, CSS, restAPI',
+    //   techImage: ['assets/img/icons/proj_html.svg',
+    //     'assets/img/icons/proj_css.svg',
+    //     'assets/img/icons/proj_restAPI.svg'],
+    //   projectImage: 'assets/img/projects/pokedex.png',
+    //   github: 'https://github.com/MarcoHantel/PokeDex',
+    //   livetest: 'https://pokedex.marcohantel.de'
 
-    }
+    // }
     // {
     //   key: 'soon',
     //   label: 'Aesparel',

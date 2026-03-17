@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<div class="imprint-wrapper">
+    <h1>{{ langSvc.t.legalNotice.legalNotice[langSvc.lang()] }}</h1>
+    <div class="imprint-content">
+
+        <div class="imprint-text">
+
+            <h3>{{ langSvc.t.legalNotice.imprint.title[langSvc.lang()] }}</h3>
+            <p [innerHTML]="langSvc.t.legalNotice.imprint.name[langSvc.lang()]"></p>
+            <p [innerHTML]="langSvc.t.legalNotice.imprint.mail[langSvc.lang()]"></p>
+
+
+            <h3>{{ langSvc.t.legalNotice.acceptance[langSvc.lang()] }}</h3>
+            <p [innerHTML]="langSvc.t.legalNotice.acceptanceText[langSvc.lang()]"></p>
+
+        </div>
+
+        <div class="imprint-text">
+
+            <h3>{{ langSvc.t.legalNotice.scope[langSvc.lang()] }}</h3>
+
+            <p [innerHTML]="langSvc.t.legalNotice.scopeText[langSvc.lang()]"></p>
+
+        </div>
+
+        <div class="imprint-text">
+
+            <h3>{{ langSvc.t.legalNotice.proprietaryRights[langSvc.lang()] }}</h3>
+
+            <p [innerHTML]="langSvc.t.legalNotice.proprietaryText[langSvc.lang()]"></p>
+
+        </div>
+
+        <div class="imprint-text">
+
+            <h3>{{ langSvc.t.legalNotice.use[langSvc.lang()] }}</h3>
+
+            <p [innerHTML]="langSvc.t.legalNotice.useText[langSvc.lang()]"></p>
+        </div>
+
+        <div class="imprint-text">
+
+            <h3>{{ langSvc.t.legalNotice.disclaimer[langSvc.lang()] }}</h3>
+
+            <p [innerHTML]="langSvc.t.legalNotice.disclaimerText[langSvc.lang()]"></p>
+
+        </div>
+
+        <div class="imprint-text">
+
+            <h3>{{ langSvc.t.legalNotice.indemnity[langSvc.lang()] }}</h3>
+
+            <p [innerHTML]="langSvc.t.legalNotice.indemnityText[langSvc.lang()]"></p>
+        </div>
+    </div>
+</div>

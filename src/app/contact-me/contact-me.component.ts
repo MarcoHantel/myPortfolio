@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-// import { ScrollService } from '../services/scroll/scroll.service';
 import { HoverServiceService } from '../services/hover/hover.service.service';
 import { LanguageService } from '../services/language/language.service';
 import { HttpClient } from '@angular/common/http';

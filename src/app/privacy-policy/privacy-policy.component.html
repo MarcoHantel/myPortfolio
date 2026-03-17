@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<div class="imprint-wrapper">
+    <h1>{{ langSvc.t.privacyPolicy.title[langSvc.lang()] }}</h1>
+    <div class="imprint-content">
+
+        <div class="imprint-text">
+
+            <h3>{{ langSvc.t.privacyPolicy.controller.headline[langSvc.lang()] }}</h3>
+            <p [innerHTML]="langSvc.t.privacyPolicy.controller.text[langSvc.lang()]"></p>
+            <p [innerHTML]="langSvc.t.privacyPolicy.controller.mail[langSvc.lang()]"></p>
+
+
+            <h3>{{ langSvc.t.privacyPolicy.dataProcessing.headline[langSvc.lang()] }}</h3>
+            <p [innerHTML]="langSvc.t.privacyPolicy.dataProcessing.text[langSvc.lang()]"></p>
+
+        </div>
+
+        <div class="imprint-text">
+
+            <h3>{{ langSvc.t.privacyPolicy.logFiles.headline[langSvc.lang()] }}</h3>
+
+            <p [innerHTML]="langSvc.t.privacyPolicy.logFiles.text[langSvc.lang()]"></p>
+
+        </div>
+
+        <div class="imprint-text">
+
+            <h3>{{ langSvc.t.privacyPolicy.contact.headline[langSvc.lang()] }}</h3>
+
+            <p [innerHTML]="langSvc.t.privacyPolicy.contact.text[langSvc.lang()]"></p>
+
+        </div>
+
+        <div class="imprint-text">
+
+            <h3>{{ langSvc.t.privacyPolicy.tracking.headline[langSvc.lang()] }}</h3>
+
+            <p [innerHTML]="langSvc.t.privacyPolicy.tracking.text[langSvc.lang()]"></p>
+        </div>
+    </div>
+</div>

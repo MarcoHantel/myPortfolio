@@ -199,11 +199,24 @@ export const TRANSLATIONS = {
         },
     },
 
-    imprint: {
+    legalNotice: {
 
-        title: {
-            en: 'Imprint',
-            de: 'Impressum'
+        imprint: {
+
+            title: {
+                en: 'Impressum § 5 TMG',
+                de: 'Impressum Angaben gemäß § 5 TMG'
+            },
+
+            name: {
+                en: 'Marco Hantel 82223 Eichenau Deutschland',
+                de: 'Marco Hantel 82223 Eichenau Deutschland'
+            },
+
+            mail: {
+                en: 'E- Mail: hantelmarco@gmail.com',
+                de: 'E- Mail: hantelmarco@gmail.com'
+            }
         },
 
         legalNotice: {
@@ -357,7 +370,90 @@ export const TRANSLATIONS = {
             Datum: 26. Juli 2025
             `
         }
+    },
 
+    privacyPolicy: {
+        title: {
+            en: 'Privacy Policy',
+            de: 'Datenschutzbestimmungen'
+        },
+
+        controller: {
+
+            headline: {
+                en: 'Controller',
+                de: 'Verantwortliche Stelle'
+            },
+
+            text: {
+                en: 'The responsible party for data processing on this website is: Marco Hantel, 82223 Eichenau, Germany',
+                de: 'Verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist: Marco Hantel, 82223 Eichenau, Deutschland'
+            },
+
+            mail: {
+                en: 'Email: hantelmarco[at]gmail.com',
+                de: 'Email: hantelmarco[at]gmail.com'
+            },
+        },
+
+
+        dataProcessing: {
+
+            headline: {
+                en: 'General Information on Data Processing',
+                de: 'Allgemeine Informationen zur Datenverarbeitung'
+            },
+            text: {
+                en: `We take the protection of your personal data seriously. This website processes
+                    personal data only to the extent necessary and in accordance with the General Data Protection Regulation (GDPR).`,
+                de: `Wir nehmen den Schutz Ihrer persönlichen Daten ernst. Diese Website verarbeitet
+                    persönliche Daten nur in dem Umfang, der erforderlich ist und in Übereinstimmung mit der Datenschutz-Grundverordnung (DSGVO).`
+            }
+        },
+
+        logFiles: {
+
+            headline: {
+                en: 'Server Log Files',
+                de: 'Server-Log-Dateien'
+            },
+            text: {
+                en: `When accessing this website, information is automatically collected by the hosting provider. This may include:
+                    IP address (anonymized where possible), Date and time of request, Browser type and version, Operating system,
+                    Referrer URL, These data are used solely to ensure the technical functionality and security of the website. 
+                    Legal basis: Art. 6(1)(f) GDPR (legitimate interest)`,
+                de: `Wir nehmen den Schutz Ihrer persönlichen Daten ernst. Diese Website verarbeitet
+                    persönliche Daten nur in dem Umfang, der erforderlich ist und in Übereinstimmung mit der Datenschutz-Grundverordnung (DSGVO).`
+            }
+        },
+
+        contact: {
+
+            headline: {
+                en: 'Contact',
+                de: 'Kontakt'
+            },
+            text: {
+                en: `If you contact us via email or contact form, the data you provide (e.g., name, email address, message) will be used solely to process your request.
+                    Your data will not be shared without your consent. Legal basis: Art. 6(1)(a) GDPR (consent)`,
+                de: `Wenn Sie uns per E-Mail oder Kontaktformular kontaktieren, werden die von Ihnen bereitgestellten Daten (z.B. Name, E-Mail-Adresse, Nachricht) ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.
+                    Ihre Daten werden ohne Ihre Zustimmung nicht weitergegeben. Rechtsgrundlage: Art. 6(1)(a) DSGVO (Einwilligung)`
+            }
+        },
+
+        tracking: {
+
+            headline: {
+                en: 'Tracking Tools',
+                de: 'Tracking-Tools'
+            },
+            text: {
+                en: `This website does not use any analytics or tracking tools (such as Google Analytics).
+                There is no tracking of user behavior for marketing purposes.`,
+                de: `Diese Website verwendet keine Analytics- oder Tracking-Tools (wie z.B. Google Analytics).
+                Es findet keine Erfassung des Nutzerverhaltens zu Marketingzwecken statt.`
+            }
+        }
     }
 
 } as const;
