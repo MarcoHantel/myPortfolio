@@ -9,6 +9,7 @@ import { MyProjectsComponent } from './my-projects/my-projects.component';
 import { TeamplayerComponent } from './teamplayer/teamplayer.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { NavBarMobileComponent } from './shared/nav-bar-mobile/nav-bar-mobile.component';
 
 
 
@@ -24,7 +25,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     MyProjectsComponent,
     TeamplayerComponent,
     ContactMeComponent,
-    FooterComponent
+    FooterComponent,
+    NavBarMobileComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

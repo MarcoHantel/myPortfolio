@@ -1,0 +1,45 @@
+
+<div class="mobile-nav-bar-wrapper">
+
+    <div class="mobile-nav-bar">
+
+        <a routerLink="/" class="mobile-logo-link">
+            <img class="mobile-nav-logo" src="assets/img/logo/LOGO_mh.png">
+        </a>
+        <div class="hamburger-menu" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+
+        <div class="mobile-menu" [class.show]="isMobileMenuOpen" (click)="toggleMobileMenu()">
+            <img src="/assets/img/shapes/mobil/nav-bar-mobile.png" alt="mobile menu" (click)="$event.stopPropagation()">
+            <div class="mobile-links" (click)="$event.stopPropagation()">
+                <a routerLink="/" fragment="whyMe" (click)="toggleMobileMenu()"> {{
+                    langSvc.t.navbar.whyMe[langSvc.lang()] }}</a>
+                <a routerLink="/" fragment="skills" (click)="toggleMobileMenu()"> {{
+                    langSvc.t.navbar.skills[langSvc.lang()] }}</a>
+                <a routerLink="/" fragment="myProjects" (click)="toggleMobileMenu()"> {{
+                    langSvc.t.navbar.projects[langSvc.lang()] }}</a>
+                <a routerLink="/" fragment="contactMe" (click)="toggleMobileMenu()"> {{
+                    langSvc.t.navbar.contact[langSvc.lang()] }}</a>
+
+                <div class="language-icons">
+                    <div class="language-icon-de" (click)="setLang('de')" [class.active]="langSvc.is('de')">
+                        <span class="language-de">DE</span>
+                        @if (langSvc.is('de')) {
+                        <img src="assets/img/icons/ellipse_activ.png" alt="">
+                        }
+                    </div>
+
+                    <div class="language-icon-en" (click)="setLang('en')" [class.active]="langSvc.is('en')">
+                        <span class="language-en">EN</span>
+                        @if (langSvc.is('en')) {
+                        <img src="assets/img/icons/ellipse_activ.png" alt="">
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
