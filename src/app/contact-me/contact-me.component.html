@@ -1,87 +1,91 @@
 <div class="form-content">
-    <div class="form-wrapper">
-        <h2>{{ langSvc.t.contactMe.title[langSvc.lang()] }}</h2>
-        <div class="text-info-wrapper">
-            <div class="form-text">
-                {{ langSvc.t.contactMe.text[langSvc.lang()] }}
-            </div>
+    <div class="wrapper-limitation">
+        <div class="form-wrapper">
+            <h2>{{ langSvc.t.contactMe.title[langSvc.lang()] }}</h2>
+            <div class="text-info-wrapper">
+                <div class="form-text">
+                    {{ langSvc.t.contactMe.text[langSvc.lang()] }}
+                </div>
 
-            <div id="contactMe" class="form-contact-infos">
-                <!-- MAIL -->
-                <div class="contact-mail" (mouseenter)="hoverSvc.setHover(mailHoverKey, true)"
-                    (mouseleave)="hoverSvc.setHover(mailHoverKey, false)">
+                <div id="contactMe" class="form-contact-infos">
+                    <!-- MAIL -->
+                    <div class="contact-mail" (mouseenter)="hoverSvc.setHover(mailHoverKey, true)"
+                        (mouseleave)="hoverSvc.setHover(mailHoverKey, false)">
 
-                    <img [src]="hoverSvc.getHover(mailHoverKey)
+                        <img [src]="hoverSvc.getHover(mailHoverKey)
                 ? 'assets/img/icons/icon_email_hover.png'
                 : 'assets/img/icons/icon_email.png'" alt="email icon" class="contact-icon">
 
-                    <div><a class="contact-link" href="mailto:hantelmarco@gmail.com">E-mail: hantelmarco[at]gmail.com</a></div>
-                </div>
+                        <div><a class="contact-link" href="mailto:hantelmarco@gmail.com">E-mail:
+                                hantelmarco[at]gmail.com</a></div>
+                    </div>
 
-                <!-- PHONE -->
-                <div class="contact-tel" (mouseenter)="hoverSvc.setHover(phoneHoverKey, true)"
-                    (mouseleave)="hoverSvc.setHover(phoneHoverKey, false)">
+                    <!-- PHONE -->
+                    <div class="contact-tel" (mouseenter)="hoverSvc.setHover(phoneHoverKey, true)"
+                        (mouseleave)="hoverSvc.setHover(phoneHoverKey, false)">
 
-                    <img [src]="hoverSvc.getHover(phoneHoverKey)
+                        <img [src]="hoverSvc.getHover(phoneHoverKey)
                 ? 'assets/img/icons/icon_phone_hover.png'
                 : 'assets/img/icons/icon_phone.png'" alt="phone icon" class="contact-icon">
 
-                    <div><a class="contact-link" href="tel:+491743939622">Tel.: +49 1743939622</a></div>
+                        <div><a class="contact-link" href="tel:+491743939622">Tel.: +49 1743939622</a></div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- form -->
-        <div class="inside-form-wrapper">
-            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-                <div class="input-one">
-                    <div class="input">
-                        <label for="name">
-                            {{ langSvc.t.contactMe.forms.name[langSvc.lang()] }}
-                        </label>
+            <!-- form -->
+            <div class="inside-form-wrapper">
+                <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+                    <div class="input-one">
+                        <div class="input">
+                            <label for="name">
+                                {{ langSvc.t.contactMe.forms.name[langSvc.lang()] }}
+                            </label>
 
-                        <input id="name" class="input-field input-design" #name="ngModel" [(ngModel)]="contactData.name"
-                            (input)="mailSent = false; hideSuccessText = false" type="text" name="name" minlength="2"
-                            required [class.invalid]="!name.valid && (name.touched || contactForm.submitted)">
+                            <input id="name" class="input-field input-design" #name="ngModel"
+                                [(ngModel)]="contactData.name" (input)="mailSent = false; hideSuccessText = false"
+                                type="text" name="name" minlength="2" required
+                                [class.invalid]="!name.valid && (name.touched || contactForm.submitted)">
 
-                        <span class="error-text">
-                            {{ !name.valid && (name.touched || contactForm.submitted)
-                            ? langSvc.t.contactMe.forms.errorName[langSvc.lang()]
-                            : '' }}
-                        </span>
+                            <span class="error-text">
+                                {{ !name.valid && (name.touched || contactForm.submitted)
+                                ? langSvc.t.contactMe.forms.errorName[langSvc.lang()]
+                                : '' }}
+                            </span>
+                        </div>
+
+
+                        <div class="input">
+                            <label for="email">{{ langSvc.t.contactMe.forms.email[langSvc.lang()] }}</label>
+                            <input id="email" class="input-field input-design" #email="ngModel"
+                                [(ngModel)]="contactData.email" (input)="mailSent = false; hideSuccessText = false"
+                                type="email" name="email" required
+                                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                                [class.invalid]="!email.valid && (email.touched || contactForm.submitted)">
+
+                            <span class="error-text">
+                                {{ !email.valid && (email.touched || contactForm.submitted)
+                                ?langSvc.t.contactMe.forms.errorEmail[langSvc.lang()]: '' }}
+                            </span>
+
+                        </div>
                     </div>
-
-
-                    <div class="input">
-                        <label for="email">{{ langSvc.t.contactMe.forms.email[langSvc.lang()] }}</label>
-                        <input id="email" class="input-field input-design" #email="ngModel"
-                            [(ngModel)]="contactData.email" (input)="mailSent = false; hideSuccessText = false" type="email" name="email"
-                            required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-                            [class.invalid]="!email.valid && (email.touched || contactForm.submitted)">
-
-                        <span class="error-text">
-                            {{ !email.valid && (email.touched || contactForm.submitted)
-                            ?langSvc.t.contactMe.forms.errorEmail[langSvc.lang()]: '' }}
-                        </span>
-
-                    </div>
-                </div>
-                <div class="input-two">
-                    <textarea id="message" class="input-textarea input-design" #message="ngModel"
-                        [(ngModel)]="contactData.message" (input)="mailSent = false; hideSuccessText = false" name="message"
-                        minlength="4" required
-                        [class.invalid]="!message.valid && (message.touched || contactForm.submitted)">
+                    <div class="input-two">
+                        <textarea id="message" class="input-textarea input-design" #message="ngModel"
+                            [(ngModel)]="contactData.message" (input)="mailSent = false; hideSuccessText = false"
+                            name="message" minlength="4" required
+                            [class.invalid]="!message.valid && (message.touched || contactForm.submitted)">
 </textarea>
-                </div>
+                    </div>
 
-                <span class="error-text">
-                    {{ !message.valid && (message.touched || contactForm.submitted)
-                    ? langSvc.t.contactMe.forms.errorText[langSvc.lang()] : ''}}</span>
+                    <span class="error-text">
+                        {{ !message.valid && (message.touched || contactForm.submitted)
+                        ? langSvc.t.contactMe.forms.errorText[langSvc.lang()] : ''}}</span>
 
-                <div>
-                    <div class="privacy-policy-check">
-                        <img class="check-box" (click)="togglePrivacy()" (mouseenter)="hoveredPrivacyPolicy = true"
-                            (mouseleave)="hoveredPrivacyPolicy = false" [src]="
+                    <div>
+                        <div class="privacy-policy-check">
+                            <img class="check-box" (click)="togglePrivacy()" (mouseenter)="hoveredPrivacyPolicy = true"
+                                (mouseleave)="hoveredPrivacyPolicy = false" [src]="
                                     confirmPrivacyPolicy
                                       ? 'assets/img/shapes/shap_checkbox/checked.png'
                                       : contactForm.submitted
@@ -90,37 +94,43 @@
                                           ? 'assets/img/shapes/shap_checkbox/hover.png'
                                           : 'assets/img/shapes/shap_checkbox/default.png'
                                   " (mouseenter)="hoveredPrivacyPolicy = true"
-                            (mouseleave)="hoveredPrivacyPolicy = false">
+                                (mouseleave)="hoveredPrivacyPolicy = false">
 
-                        <p>{{ langSvc.t.contactMe.forms.textPrivacyPolicy_1[langSvc.lang()] }} <a
-                                routerLink="/privacy-policy">{{ langSvc.t.contact.privacy[langSvc.lang()] }}
-                            </a>  {{ langSvc.t.contactMe.forms.textPrivacyPolicy_2[langSvc.lang()] }}.
-                        </p>
+                            <p>{{ langSvc.t.contactMe.forms.textPrivacyPolicy_1[langSvc.lang()] }} <a
+                                    routerLink="/privacy-policy">{{ langSvc.t.contact.privacy[langSvc.lang()] }}
+                                </a> {{ langSvc.t.contactMe.forms.textPrivacyPolicy_2[langSvc.lang()] }}.
+                            </p>
+                        </div>
+
+                        <span class="error-text">{{
+                            !confirmPrivacyPolicy && contactForm.submitted
+                            ? langSvc.t.contactMe.forms.errorPrivacyPolicy[langSvc.lang()] : '' }}
+                        </span>
+
+                        @if(mailSent){
+                        <span class="success-text" [class.hide]="!mailSent">
+                            {{ langSvc.t.contactMe.forms.sentMail[langSvc.lang()] }}
+                        </span>
+                        }
+
+                        <div class="submit-button-wrapper">
+                            <input class="button-for-submint" type="submit" value="Send"
+                                [disabled]="contactForm.invalid || !confirmPrivacyPolicy">
+                        </div>
                     </div>
+                </form>
+            </div>
+        </div>
 
-                    <span class="error-text">{{
-                        !confirmPrivacyPolicy && contactForm.submitted
-                        ? langSvc.t.contactMe.forms.errorPrivacyPolicy[langSvc.lang()] : '' }}
-                    </span>
-
-                    @if(mailSent){
-                    <span class="success-text" [class.hide]="!mailSent">
-                        {{ langSvc.t.contactMe.forms.sentMail[langSvc.lang()] }}
-                    </span>
-                    }
-
-                    <div class="submit-button-wrapper">
-                        <input class="button-for-submint" type="submit" value="Send"
-                            [disabled]="contactForm.invalid || !confirmPrivacyPolicy">
-                    </div>
-                </div>
-            </form>
-
-            <a routerLink="/" fragment="top" class="arrow-wrapper">
+        <div class="arrow-wrapper">
+            <a routerLink="/" fragment="top">
                 <button class="button_up_down">
                     <img src="assets/img/icons/SVG/arrow_up.svg" alt="arrow up">
                 </button>
+
             </a>
         </div>
     </div>
+
+
 </div>

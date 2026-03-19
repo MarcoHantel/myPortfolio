@@ -1,30 +1,31 @@
 <div class="nav-bar">
     <div class="nav-bar-wraper">
         <a href="/"><img class="nav-logo" src="assets/img/logo/LOGO_dark_mh.png"></a>
+        <div class="nav-links">
+            <span>
+                <a [routerLink]="['/']" (click)="scrollToSection($event, 'whyMe')">
+                    {{ langSvc.t.navbar.whyMe[langSvc.lang()] }}
+                </a>
+            </span>
 
-        <span>
-            <a [routerLink]="['/']" (click)="scrollToSection($event, 'whyMe')">
-                {{ langSvc.t.navbar.whyMe[langSvc.lang()] }}
-            </a>
-        </span>
+            <span>
+                <a [routerLink]="['/']" (click)="scrollToSection($event, 'skills')">
+                    {{ langSvc.t.navbar.skills[langSvc.lang()] }}
+                </a>
+            </span>
 
-        <span>
-            <a [routerLink]="['/']" (click)="scrollToSection($event, 'skills')">
-                {{ langSvc.t.navbar.skills[langSvc.lang()] }}
-            </a>
-        </span>
+            <span>
+                <a [routerLink]="['/']" (click)="scrollToSection($event, 'myProjects')">
+                    {{ langSvc.t.navbar.projects[langSvc.lang()] }}
+                </a>
+            </span>
 
-        <span>
-            <a [routerLink]="['/']" (click)="scrollToSection($event, 'myProjects')">
-                {{ langSvc.t.navbar.projects[langSvc.lang()] }}
-            </a>
-        </span>
-
-        <span>
-            <a [routerLink]="['/']" (click)="scrollToSection($event, 'contactMe')">
-                {{ langSvc.t.navbar.contact[langSvc.lang()] }}
-            </a>
-        </span>
+            <span>
+                <a [routerLink]="['/']" (click)="scrollToSection($event, 'contactMe')">
+                    {{ langSvc.t.navbar.contact[langSvc.lang()] }}
+                </a>
+            </span>
+        </div>
         <div class="language-icons">
 
             <div class="language-icon-de" (click)="setLang('de')" [class.active]="langSvc.is('de')">
