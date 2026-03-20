@@ -59,8 +59,8 @@ export class TeamplayerComponent {
       headline: 'Felix',
       project: 'PokeDex',
       text: {
-        en: 'I haven\'t collaborated with Marco on a project, but he has helped me several times with my Pokédex work. He\'s very organized, easy to talk to, and always willing to support others. His explanations are clear, and his coding skills are strong.',
-        de: 'Ich habe nicht mit Marco in einem Projekt gearbeitet, aber er hat mir bei meiner Pokédex-Arbeit geholfen. Er ist sehr organisiert und hilfsbereit. Seine Erklärungen sind klar und seine Programmierfähigkeiten sind stark.'
+        en: 'I did work with Marco on the Join project. He is very organized and helpful. His explanations are clear, and his programming skills are strong.',
+        de: 'Ich habe mit Marco im Projekt Join zusammengearbeitet. Er ist sehr organisiert und hilfsbereit. Seine Erklärungen sind klar und seine Programmierfähigkeiten sind stark.'
       },
       linkLabel: { en: 'LinkedIn Profile', de: 'LinkedIn Profil' },
       linkUrl: '',
